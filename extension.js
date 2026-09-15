@@ -1012,19 +1012,95 @@ export default class LibrePodsExtension extends Extension {
 
   _toggleNoiseOptions() {
     this._noiseExpanded = !this._noiseExpanded;
-    if (this._noiseOptionsBox)
-      this._noiseOptionsBox.visible = this._noiseExpanded;
+    const box = this._noiseOptionsBox;
+    if (box) {
+      if (this._noiseExpanded) this._expandNoiseOptions(box);
+      else this._collapseNoiseOptions();
+    }
     if (this._noiseChevron)
       this._noiseChevron.icon_name = this._noiseExpanded
         ? "go-down-symbolic"
         : "go-next-symbolic";
   }
 
-  _collapseNoiseOptions() {
+  _collapseNoiseOptions(animate = true) {
     if (!this._noiseExpanded) return;
     this._noiseExpanded = false;
-    if (this._noiseOptionsBox) this._noiseOptionsBox.visible = false;
     if (this._noiseChevron) this._noiseChevron.icon_name = "go-next-symbolic";
+    const box = this._noiseOptionsBox;
+    if (!box) return;
+    if (animate) {
+      this._animateHeightTo(box, 0, () => {
+        box.visible = false;
+        this._noiseOptionsAnimating = false;
+        this._animateViewsStackHeight();
+      });
+      this._noiseOptionsAnimating = true;
+    } else {
+      box.remove_all_transitions();
+      this._noiseOptionsAnimating = false;
+      box.visible = false;
+      box.set_height(-1);
+    }
+  }
+
+  _expandNoiseOptions(box) {
+    box.visible = true;
+    box.remove_all_transitions();
+    box.set_height(-1);
+    const [, naturalHeight] = box.get_preferred_height(-1);
+    this._noiseOptionsAnimating = true;
+    box.set_height(0);
+    box.ease_property("height", naturalHeight, {
+      duration: 200,
+      mode: Clutter.AnimationMode.EASE_OUT_QUAD,
+      onComplete: () => {
+        box.set_height(-1);
+        this._noiseOptionsAnimating = false;
+      },
+    });
+  }
+
+  // Submenu-style height animation (the same trick GNOME's PopupSubMenu
+  // uses): pin the current height, ease to the target, then restore natural
+  // sizing. The pinned height propagates up through preferred sizes, so the
+  // popover glides instead of jumping.
+  _animateHeightTo(actor, target, onComplete = null) {
+    const current = actor.height;
+    actor.remove_all_transitions();
+    if (Math.abs(target - current) < 1) {
+      onComplete?.();
+      return;
+    }
+    actor.set_height(current);
+    actor.ease_property("height", target, {
+      duration: 200,
+      mode: Clutter.AnimationMode.EASE_OUT_QUAD,
+      onComplete: () => {
+        actor.set_height(-1);
+        onComplete?.();
+      },
+    });
+  }
+
+  _animateViewsStackHeight() {
+    const stack = this._viewsStack;
+    if (!stack || !stack.allocation.get_width()) return;
+    // A noise-options animation already drives the popover height through
+    // preferred sizes — pinning the stack now would fight it.
+    if (this._noiseOptionsAnimating) return;
+    const current = stack.height;
+    stack.set_height(-1);
+    const [, naturalHeight] = stack.get_preferred_height(
+      stack.allocation.get_width(),
+    );
+    if (Math.abs(naturalHeight - current) < 1) return;
+    stack.set_height(current);
+    stack.ease_property("height", naturalHeight, {
+      duration: 200,
+      mode: Clutter.AnimationMode.EASE_OUT_QUAD,
+      onComplete: () => stack.set_height(-1),
+    });
   }
 
   _sendNoiseMode(mode) {
@@ -1120,7 +1196,7 @@ export default class LibrePodsExtension extends Extension {
       this._noiseBtn.reactive = connected;
       this._noiseBtn.can_focus = connected;
     }
-    if (!connected) this._collapseNoiseOptions();
+    if (!connected) this._collapseNoiseOptions(false);
 
     this._setNoiseMode(this._getDBusProperty("ListeningMode"));
     const allowOff = Number(this._getDBusProperty("AllowOff")) === 1;
@@ -1164,6 +1240,7 @@ export default class LibrePodsExtension extends Extension {
       );
 
     this._updateBatteryUI();
+    this._animateViewsStackHeight();
   }
 
   _initDBus() {
@@ -1236,7 +1313,7 @@ export default class LibrePodsExtension extends Extension {
     if (this._activeTab === tabId) return;
 
     this._activeTab = tabId;
-    if (tabId !== "controls") this._collapseNoiseOptions();
+    if (tabId !== "controls") this._collapseNoiseOptions(false);
     Object.keys(this._tabButtons || {}).forEach((id) => {
       if (id === tabId) {
         this._tabButtons[id].style_class =

@@ -142,6 +142,7 @@
 .librepods-noise-pill-btn {
   border-radius: 9999px;
   padding: 0px 0px 0px 14px;
+  min-height: 48px;
 }
 
 /* Half-pill arrow section at the right end (flat seam, curved right cap),
