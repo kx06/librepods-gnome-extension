@@ -1024,7 +1024,6 @@ export default class LibrePodsExtension extends Extension {
   }
 
   _collapseNoiseOptions() {
-    if (!this._noiseExpanded) return;
     this._noiseExpanded = false;
     if (this._noiseChevron) this._noiseChevron.icon_name = "go-next-symbolic";
     const box = this._noiseOptionsBox;
