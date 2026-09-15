@@ -1052,7 +1052,7 @@ export default class LibrePodsExtension extends Extension {
     this._noiseOptionsAnimating = true;
     box.set_height(0);
     box.ease_property("height", naturalHeight, {
-      duration: 200,
+      duration: 260,
       mode: Clutter.AnimationMode.EASE_OUT_QUAD,
       onComplete: () => {
         box.set_height(-1);
@@ -1074,7 +1074,7 @@ export default class LibrePodsExtension extends Extension {
     }
     actor.set_height(current);
     actor.ease_property("height", target, {
-      duration: 200,
+      duration: 260,
       mode: Clutter.AnimationMode.EASE_OUT_QUAD,
       onComplete: () => {
         actor.set_height(-1);
@@ -1085,19 +1085,24 @@ export default class LibrePodsExtension extends Extension {
 
   _animateViewsStackHeight() {
     const stack = this._viewsStack;
-    if (!stack || !stack.allocation.get_width()) return;
+    const menu = this._indicator?.menu;
+    if (!stack || !menu?.isOpen || !stack.allocation.get_width()) return;
     // A noise-options animation already drives the popover height through
     // preferred sizes — pinning the stack now would fight it.
     if (this._noiseOptionsAnimating) return;
     const current = stack.height;
+    // Cancel any in-flight height ease first: a superseded ease never runs
+    // its onComplete, which would leave the stack pinned at a stale height
+    // and the popover unable to grow with its content.
+    stack.remove_all_transitions();
     stack.set_height(-1);
     const [, naturalHeight] = stack.get_preferred_height(
       stack.allocation.get_width(),
     );
-    if (Math.abs(naturalHeight - current) < 1) return;
+    if (Math.round(naturalHeight) === Math.round(current)) return;
     stack.set_height(current);
     stack.ease_property("height", naturalHeight, {
-      duration: 200,
+      duration: 260,
       mode: Clutter.AnimationMode.EASE_OUT_QUAD,
       onComplete: () => stack.set_height(-1),
     });
