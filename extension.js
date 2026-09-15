@@ -1065,14 +1065,15 @@ export default class LibrePodsExtension extends Extension {
   _animateViewsStackHeight() {
     const stack = this._viewsStack;
     const menu = this._indicator?.menu;
-    if (!stack || !menu?.isOpen || !stack.allocation.get_width()) return;
+    if (!stack || menu?.isOpen === false || !stack.allocation.get_width())
+      return;
     // A noise-options animation already drives the popover height through
     // preferred sizes — pinning the stack now would fight it.
     if (this._noiseOptionsAnimating) return;
-    const current = stack.height;
-    // Cancel any in-flight height ease first: a superseded ease never runs
-    // its onComplete, which would leave the stack pinned at a stale height
-    // and the popover unable to grow with its content.
+    // Read the height from the last real allocation: the height property
+    // falls back to the (already-updated) preferred size once a relayout is
+    // queued, which makes the pending change look like a no-op and snap.
+    const current = stack.allocation.get_height();
     stack.remove_all_transitions();
     stack.set_height(-1);
     const [, naturalHeight] = stack.get_preferred_height(
@@ -1085,6 +1086,10 @@ export default class LibrePodsExtension extends Extension {
       mode: Clutter.AnimationMode.EASE_OUT_QUAD,
       onComplete: () => stack.set_height(-1),
     });
+    // Temporary debug: verify the glide actually starts.
+    log(
+      `librepods stack anim: ${Math.round(current)} -> ${Math.round(naturalHeight)}`,
+    );
   }
 
   _sendNoiseMode(mode) {
