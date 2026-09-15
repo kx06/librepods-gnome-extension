@@ -165,7 +165,6 @@
 .librepods-noise-option-row {
   border-radius: 14px;
   padding: 12px 14px;
-  background-color: rgba(255, 255, 255, 0.1);
 }
 
 .librepods-noise-option-row:hover,
@@ -180,10 +179,14 @@
 .librepods-noise-option-label {
   font-size: 14px;
   font-weight: 500;
+  color: #ffffff !important;
+  opacity: 1 !important;
 }
 
 .librepods-noise-option-check {
   icon-size: 16px;
+  color: #ffffff !important;
+  opacity: 1 !important;
 }
 
 .librepods-quick-pill-chevron-icon {
