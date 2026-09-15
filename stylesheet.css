@@ -140,7 +140,7 @@
 .librepods-quick-pill-arrow-chip {
   background-color: rgba(255, 255, 255, 0.15);
   border-radius: 0px 9999px 9999px 0px;
-  padding: 12px 14px;
+  padding: 12px 8px;
 }
 
 .librepods-noise-pill-btn:active,
@@ -165,6 +165,12 @@
 .librepods-noise-option-row {
   border-radius: 14px;
   padding: 12px 14px;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.librepods-noise-option-row:hover,
+.librepods-noise-option-row:focus {
+  background-color: rgba(255, 255, 255, 0.16);
 }
 
 .librepods-noise-option-row-box {
