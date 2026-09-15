@@ -141,6 +141,26 @@
   color: -st-accent-fg-color;
 }
 
+.librepods-noise-pill-btn:insensitive {
+  opacity: 0.5;
+}
+
+/* Inline expanding noise-mode options (Wi-Fi-list style) */
+.librepods-noise-options {
+  spacing: 2px;
+  margin-top: 4px;
+}
+
+.librepods-noise-option-item {
+  border-radius: 12px;
+  padding: 8px 12px;
+}
+
+.librepods-quick-pill-chevron-icon {
+  icon-size: 16px;
+  opacity: 0.6;
+}
+
 .librepods-noise-pill-inner {
   align-items: center;
   spacing: 4px;

@@ -375,21 +375,30 @@ export default class LibrePodsExtension extends Extension {
     pillTextStack.add_child(pillTitle);
     pillTextStack.add_child(this._noisePillSubtitle);
 
-    let pillChevron = new St.Label({
-      text: "›",
-      style_class: "librepods-quick-pill-chevron",
+    this._noiseChevron = new St.Icon({
+      icon_name: "go-next-symbolic",
+      style_class: "librepods-quick-pill-chevron-icon",
     });
 
     pillBox.add_child(pillIcon);
     pillBox.add_child(pillTextStack);
-    pillBox.add_child(pillChevron);
+    pillBox.add_child(this._noiseChevron);
 
     noiseBtn.set_child(pillBox);
     this._noiseBtn = noiseBtn;
+    this._noiseExpanded = false;
 
-    // --- The popup menu, anchored to the pill ---
-    this._noiseMenu = new PopupMenu.PopupMenu(noiseBtn, 0.0, St.Side.BOTTOM);
-    this._noiseMenu.actor.add_style_class_name("librepods-noise-menu");
+    noiseBtn.connect("clicked", () => this._toggleNoiseOptions());
+
+    noiseGroup.add_child(noiseBtn);
+
+    // --- Inline expanding option list (Wi-Fi-list style, native ornaments) ---
+    this._noiseOptionsBox = new St.BoxLayout({
+      vertical: true,
+      style_class: "librepods-noise-options",
+      visible: false,
+      x_expand: true,
+    });
 
     const menuDefs = [
       { mode: NoiseMode.OFF, label: "Off" },
@@ -401,18 +410,17 @@ export default class LibrePodsExtension extends Extension {
     this._noiseMenuItems = {};
     for (const { mode, label } of menuDefs) {
       let item = new PopupMenu.PopupMenuItem(label);
+      item.add_style_class_name("librepods-noise-option-item");
       item.connect("activate", () => {
         this._setNoiseMode(mode); // updates UI immediately (optimistic)
         this._sendNoiseMode(mode); // tells the daemon
-        this._noiseMenu.close();
+        this._collapseNoiseOptions();
       });
-      this._noiseMenu.addMenuItem(item);
+      this._noiseOptionsBox.add_child(item);
       this._noiseMenuItems[mode] = item;
     }
 
-    noiseBtn.connect("clicked", () => this._noiseMenu.toggle());
-
-    noiseGroup.add_child(noiseBtn);
+    noiseGroup.add_child(this._noiseOptionsBox);
     container.add_child(noiseGroup);
 
     // 2-Column QuickToggle Grid — homogeneous via layout manager
@@ -896,6 +904,24 @@ export default class LibrePodsExtension extends Extension {
       }
     }
   }
+
+  _toggleNoiseOptions() {
+    this._noiseExpanded = !this._noiseExpanded;
+    if (this._noiseOptionsBox)
+      this._noiseOptionsBox.visible = this._noiseExpanded;
+    if (this._noiseChevron)
+      this._noiseChevron.icon_name = this._noiseExpanded
+        ? "go-down-symbolic"
+        : "go-next-symbolic";
+  }
+
+  _collapseNoiseOptions() {
+    if (!this._noiseExpanded) return;
+    this._noiseExpanded = false;
+    if (this._noiseOptionsBox) this._noiseOptionsBox.visible = false;
+    if (this._noiseChevron) this._noiseChevron.icon_name = "go-next-symbolic";
+  }
+
   _sendNoiseMode(mode) {
     if (!this._dbusProxy) return;
     this._dbusProxy.SetListeningModeRemote(mode, (_r, error) => {
@@ -983,6 +1009,13 @@ export default class LibrePodsExtension extends Extension {
     this._isConnected = connected;
     this._deviceName = this._getDBusProperty("DeviceName") || "AirPods";
     if (this._updateHeroState) this._updateHeroState();
+
+    // Noise pill mirrors quick-settings behavior: insensitive while off/disconnected
+    if (this._noiseBtn) {
+      this._noiseBtn.reactive = connected;
+      this._noiseBtn.can_focus = connected;
+    }
+    if (!connected) this._collapseNoiseOptions();
 
     this._setNoiseMode(this._getDBusProperty("ListeningMode"));
     const allowOff = Number(this._getDBusProperty("AllowOff")) === 1;
@@ -1091,6 +1124,7 @@ export default class LibrePodsExtension extends Extension {
     if (this._activeTab === tabId) return;
 
     this._activeTab = tabId;
+    if (tabId !== "controls") this._collapseNoiseOptions();
     Object.keys(this._tabButtons || {}).forEach((id) => {
       if (id === tabId) {
         this._tabButtons[id].style_class =
