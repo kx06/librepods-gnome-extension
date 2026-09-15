@@ -100,7 +100,15 @@ function makeEqualColumnsRow(styleClass, children, spacing = 8) {
     layout_manager: layout,
     x_expand: true,
   });
-  children.forEach((child, i) => layout.attach(child, i, 0, 1, 1));
+  children.forEach((child, i) => {
+    // GridLayout children default to natural size, top-left in their cell —
+    // force them to expand and fill so pills span their equal columns.
+    child.x_expand = true;
+    child.y_expand = true;
+    child.x_align = Clutter.ActorAlign.FILL;
+    child.y_align = Clutter.ActorAlign.FILL;
+    layout.attach(child, i, 0, 1, 1);
+  });
   return widget;
 }
 
