@@ -375,14 +375,18 @@ export default class LibrePodsExtension extends Extension {
     pillTextStack.add_child(pillTitle);
     pillTextStack.add_child(this._noisePillSubtitle);
 
+    let chevronChip = new St.BoxLayout({
+      style_class: "librepods-quick-pill-arrow-chip",
+    });
     this._noiseChevron = new St.Icon({
       icon_name: "go-next-symbolic",
       style_class: "librepods-quick-pill-chevron-icon",
     });
+    chevronChip.add_child(this._noiseChevron);
 
     pillBox.add_child(pillIcon);
     pillBox.add_child(pillTextStack);
-    pillBox.add_child(this._noiseChevron);
+    pillBox.add_child(chevronChip);
 
     noiseBtn.set_child(pillBox);
     this._noiseBtn = noiseBtn;
@@ -409,15 +413,42 @@ export default class LibrePodsExtension extends Extension {
 
     this._noiseMenuItems = {};
     for (const { mode, label } of menuDefs) {
-      let item = new PopupMenu.PopupMenuItem(label);
-      item.add_style_class_name("librepods-noise-option-item");
-      item.connect("activate", () => {
+      let rowBtn = new St.Button({
+        style_class: "popup-menu-item librepods-noise-option-row",
+        can_focus: true,
+        x_expand: true,
+      });
+
+      let rowBox = new St.BoxLayout({
+        style_class: "librepods-noise-option-row-box",
+        x_expand: true,
+      });
+
+      let rowLabel = new St.Label({
+        text: label,
+        style_class: "librepods-noise-option-label",
+      });
+
+      // object-select-symbolic is the stock GNOME checkmark used by
+      // quick-settings submenus (Wi-Fi network list style).
+      let rowCheck = new St.Icon({
+        icon_name: "object-select-symbolic",
+        style_class: "popup-menu-icon librepods-noise-option-check",
+        visible: false,
+      });
+
+      rowBox.add_child(rowLabel);
+      rowBox.add_child(rowCheck);
+      rowBtn.set_child(rowBox);
+
+      rowBtn.connect("clicked", () => {
         this._setNoiseMode(mode); // updates UI immediately (optimistic)
         this._sendNoiseMode(mode); // tells the daemon
         this._collapseNoiseOptions();
       });
-      this._noiseOptionsBox.add_child(item);
-      this._noiseMenuItems[mode] = item;
+
+      this._noiseOptionsBox.add_child(rowBtn);
+      this._noiseMenuItems[mode] = { row: rowBtn, check: rowCheck };
     }
 
     noiseGroup.add_child(this._noiseOptionsBox);
@@ -508,12 +539,6 @@ export default class LibrePodsExtension extends Extension {
     textStack.add_child(tLabel);
     textStack.add_child(sLabel);
     box.add_child(textStack);
-
-    let chevron = new St.Label({
-      text: "›",
-      style_class: "librepods-quick-pill-chevron",
-    });
-    box.add_child(chevron);
 
     pillBtn.set_child(box);
 
@@ -896,11 +921,7 @@ export default class LibrePodsExtension extends Extension {
 
     if (this._noiseMenuItems) {
       for (const [mode, item] of Object.entries(this._noiseMenuItems)) {
-        item.setOrnament(
-          Number(mode) === modeNum
-            ? PopupMenu.Ornament.CHECK
-            : PopupMenu.Ornament.NONE,
-        );
+        item.check.visible = Number(mode) === modeNum;
       }
     }
   }
