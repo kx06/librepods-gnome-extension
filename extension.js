@@ -1023,43 +1023,21 @@ export default class LibrePodsExtension extends Extension {
         : "go-next-symbolic";
   }
 
-  _collapseNoiseOptions(animate = true) {
+  _collapseNoiseOptions() {
     if (!this._noiseExpanded) return;
     this._noiseExpanded = false;
     if (this._noiseChevron) this._noiseChevron.icon_name = "go-next-symbolic";
     const box = this._noiseOptionsBox;
     if (!box) return;
-    // Hide synchronously: visibility must never wait on an animation
-    // callback, or a missed callback desyncs state and the options get
-    // stuck open. The popover itself still glides closed via the stack.
     box.remove_all_transitions();
     box.visible = false;
     box.set_height(-1);
-    this._noiseOptionsAnimating = false;
-    if (animate) this._animateViewsStackHeight();
   }
 
   _expandNoiseOptions(box) {
-    // Unpin the stack so the options' own ease drives the popover height.
-    const stack = this._viewsStack;
-    if (stack) {
-      stack.remove_all_transitions();
-      stack.set_height(-1);
-    }
-    box.visible = true;
     box.remove_all_transitions();
+    box.visible = true;
     box.set_height(-1);
-    const [, naturalHeight] = box.get_preferred_height(-1);
-    this._noiseOptionsAnimating = true;
-    box.set_height(0);
-    box.ease_property("height", naturalHeight, {
-      duration: 260,
-      mode: Clutter.AnimationMode.EASE_OUT_QUAD,
-      onComplete: () => {
-        box.set_height(-1);
-        this._noiseOptionsAnimating = false;
-      },
-    });
   }
 
   _animateViewsStackHeight() {
@@ -1067,9 +1045,6 @@ export default class LibrePodsExtension extends Extension {
     const menu = this._indicator?.menu;
     if (!stack || menu?.isOpen === false || !stack.allocation.get_width())
       return;
-    // A noise-options animation already drives the popover height through
-    // preferred sizes — pinning the stack now would fight it.
-    if (this._noiseOptionsAnimating) return;
     // Read the height from the last real allocation: the height property
     // falls back to the (already-updated) preferred size once a relayout is
     // queued, which makes the pending change look like a no-op and snap.
@@ -1086,10 +1061,6 @@ export default class LibrePodsExtension extends Extension {
       mode: Clutter.AnimationMode.EASE_OUT_QUAD,
       onComplete: () => stack.set_height(-1),
     });
-    // Temporary debug: verify the glide actually starts.
-    log(
-      `librepods stack anim: ${Math.round(current)} -> ${Math.round(naturalHeight)}`,
-    );
   }
 
   _sendNoiseMode(mode) {
@@ -1185,7 +1156,7 @@ export default class LibrePodsExtension extends Extension {
       this._noiseBtn.reactive = connected;
       this._noiseBtn.can_focus = connected;
     }
-    if (!connected) this._collapseNoiseOptions(false);
+    if (!connected) this._collapseNoiseOptions();
 
     this._setNoiseMode(this._getDBusProperty("ListeningMode"));
     const allowOff = Number(this._getDBusProperty("AllowOff")) === 1;
@@ -1302,7 +1273,7 @@ export default class LibrePodsExtension extends Extension {
     if (this._activeTab === tabId) return;
 
     this._activeTab = tabId;
-    if (tabId !== "controls") this._collapseNoiseOptions(false);
+    if (tabId !== "controls") this._collapseNoiseOptions();
     Object.keys(this._tabButtons || {}).forEach((id) => {
       if (id === tabId) {
         this._tabButtons[id].style_class =
