@@ -262,7 +262,7 @@ export default class LibrePodsExtension extends Extension {
         label: t.label,
         style_class:
           t.id === "controls"
-            ? "button active librepods-tab-pill-btn"
+            ? "button librepods-active librepods-tab-pill-btn"
             : "button librepods-tab-pill-btn",
         can_focus: true,
         x_expand: true,
@@ -368,25 +368,14 @@ export default class LibrePodsExtension extends Extension {
       style_class: "librepods-quick-pill-icon",
     });
 
-    let pillTextStack = new St.BoxLayout({
-      vertical: true,
-      style_class: "librepods-quick-pill-text-stack",
+    // Section header already says "Noise Control", so the pill carries just
+    // the active mode as its single line of text.
+    this._noisePillLabel = new St.Label({
+      text: "Noise Cancellation",
+      style_class: "librepods-quick-pill-title",
       x_expand: true,
       y_align: Clutter.ActorAlign.CENTER,
     });
-
-    let pillTitle = new St.Label({
-      text: "Noise Control",
-      style_class: "librepods-quick-pill-title",
-    });
-
-    this._noisePillSubtitle = new St.Label({
-      text: "Noise Cancellation",
-      style_class: "librepods-quick-pill-subtitle",
-    });
-
-    pillTextStack.add_child(pillTitle);
-    pillTextStack.add_child(this._noisePillSubtitle);
 
     let chevronChip = new St.BoxLayout({
       style_class: "librepods-quick-pill-arrow-chip",
@@ -399,7 +388,7 @@ export default class LibrePodsExtension extends Extension {
     chevronChip.add_child(this._noiseChevron);
 
     pillBox.add_child(pillIcon);
-    pillBox.add_child(pillTextStack);
+    pillBox.add_child(this._noisePillLabel);
     pillBox.add_child(chevronChip);
 
     noiseBtn.set_child(pillBox);
@@ -516,7 +505,7 @@ export default class LibrePodsExtension extends Extension {
     const enabled = options.enabled !== false || !!options.onToggle;
     let pillBtn = new St.Button({
       style_class: isActive
-        ? "button active librepods-quick-pill-btn"
+        ? "button librepods-active librepods-quick-pill-btn"
         : "button librepods-quick-pill-btn",
       can_focus: enabled,
       reactive: enabled,
@@ -558,7 +547,7 @@ export default class LibrePodsExtension extends Extension {
       if (!options.onToggle) return;
       pillBtn._isActive = !pillBtn._isActive;
       pillBtn.style_class = pillBtn._isActive
-        ? "button active librepods-quick-pill-btn"
+        ? "button librepods-active librepods-quick-pill-btn"
         : "button librepods-quick-pill-btn";
       options.onToggle(pillBtn._isActive);
     });
@@ -571,7 +560,7 @@ export default class LibrePodsExtension extends Extension {
         setActive: (active, subtitleText) => {
           pillBtn._isActive = !!active;
           pillBtn.style_class = pillBtn._isActive
-            ? "button active librepods-quick-pill-btn"
+            ? "button librepods-active librepods-quick-pill-btn"
             : "button librepods-quick-pill-btn";
           if (subtitleText !== undefined) sLabel.text = subtitleText;
         },
@@ -925,11 +914,11 @@ export default class LibrePodsExtension extends Extension {
       this._noiseBtn.style_class =
         modeNum === NoiseMode.OFF
           ? "button librepods-noise-pill-btn"
-          : "button librepods-noise-pill-btn active";
+          : "button librepods-noise-pill-btn librepods-active";
     }
 
-    if (this._noisePillSubtitle)
-      this._noisePillSubtitle.text = listeningModeLabel(modeNum);
+    if (this._noisePillLabel)
+      this._noisePillLabel.text = listeningModeLabel(modeNum);
 
     if (this._noiseMenuItems) {
       for (const [mode, item] of Object.entries(this._noiseMenuItems)) {
@@ -1161,7 +1150,7 @@ export default class LibrePodsExtension extends Extension {
     Object.keys(this._tabButtons || {}).forEach((id) => {
       if (id === tabId) {
         this._tabButtons[id].style_class =
-          "button active librepods-tab-pill-btn";
+          "button librepods-active librepods-tab-pill-btn";
         this._tabContainers[id].visible = true;
       } else {
         this._tabButtons[id].style_class = "button librepods-tab-pill-btn";
