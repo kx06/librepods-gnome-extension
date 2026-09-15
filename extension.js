@@ -88,15 +88,19 @@ function listeningModeLabel(value) {
   }
 }
 
-// Helper: create a homogeneous horizontal layout using St.Widget + Clutter.BoxLayout
-// This is required because St.BoxLayout does not support homogeneous in its constructor
-// args in GNOME Shell 48+.
-function makeHomogeneousHBox(styleClass, spacing = 8) {
+// Equal-width column row: Clutter.BoxLayout's homogeneous flag does not
+// equalize child allocations reliably on GNOME 48+, so use GridLayout.
+function makeEqualColumnsRow(styleClass, children, spacing = 8) {
+  let layout = new Clutter.GridLayout({
+    column_homogeneous: true,
+    column_spacing: spacing,
+  });
   let widget = new St.Widget({
     style_class: styleClass,
-    layout_manager: new Clutter.BoxLayout({ homogeneous: true, spacing }),
+    layout_manager: layout,
     x_expand: true,
   });
+  children.forEach((child, i) => layout.attach(child, i, 0, 1, 1));
   return widget;
 }
 
@@ -234,9 +238,7 @@ export default class LibrePodsExtension extends Extension {
 
     this._mainBox.add_child(heroCard);
 
-    // 2. SEGMENTED NAVIGATION TAB BAR — homogeneous via layout manager
-    let tabBar = makeHomogeneousHBox("librepods-tab-pill-track");
-
+    // 2. SEGMENTED NAVIGATION TAB BAR — equal-width columns via GridLayout
     const tabs = [
       { id: "controls", label: "Controls" },
       { id: "battery", label: "Charge" },
@@ -247,7 +249,7 @@ export default class LibrePodsExtension extends Extension {
     this._tabButtons = {};
     this._tabContainers = {};
 
-    tabs.forEach((t) => {
+    let tabButtons = tabs.map((t) => {
       let btn = new St.Button({
         label: t.label,
         style_class:
@@ -258,11 +260,13 @@ export default class LibrePodsExtension extends Extension {
         x_expand: true,
       });
       btn.connect("clicked", () => this._switchTab(t.id));
-      tabBar.add_child(btn);
       this._tabButtons[t.id] = btn;
+      return btn;
     });
 
-    this._mainBox.add_child(tabBar);
+    this._mainBox.add_child(
+      makeEqualColumnsRow("librepods-tab-pill-track", tabButtons),
+    );
 
     // 3. TAB VIEWS CONTAINER STACK
     this._viewsStack = new St.BoxLayout({
@@ -360,6 +364,7 @@ export default class LibrePodsExtension extends Extension {
       vertical: true,
       style_class: "librepods-quick-pill-text-stack",
       x_expand: true,
+      y_align: Clutter.ActorAlign.CENTER,
     });
 
     let pillTitle = new St.Label({
@@ -377,6 +382,7 @@ export default class LibrePodsExtension extends Extension {
 
     let chevronChip = new St.BoxLayout({
       style_class: "librepods-quick-pill-arrow-chip",
+      y_expand: true,
     });
     this._noiseChevron = new St.Icon({
       icon_name: "go-next-symbolic",
@@ -454,49 +460,47 @@ export default class LibrePodsExtension extends Extension {
     noiseGroup.add_child(this._noiseOptionsBox);
     container.add_child(noiseGroup);
 
-    // 2-Column QuickToggle Grid — homogeneous via layout manager
-    let grid1 = makeHomogeneousHBox("librepods-quick-grid-row");
-    let p1 = this._createQuickPill(
-      "Spatial Audio",
-      "Not in daemon yet",
-      "audio-headphones-symbolic",
-      false,
-      { enabled: false },
-    );
-    let p2 = this._createQuickPill(
-      "Adaptive Audio",
-      "Not in daemon yet",
-      "audio-volume-high-symbolic",
-      false,
-      { enabled: false },
-    );
-    grid1.add_child(p1);
-    grid1.add_child(p2);
+    // 2-Column QuickToggle Grid — equal-width columns via GridLayout
+    let grid1 = makeEqualColumnsRow("librepods-quick-grid-row", [
+      this._createQuickPill(
+        "Spatial Audio",
+        "Not in daemon yet",
+        "audio-headphones-symbolic",
+        false,
+        { enabled: false },
+      ),
+      this._createQuickPill(
+        "Adaptive Audio",
+        "Not in daemon yet",
+        "audio-volume-high-symbolic",
+        false,
+        { enabled: false },
+      ),
+    ]);
     container.add_child(grid1);
 
-    let grid2 = makeHomogeneousHBox("librepods-quick-grid-row");
-    let p3 = this._createQuickPill(
-      "Conversation",
-      "Off",
-      "audio-input-microphone-symbolic",
-      false,
-      {
-        id: "conversation",
-        onToggle: (enabled) => this._setConversationDetect(enabled),
-      },
-    );
-    let p4 = this._createQuickPill(
-      "Personalized Volume",
-      "Off",
-      "audio-volume-high-symbolic",
-      false,
-      {
-        id: "personalized",
-        onToggle: (enabled) => this._setPersonalizedVolume(enabled),
-      },
-    );
-    grid2.add_child(p3);
-    grid2.add_child(p4);
+    let grid2 = makeEqualColumnsRow("librepods-quick-grid-row", [
+      this._createQuickPill(
+        "Conversation",
+        "Off",
+        "audio-input-microphone-symbolic",
+        false,
+        {
+          id: "conversation",
+          onToggle: (enabled) => this._setConversationDetect(enabled),
+        },
+      ),
+      this._createQuickPill(
+        "Personalized Volume",
+        "Off",
+        "audio-volume-high-symbolic",
+        false,
+        {
+          id: "personalized",
+          onToggle: (enabled) => this._setPersonalizedVolume(enabled),
+        },
+      ),
+    ]);
     container.add_child(grid2);
   }
 
