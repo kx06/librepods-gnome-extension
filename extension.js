@@ -141,6 +141,48 @@ const EqualColumnsLayout = GObject.registerClass(
   },
 );
 
+// Tab-page stack: hidden pages still contribute to the preferred width, so
+// the popover is always as wide as the widest page and never resizes when
+// the user switches tabs. Only the visible page contributes to height.
+const ConstantWidthStack = GObject.registerClass(
+  class ConstantWidthStack extends Clutter.LayoutManager {
+    vfunc_get_preferred_width(container, forHeight) {
+      let min = 0;
+      let nat = 0;
+      for (const child of container.get_children()) {
+        const [cMin, cNat] = child.get_preferred_width(-1);
+        min = Math.max(min, cMin);
+        nat = Math.max(nat, cNat);
+      }
+      return [min, nat];
+    }
+
+    vfunc_get_preferred_height(container, forWidth) {
+      let min = 0;
+      let nat = 0;
+      for (const child of container.get_children().filter((c) => c.visible)) {
+        const [cMin, cNat] = child.get_preferred_height(forWidth);
+        min = Math.max(min, cMin);
+        nat = Math.max(nat, cNat);
+      }
+      return [min, nat];
+    }
+
+    vfunc_allocate(container, box) {
+      for (const child of container.get_children()) {
+        child.allocate(
+          new Clutter.ActorBox({
+            x1: box.x1,
+            x2: box.x2,
+            y1: box.y1,
+            y2: box.y2,
+          }),
+        );
+      }
+    }
+  },
+);
+
 function makeEqualColumnsRow(styleClass, children, spacing = 8) {
   let layout = new EqualColumnsLayout();
   layout.spacing = spacing;
@@ -318,9 +360,9 @@ export default class LibrePodsExtension extends Extension {
     );
 
     // 3. TAB VIEWS CONTAINER STACK
-    this._viewsStack = new St.BoxLayout({
-      vertical: true,
+    this._viewsStack = new St.Widget({
       style_class: "librepods-views-stack",
+      layout_manager: new ConstantWidthStack(),
       x_expand: true,
     });
 
