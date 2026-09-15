@@ -100,9 +100,6 @@
   font-size: 11.5px;
   font-weight: 600;
   text-align: center;
-  /* Floor every tab's natural width so all four columns stay equal
-     regardless of label length or layout-manager behavior */
-  min-width: 84px;
 }
 
 .librepods-tab-pill-btn.librepods-active {

@@ -6,6 +6,7 @@ import * as PanelMenu from "resource:///org/gnome/shell/ui/panelMenu.js";
 import * as PopupMenu from "resource:///org/gnome/shell/ui/popupMenu.js";
 import { Extension } from "resource:///org/gnome/shell/extensions/extension.js";
 import Gio from "gi://Gio";
+import GObject from "gi://GObject";
 
 // Log function — used for debugging D‑Bus failures in the extension.
 log = (msg) => {
@@ -88,27 +89,67 @@ function listeningModeLabel(value) {
   }
 }
 
-// Equal-width column row: Clutter.BoxLayout's homogeneous flag does not
-// equalize child allocations reliably on GNOME 48+, so use GridLayout.
+// Layout that gives every visible child exactly the same column width.
+// The homogeneous flags on BoxLayout/GridLayout proved unreliable across
+// shells, so equality is enforced directly in the allocation.
+const EqualColumnsLayout = GObject.registerClass(
+  class EqualColumnsLayout extends Clutter.LayoutManager {
+    vfunc_get_preferred_width(container, forHeight) {
+      const children = container.get_children().filter((c) => c.visible);
+      let min = 0;
+      let nat = 0;
+      for (const child of children) {
+        const [cMin, cNat] = child.get_preferred_width(-1);
+        min = Math.max(min, cMin);
+        nat = Math.max(nat, cNat);
+      }
+      const n = children.length;
+      const withSpacing = (w) => (n > 0 ? w * n + this.spacing * (n - 1) : 0);
+      return [withSpacing(min), withSpacing(nat)];
+    }
+
+    vfunc_get_preferred_height(container, forWidth) {
+      const children = container.get_children().filter((c) => c.visible);
+      let min = 0;
+      let nat = 0;
+      for (const child of children) {
+        const [cMin, cNat] = child.get_preferred_height(forWidth);
+        min = Math.max(min, cMin);
+        nat = Math.max(nat, cNat);
+      }
+      return [min, nat];
+    }
+
+    vfunc_allocate(container, box) {
+      const children = container.get_children().filter((c) => c.visible);
+      const n = children.length;
+      if (n === 0) return;
+      const cellWidth = (box.x2 - box.x1 - this.spacing * (n - 1)) / n;
+      let x = box.x1;
+      for (const child of children) {
+        child.allocate(
+          new Clutter.ActorBox({
+            x1: x,
+            x2: x + cellWidth,
+            y1: box.y1,
+            y2: box.y2,
+          }),
+        );
+        x += cellWidth + this.spacing;
+      }
+    }
+  },
+);
+
 function makeEqualColumnsRow(styleClass, children, spacing = 8) {
-  let layout = new Clutter.GridLayout({
-    column_homogeneous: true,
-    column_spacing: spacing,
-  });
+  let layout = new EqualColumnsLayout();
+  layout.spacing = spacing;
   let widget = new St.Widget({
     style_class: styleClass,
     layout_manager: layout,
     x_expand: true,
   });
-  children.forEach((child, i) => {
-    // GridLayout children default to natural size, top-left in their cell —
-    // force them to expand and fill so pills span their equal columns.
-    child.x_expand = true;
-    child.y_expand = true;
-    child.x_align = Clutter.ActorAlign.FILL;
-    child.y_align = Clutter.ActorAlign.FILL;
-    layout.attach(child, i, 0, 1, 1);
-  });
+  children.forEach((child) => widget.add_child(child));
   return widget;
 }
 
