@@ -94,12 +94,21 @@
   height: 36px;
 }
 
+/* Tabs are fully self-styled (no theme `button` class) so no theme rule —
+   hover, active, first-child, shadows — can resize or reshape them */
 .librepods-tab-pill-btn {
   border-radius: 9999px;
   padding: 6px 4px;
   font-size: 11.5px;
   font-weight: 600;
   text-align: center;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+}
+
+.librepods-tab-pill-btn:hover,
+.librepods-tab-pill-btn:focus {
+  background-color: rgba(255, 255, 255, 0.14);
 }
 
 .librepods-tab-pill-btn.librepods-active {

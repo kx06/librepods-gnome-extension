@@ -303,8 +303,8 @@ export default class LibrePodsExtension extends Extension {
         label: t.label,
         style_class:
           t.id === "controls"
-            ? "button librepods-active librepods-tab-pill-btn"
-            : "button librepods-tab-pill-btn",
+            ? "librepods-active librepods-tab-pill-btn"
+            : "librepods-tab-pill-btn",
         can_focus: true,
         x_expand: true,
       });
@@ -1175,6 +1175,13 @@ export default class LibrePodsExtension extends Extension {
       this._indicator.menu.connect("open-state-changed", (_menu, isOpen) => {
         if (!isOpen) return;
         this._syncFromDBus();
+        // Temporary debug: verify the equal-column layout is really applied.
+        if (this._tabButtons) {
+          const widths = Object.entries(this._tabButtons).map(
+            ([id, b]) => `${id}=${Math.round(b.allocation.get_width())}`,
+          );
+          log("librepods tab widths: " + widths.join(" "));
+        }
       });
 
       this._syncFromDBus();
@@ -1191,10 +1198,10 @@ export default class LibrePodsExtension extends Extension {
     Object.keys(this._tabButtons || {}).forEach((id) => {
       if (id === tabId) {
         this._tabButtons[id].style_class =
-          "button librepods-active librepods-tab-pill-btn";
+          "librepods-active librepods-tab-pill-btn";
         this._tabContainers[id].visible = true;
       } else {
-        this._tabButtons[id].style_class = "button librepods-tab-pill-btn";
+        this._tabButtons[id].style_class = "librepods-tab-pill-btn";
         this._tabContainers[id].visible = false;
       }
     });
