@@ -1029,22 +1029,23 @@ export default class LibrePodsExtension extends Extension {
     if (this._noiseChevron) this._noiseChevron.icon_name = "go-next-symbolic";
     const box = this._noiseOptionsBox;
     if (!box) return;
-    if (animate) {
-      this._animateHeightTo(box, 0, () => {
-        box.visible = false;
-        this._noiseOptionsAnimating = false;
-        this._animateViewsStackHeight();
-      });
-      this._noiseOptionsAnimating = true;
-    } else {
-      box.remove_all_transitions();
-      this._noiseOptionsAnimating = false;
-      box.visible = false;
-      box.set_height(-1);
-    }
+    // Hide synchronously: visibility must never wait on an animation
+    // callback, or a missed callback desyncs state and the options get
+    // stuck open. The popover itself still glides closed via the stack.
+    box.remove_all_transitions();
+    box.visible = false;
+    box.set_height(-1);
+    this._noiseOptionsAnimating = false;
+    if (animate) this._animateViewsStackHeight();
   }
 
   _expandNoiseOptions(box) {
+    // Unpin the stack so the options' own ease drives the popover height.
+    const stack = this._viewsStack;
+    if (stack) {
+      stack.remove_all_transitions();
+      stack.set_height(-1);
+    }
     box.visible = true;
     box.remove_all_transitions();
     box.set_height(-1);
@@ -1057,28 +1058,6 @@ export default class LibrePodsExtension extends Extension {
       onComplete: () => {
         box.set_height(-1);
         this._noiseOptionsAnimating = false;
-      },
-    });
-  }
-
-  // Submenu-style height animation (the same trick GNOME's PopupSubMenu
-  // uses): pin the current height, ease to the target, then restore natural
-  // sizing. The pinned height propagates up through preferred sizes, so the
-  // popover glides instead of jumping.
-  _animateHeightTo(actor, target, onComplete = null) {
-    const current = actor.height;
-    actor.remove_all_transitions();
-    if (Math.abs(target - current) < 1) {
-      onComplete?.();
-      return;
-    }
-    actor.set_height(current);
-    actor.ease_property("height", target, {
-      duration: 260,
-      mode: Clutter.AnimationMode.EASE_OUT_QUAD,
-      onComplete: () => {
-        actor.set_height(-1);
-        onComplete?.();
       },
     });
   }
