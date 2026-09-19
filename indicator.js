@@ -254,7 +254,6 @@ function _buildControlsPage(noiseControl, conversationDetect, personalizedVolume
     const row = new St.BoxLayout({
         style_class: 'librepods-toggle-row',
         x_expand: true,
-        homogeneous: true,
     });
     row.add_child(conversationDetect);
     row.add_child(personalizedVolume);
