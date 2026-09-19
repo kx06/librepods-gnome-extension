@@ -1,0 +1,178 @@
+   ~/librepods/linux-rust/target/release ❯                                                                                        at   23:10:03
+   ~/librepods/linux-rust/target/release on    feat/high-res-mic-a2dp +40 !2 ❯ dbus-run-session gnome-shell --devkit --wayland  at   23:10:03
+dbus-daemon[175613]: [session uid=1000 pid=175613 pidfd=5] Activating service name='org.gtk.vfs.Daemon' requested by ':1.0' (uid=1000 pid=175614 comm="gnome-shell --devkit --wayland")
+dbus-daemon[175613]: [session uid=1000 pid=175613 pidfd=5] Successfully activated service 'org.gtk.vfs.Daemon'
+fusermount3: failed to access mountpoint /run/user/1000/gvfs: Permission denied
+libmutter-Message: 23:10:05.050: Running GNOME Shell (using mutter 50.4) as a Wayland display server
+libmutter-Message: 23:10:05.210: Added device '/dev/dri/renderD128' (nvidia-drm) using no mode setting.
+libmutter-Message: 23:10:05.231: Added device '/dev/dri/renderD129' (amdgpu) using no mode setting.
+libmutter-Message: 23:10:05.233: Created gbm renderer for '/dev/dri/renderD128'
+libmutter-Message: 23:10:05.235: Created gbm renderer for '/dev/dri/renderD129'
+libmutter-Message: 23:10:05.235: GPU /dev/dri/renderD128 selected primary given udev rule
+** Message: 23:10:05.236: Obtained a high priority EGL context
+dbus-daemon[175613]: [session uid=1000 pid=175613 pidfd=5] Activating service name='org.a11y.Bus' requested by ':1.2' (uid=1000 pid=175614 comm="gnome-shell --devkit --wayland")
+dbus-daemon[175613]: [session uid=1000 pid=175613 pidfd=5] Successfully activated service 'org.a11y.Bus'
+dbus-daemon[175613]: [session uid=1000 pid=175613 pidfd=5] Activating service name='org.freedesktop.systemd1' requested by ':1.4' (uid=1000 pid=175658 comm="/usr/bin/dbus-broker-launch --config-file=/usr/sha")
+libmutter-Message: 23:10:05.269: Using public X11 display :2, (using unix:/tmp/.X11-unix/X3 for managed services)
+
+(gnome-shell:175614): libmutter-WARNING **: 23:10:05.269: WL: unable to lock lockfile /run/user/1000/wayland-0.lock, maybe another compositor is running
+
+libmutter-Message: 23:10:05.269: Using Wayland display name 'wayland-1'
+dbus-daemon[175613]: [session uid=1000 pid=175613 pidfd=5] Activated service 'org.freedesktop.systemd1' failed: Process org.freedesktop.systemd1 exited with status 1
+dbus-daemon[175613]: [session uid=1000 pid=175613 pidfd=5] Activating service name='org.freedesktop.systemd1' requested by ':1.4' (uid=1000 pid=175658 comm="/usr/bin/dbus-broker-launch --config-file=/usr/sha")
+dbus-daemon[175613]: [session uid=1000 pid=175613 pidfd=5] Activated service 'org.freedesktop.systemd1' failed: Process org.freedesktop.systemd1 exited with status 1
+
+** (gnome-shell:175614): WARNING **: 23:10:05.335: AT-SPI: Could not obtain desktop path or name
+
+dbus-daemon[175613]: [session uid=1000 pid=175613 pidfd=5] Activating service name='org.freedesktop.systemd1' requested by ':1.4' (uid=1000 pid=175658 comm="/usr/bin/dbus-broker-launch --config-file=/usr/sha")
+dbus-daemon[175613]: [session uid=1000 pid=175613 pidfd=5] Activated service 'org.freedesktop.systemd1' failed: Process org.freedesktop.systemd1 exited with status 1
+
+** (gnome-shell:175614): WARNING **: 23:10:05.338: atk-bridge: GetRegisteredEvents returned message with unknown signature
+GNOME Shell-Message: 23:10:05.645: Unset XDG_SESSION_ID, getCurrentSessionProxy() called outside a user session. Asking logind directly.
+dbus-daemon[175613]: [session uid=1000 pid=175613 pidfd=5] Activating service name='org.gnome.Shell.Screencast' requested by ':1.0' (uid=1000 pid=175614 comm="gnome-shell --devkit --wayland")
+dbus-daemon[175613]: [session uid=1000 pid=175613 pidfd=5] Activating service name='org.freedesktop.impl.portal.PermissionStore' requested by ':1.0' (uid=1000 pid=175614 comm="gnome-shell --devkit --wayland")
+dbus-daemon[175613]: [session uid=1000 pid=175613 pidfd=5] Activating service name='org.gnome.Shell.CalendarServer' requested by ':1.0' (uid=1000 pid=175614 comm="gnome-shell --devkit --wayland")
+dbus-daemon[175613]: [session uid=1000 pid=175613 pidfd=5] Successfully activated service 'org.freedesktop.impl.portal.PermissionStore'
+dbus-daemon[175613]: [session uid=1000 pid=175613 pidfd=5] Activating service name='org.gnome.evolution.dataserver.Sources5' requested by ':1.8' (uid=1000 pid=175691 comm="/usr/lib/gnome-shell-calendar-server")
+GNOME Shell-Message: 23:10:05.764: Registering session with GDM
+dbus-daemon[175613]: [session uid=1000 pid=175613 pidfd=5] Activating service name='org.gnome.Shell.Notifications' requested by ':1.0' (uid=1000 pid=175614 comm="gnome-shell --devkit --wayland")
+dbus-daemon[175613]: [session uid=1000 pid=175613 pidfd=5] Activating service name='org.freedesktop.portal.Desktop' requested by ':1.6' (uid=1000 pid=175671 comm="/usr/bin/gjs -m /usr/share/gnome-shell/org.gnome.S")
+dbus-daemon[175613]: [session uid=1000 pid=175613 pidfd=5] Activating service name='org.freedesktop.portal.Documents' requested by ':1.11' (uid=1000 pid=175710 comm="/usr/lib/xdg-desktop-portal")
+
+** (gnome-shell:175614): WARNING **: 23:10:05.785: atk-bridge: get_device_events_reply: unknown signature
+dbus-daemon[175613]: [session uid=1000 pid=175613 pidfd=5] Successfully activated service 'org.freedesktop.portal.Documents'
+
+(process:175664): mdk-WARNING **: 23:10:05.789: Invalid application ID 'org.gnome.Ptyxis'
+dbus-daemon[175613]: [session uid=1000 pid=175613 pidfd=5] Activating service name='org.freedesktop.impl.portal.desktop.gnome' requested by ':1.11' (uid=1000 pid=175710 comm="/usr/lib/xdg-desktop-portal")
+dbus-daemon[175613]: [session uid=1000 pid=175613 pidfd=5] Activating service name='org.gnome.OnlineAccounts' requested by ':1.9' (uid=1000 pid=175700 comm="/usr/lib/evolution-source-registry")
+dbus-daemon[175613]: [session uid=1000 pid=175613 pidfd=5] Activating service name='org.gtk.GLib.PACRunner' requested by ':1.0' (uid=1000 pid=175614 comm="gnome-shell --devkit --wayland")
+dbus-daemon[175613]: [session uid=1000 pid=175613 pidfd=5] Successfully activated service 'org.gnome.evolution.dataserver.Sources5'
+dbus-daemon[175613]: [session uid=1000 pid=175613 pidfd=5] Successfully activated service 'org.gtk.GLib.PACRunner'
+dbus-daemon[175613]: [session uid=1000 pid=175613 pidfd=5] Activating service name='org.gnome.evolution.dataserver.Calendar8' requested by ':1.8' (uid=1000 pid=175691 comm="/usr/lib/gnome-shell-calendar-server")
+dbus-daemon[175613]: [session uid=1000 pid=175613 pidfd=5] Successfully activated service 'org.gnome.Shell.CalendarServer'
+GNOME Shell-Message: 23:10:05.830: Will monitor session 3
+dbus-daemon[175613]: [session uid=1000 pid=175613 pidfd=5] Successfully activated service 'org.gnome.Shell.Notifications'
+goa-daemon-Message: 23:10:05.841: goa-daemon version 3.58.1 starting
+dbus-daemon[175613]: [session uid=1000 pid=175613 pidfd=5] Activating service name='org.gnome.Identity' requested by ':1.16' (uid=1000 pid=175745 comm="/usr/lib/goa-daemon")
+dbus-daemon[175613]: [session uid=1000 pid=175613 pidfd=5] Successfully activated service 'org.gnome.OnlineAccounts'
+GNOME Shell-Message: 23:10:05.851: Error looking up permission: GDBus.Error:org.freedesktop.portal.Error.NotFound: No entry for geolocation
+dbus-daemon[175613]: [session uid=1000 pid=175613 pidfd=5] Successfully activated service 'org.gnome.Identity'
+dbus-daemon[175613]: [session uid=1000 pid=175613 pidfd=5] Activating service name='org.freedesktop.portal.IBus' requested by ':1.17' (uid=1000 pid=175761 comm="ibus-daemon --panel disable")
+dbus-daemon[175613]: [session uid=1000 pid=175613 pidfd=5] Activating service name='org.gtk.vfs.UDisks2VolumeMonitor' requested by ':1.0' (uid=1000 pid=175614 comm="gnome-shell --devkit --wayland")
+dbus-daemon[175613]: [session uid=1000 pid=175613 pidfd=5] Successfully activated service 'org.freedesktop.portal.IBus'
+dbus-daemon[175613]: [session uid=1000 pid=175613 pidfd=5] Successfully activated service 'org.gnome.evolution.dataserver.Calendar8'
+dbus-daemon[175613]: [session uid=1000 pid=175613 pidfd=5] Activating service name='org.gnome.evolution.dataserver.AddressBook10' requested by ':1.15' (uid=1000 pid=175760 comm="/usr/lib/evolution-calendar-factory")
+dbus-daemon[175613]: [session uid=1000 pid=175613 pidfd=5] Successfully activated service 'org.gtk.vfs.UDisks2VolumeMonitor'
+dbus-daemon[175613]: [session uid=1000 pid=175613 pidfd=5] Activating service name='org.gtk.vfs.MTPVolumeMonitor' requested by ':1.0' (uid=1000 pid=175614 comm="gnome-shell --devkit --wayland")
+dbus-daemon[175613]: [session uid=1000 pid=175613 pidfd=5] Successfully activated service 'org.gtk.vfs.MTPVolumeMonitor'
+dbus-daemon[175613]: [session uid=1000 pid=175613 pidfd=5] Activating service name='org.gtk.vfs.GPhoto2VolumeMonitor' requested by ':1.0' (uid=1000 pid=175614 comm="gnome-shell --devkit --wayland")
+dbus-daemon[175613]: [session uid=1000 pid=175613 pidfd=5] Successfully activated service 'org.gnome.evolution.dataserver.AddressBook10'
+dbus-daemon[175613]: [session uid=1000 pid=175613 pidfd=5] Successfully activated service 'org.gtk.vfs.GPhoto2VolumeMonitor'
+dbus-daemon[175613]: [session uid=1000 pid=175613 pidfd=5] Activating service name='org.gtk.vfs.GoaVolumeMonitor' requested by ':1.0' (uid=1000 pid=175614 comm="gnome-shell --devkit --wayland")
+dbus-daemon[175613]: [session uid=1000 pid=175613 pidfd=5] Successfully activated service 'org.gtk.vfs.GoaVolumeMonitor'
+dbus-daemon[175613]: [session uid=1000 pid=175613 pidfd=5] Activating service name='org.gtk.vfs.AfcVolumeMonitor' requested by ':1.0' (uid=1000 pid=175614 comm="gnome-shell --devkit --wayland")
+dbus-daemon[175613]: [session uid=1000 pid=175613 pidfd=5] Successfully activated service 'org.gtk.vfs.AfcVolumeMonitor'
+GNOME Shell-Message: 23:10:06.052: Failed to register AuthenticationAgent
+dbus-daemon[175613]: [session uid=1000 pid=175613 pidfd=5] Activating service name='ca.desrt.dconf' requested by ':1.0' (uid=1000 pid=175614 comm="gnome-shell --devkit --wayland")
+dbus-daemon[175613]: [session uid=1000 pid=175613 pidfd=5] Successfully activated service 'ca.desrt.dconf'
+dbus-daemon[175613]: [session uid=1000 pid=175613 pidfd=5] Reloaded configuration
+dbus-daemon[175613]: [session uid=1000 pid=175613 pidfd=5] Reloaded configuration
+dbus-daemon[175613]: [session uid=1000 pid=175613 pidfd=5] Activating service name='org.gnome.Shell.Extensions.GSConnect' requested by ':1.0' (uid=1000 pid=175614 comm="gnome-shell --devkit --wayland")
+
+(gnome-shell:175614): GNOME Shell-CRITICAL **: 23:10:06.412: Extension librepods@krishhh.dev: Error: No signal 'clicked' on object 'Gjs_librepods_krishhh_dev_indicator_LibrePodsHeroToggle'
+
+Stack trace:
+  _init@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/indicator.js:72:14
+  PopupBaseMenuItem@resource:///org/gnome/shell/ui/popupMenu.js:79:4
+  LibrePodsHeroToggle@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/indicator.js:35:1
+  _init@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/indicator.js:432:28
+  ButtonBox@resource:///org/gnome/shell/ui/panelMenu.js:10:1
+  PanelMenuButton@resource:///org/gnome/shell/ui/panelMenu.js:95:4
+  LibrePodsIndicator@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/indicator.js:397:1
+  enable@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/extension.js:8:27
+  _callExtensionEnable@resource:///org/gnome/shell/ui/extensionSystem.js:264:38
+  loadExtension@resource:///org/gnome/shell/ui/extensionSystem.js:431:32
+  async*_loadExtensions@resource:///org/gnome/shell/ui/extensionSystem.js:743:24
+  async*_enableAllExtensions@resource:///org/gnome/shell/ui/extensionSystem.js:749:48
+  _sessionUpdated@resource:///org/gnome/shell/ui/extensionSystem.js:784:20
+  async*init@resource:///org/gnome/shell/ui/extensionSystem.js:75:14
+  _initializeUI@resource:///org/gnome/shell/ui/main.js:323:22
+  start@resource:///org/gnome/shell/ui/main.js:182:11
+  @resource:///org/gnome/shell/ui/init.js:12:47
+  @resource:///org/gnome/shell/ui/init.js:20:20
+
+dbus-daemon[175613]: [session uid=1000 pid=175613 pidfd=5] Activating service name='org.gnome.Settings.GlobalShortcutsProvider' requested by ':1.14' (uid=1000 pid=175742 comm="/usr/lib/xdg-desktop-portal-gnome")
+dbus-daemon[175613]: [session uid=1000 pid=175613 pidfd=5] Successfully activated service 'org.gnome.Shell.Extensions.GSConnect'
+dbus-daemon[175613]: [session uid=1000 pid=175613 pidfd=5] Successfully activated service 'org.gnome.Settings.GlobalShortcutsProvider'
+dbus-daemon[175613]: [session uid=1000 pid=175613 pidfd=5] Successfully activated service 'org.freedesktop.impl.portal.desktop.gnome'
+dbus-daemon[175613]: [session uid=1000 pid=175613 pidfd=5] Activating service name='org.freedesktop.impl.portal.desktop.gtk' requested by ':1.11' (uid=1000 pid=175710 comm="/usr/lib/xdg-desktop-portal")
+dbus-daemon[175613]: [session uid=1000 pid=175613 pidfd=5] Activating service name='org.freedesktop.systemd1' requested by ':1.4' (uid=1000 pid=175658 comm="/usr/bin/dbus-broker-launch --config-file=/usr/sha")
+dbus-daemon[175613]: [session uid=1000 pid=175613 pidfd=5] Activated service 'org.freedesktop.systemd1' failed: Process org.freedesktop.systemd1 exited with status 1
+dbus-daemon[175613]: [session uid=1000 pid=175613 pidfd=5] Successfully activated service 'org.freedesktop.impl.portal.desktop.gtk'
+
+** (xdg-desktop-portal-gtk:175949): WARNING **: 23:10:06.688: AT-SPI: Could not obtain desktop path or name
+
+dbus-daemon[175613]: [session uid=1000 pid=175613 pidfd=5] Activating service name='org.freedesktop.systemd1' requested by ':1.4' (uid=1000 pid=175658 comm="/usr/bin/dbus-broker-launch --config-file=/usr/sha")
+dbus-daemon[175613]: [session uid=1000 pid=175613 pidfd=5] Activated service 'org.freedesktop.systemd1' failed: Process org.freedesktop.systemd1 exited with status 1
+
+** (xdg-desktop-portal-gtk:175949): WARNING **: 23:10:06.690: atk-bridge: GetRegisteredEvents returned message with unknown signature
+
+** (xdg-desktop-portal-gtk:175949): WARNING **: 23:10:06.690: atk-bridge: get_device_events_reply: unknown signature
+dbus-daemon[175613]: [session uid=1000 pid=175613 pidfd=5] Activating service name='org.freedesktop.secrets' requested by ':1.11' (uid=1000 pid=175710 comm="/usr/lib/xdg-desktop-portal")
+discover_other_daemon: 1GNOME_KEYRING_CONTROL=/run/user/1000/keyring
+dbus-daemon[175613]: [session uid=1000 pid=175613 pidfd=5] Successfully activated service 'org.freedesktop.portal.Desktop'
+dbus-daemon[175613]: [session uid=1000 pid=175613 pidfd=5] Activating service name='org.freedesktop.systemd1' requested by ':1.4' (uid=1000 pid=175658 comm="/usr/bin/dbus-broker-launch --config-file=/usr/sha")
+dbus-daemon[175613]: [session uid=1000 pid=175613 pidfd=5] Activated service 'org.freedesktop.systemd1' failed: Process org.freedesktop.systemd1 exited with status 1
+dbus-daemon[175613]: [session uid=1000 pid=175613 pidfd=5] Successfully activated service 'org.gnome.Shell.Screencast'
+dbus-daemon[175613]: [session uid=1000 pid=175613 pidfd=5] Activating service name='org.freedesktop.systemd1' requested by ':1.4' (uid=1000 pid=175658 comm="/usr/bin/dbus-broker-launch --config-file=/usr/sha")
+dbus-daemon[175613]: [session uid=1000 pid=175613 pidfd=5] Activated service 'org.freedesktop.systemd1' failed: Process org.freedesktop.systemd1 exited with status 1
+dbus-daemon[175613]: [session uid=1000 pid=175613 pidfd=5] Activating service name='org.freedesktop.systemd1' requested by ':1.4' (uid=1000 pid=175658 comm="/usr/bin/dbus-broker-launch --config-file=/usr/sha")
+dbus-daemon[175613]: [session uid=1000 pid=175613 pidfd=5] Activated service 'org.freedesktop.systemd1' failed: Process org.freedesktop.systemd1 exited with status 1
+
+** (gsconnect:175913): WARNING **: 23:10:06.779: AT-SPI: Could not obtain desktop path or name
+
+dbus-daemon[175613]: [session uid=1000 pid=175613 pidfd=5] Activating service name='org.freedesktop.systemd1' requested by ':1.4' (uid=1000 pid=175658 comm="/usr/bin/dbus-broker-launch --config-file=/usr/sha")
+dbus-daemon[175613]: [session uid=1000 pid=175613 pidfd=5] Activated service 'org.freedesktop.systemd1' failed: Process org.freedesktop.systemd1 exited with status 1
+
+** (gsconnect:175913): WARNING **: 23:10:06.781: atk-bridge: GetRegisteredEvents returned message with unknown signature
+
+** (gsconnect:175913): WARNING **: 23:10:06.781: atk-bridge: get_device_events_reply: unknown signature
+Invalid MIT-MAGIC-COOKIE-1 key
+dbus-daemon[175613]: [session uid=1000 pid=175613 pidfd=5] Activating service name='org.freedesktop.systemd1' requested by ':1.4' (uid=1000 pid=175658 comm="/usr/bin/dbus-broker-launch --config-file=/usr/sha")
+dbus-daemon[175613]: [session uid=1000 pid=175613 pidfd=5] Activated service 'org.freedesktop.systemd1' failed: Process org.freedesktop.systemd1 exited with status 1
+
+(mutter-devkit:175664): Gtk-CRITICAL **: 23:10:07.101: Unable to register the application: GDBus.Error:org.freedesktop.DBus.Error.NameHasNoOwner: Could not activate remote peer 'org.a11y.atspi.Registry': unit failed
+libmutter-Message: 23:10:07.139: Added virtual monitor Meta-0
+dbus-daemon[175613]: [session uid=1000 pid=175613 pidfd=5] Activating service name='org.gtk.vfs.Metadata' requested by ':1.0' (uid=1000 pid=175614 comm="gnome-shell --devkit --wayland")
+dbus-daemon[175613]: [session uid=1000 pid=175613 pidfd=5] Successfully activated service 'org.gtk.vfs.Metadata'
+dbus-daemon[175613]: [session uid=1000 pid=175613 pidfd=5] Activating service name='org.freedesktop.systemd1' requested by ':1.4' (uid=1000 pid=175658 comm="/usr/bin/dbus-broker-launch --config-file=/usr/sha")
+dbus-daemon[175613]: [session uid=1000 pid=175613 pidfd=5] Activated service 'org.freedesktop.systemd1' failed: Process org.freedesktop.systemd1 exited with status 1
+
+(mutter-devkit:175664): Gtk-CRITICAL **: 23:10:07.777: Unable to register the application: GDBus.Error:org.freedesktop.DBus.Error.NameHasNoOwner: Could not activate remote peer 'org.a11y.atspi.Registry': unit failed
+GNOME Shell-Message: 23:10:08.557: GNOME Shell started at Sat Sep 19 2026 23:10:05 GMT+0530 (India Standard Time)
+GNOME Shell-Message: 23:10:08.557: Registering display with GDM
+libmutter-Message: 23:10:08.631: Removed virtual monitor Meta-0
+
+(gnome-shell:175614): libmutter-CRITICAL **: 23:10:08.639: meta_monitor_manager_get_logical_monitor_from_number: assertion '(unsigned int) number < g_list_length (manager->logical_monitors)' failed
+
+(gnome-shell:175614): libmutter-CRITICAL **: 23:10:08.639: meta_workspace_get_work_area_for_monitor: assertion 'logical_monitor != NULL' failed
+
+(gnome-shell:175614): libmutter-CRITICAL **: 23:10:08.639: meta_monitor_manager_get_logical_monitor_from_number: assertion '(unsigned int) number < g_list_length (manager->logical_monitors)' failed
+
+(gnome-shell:175614): libmutter-CRITICAL **: 23:10:08.639: meta_workspace_get_work_area_for_monitor: assertion 'logical_monitor != NULL' failed
+** Message: 23:10:08.703: Shutting down GNOME Shell
+
+(gnome-shell:175614): Gjs-CRITICAL **: 23:10:08.790: Attempting to call back into JSAPI during the sweeping phase of GC. This is most likely caused by not destroying a Clutter actor or Gtk+ widget with ::destroy signals connected, but can also be caused by using the destroy(), dispose(), or remove() vfuncs. Because it would crash the application, it has been blocked and the JS callback not invoked.
+== Stack trace for context 0x561ed88d4dc0 ==
+The offending signal was destroy on Gjs_librepods_krishhh_dev_indicator_LibrePodsIndicator 0x561edc4eee70.
+Gdk-Message: 23:10:08.841: Lost connection to Wayland compositor.
+Gdk-Message: 23:10:08.841: Lost connection to Wayland compositor.
+Gdk-Message: 23:10:08.841: Error reading events from display: Broken pipe
+Gdk-Message: 23:10:08.841: Error reading events from display: Broken pipe
+A connection to the bus can't be made
+gnome-shell-calendar-server[175691]: Lost (or failed to acquire) the name org.gnome.Shell.CalendarServer - exiting
+
+(evolution-calendar-factory:175760): libedbus-private-WARNING **: 23:10:08.916: Error setting property 'ConnectionStatus' on interface org.gnome.evolution.dataserver.Source: The connection is closed (g-io-error-quark, 18)
+
+(evolution-addressbook-factory:175820): libedbus-private-WARNING **: 23:10:08.916: Error setting property 'ConnectionStatus' on interface org.gnome.evolution.dataserver.Source: The connection is closed (g-io-error-quark, 18)
+   ~/librepods/linux-rust/t/release on    feat/high-res-mic-a2dp +40 !2 ❯                                            took   4s at   23:10:08

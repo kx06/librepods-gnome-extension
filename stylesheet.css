@@ -1,443 +1,165 @@
-/* GNOME Shell Native System Theme & Fluid Scaling (Zero Fixed Heights) */
-/**/
-/* .librepods-tab-pill-track { */
-/*   margin-bottom: 0px; */
-/* } */
+/* LibrePods — clean rewrite for GNOME Shell 45+ */
 
-.librepods-topbar-box {
-  spacing: 6px;
-  align-items: center;
-}
-
-.librepods-topbar-pct {
-  font-size: 11px;
-  font-weight: bold;
-}
-
-.librepods-adwaita-container {
+.librepods-container {
   padding: 6px;
   min-width: 380px;
-  spacing: 6px;
 }
 
-.librepods-menu-wrapper {
-  padding: 0px;
+/* Panel Icon */
+.librepods-disconnected {
+  opacity: 0.6;
 }
 
-.popup-menu-boxpointer.librepods-custom-popover {
-  -arrow-border-radius: 30px !important;
-  border-radius: 30px !important;
+/* Hero */
+.librepods-hero {
+  border-radius: 14px;
+  padding: 6px 10px;
+  background-color: rgba(255, 255, 255, 0.08) !important;
+  color: rgba(255, 255, 255, 0.7);
+  transition-duration: 150ms;
 }
 
-.popup-menu-boxpointer.librepods-custom-popover .popup-menu-content {
-  border-radius: 30px !important;
+.librepods-hero:selected {
+  background-color: rgba(255, 255, 255, 0.12) !important;
+  color: white !important;
 }
 
-/* Master Hero Item (Highlight Card matching GNOME Settings) */
-.librepods-hero-item {
-  border-radius: 18px;
-  padding: 12px 16px;
-  background-color: rgba(255, 255, 255, 0.08);
-}
-
-.librepods-hero-item:hover,
-.librepods-hero-item:focus {
-  background-color: rgba(255, 255, 255, 0.14);
-}
-
-.librepods-adwaita-hero-box {
-  align-items: center;
-  spacing: 12px;
+.librepods-hero:active {
+  background-color: rgba(255, 255, 255, 0.15) !important;
+  color: white !important;
 }
 
 .librepods-hero-icon {
   icon-size: 22px;
-  color: #ffffff !important;
-  opacity: 1 !important;
 }
 
-.librepods-hero-text-box {
-  spacing: 2px;
-}
-
-.librepods-adwaita-hero-title {
-  font-size: 13.5px;
+.librepods-hero-title {
+  font-size: 14px;
   font-weight: bold;
-  color: #ffffff !important;
-  opacity: 1 !important;
 }
 
-.librepods-adwaita-hero-subtitle {
-  font-size: 11px;
-  font-weight: 500;
-  color: #ffffff !important;
-  opacity: 0.8 !important;
-  max-width: 250px;
+.librepods-hero-subtitle {
+  font-size: 11.5px;
+  opacity: 0.6;
 }
 
-/* Disconnected dimmed state */
-.librepods-hero-item.disconnected .librepods-adwaita-hero-title,
-.librepods-hero-item.disconnected .librepods-hero-icon {
-  opacity: 0.4 !important;
-  color: rgba(255, 255, 255, 0.4) !important;
-}
-
-.librepods-hero-item.disconnected .librepods-adwaita-hero-subtitle {
-  opacity: 0.3 !important;
-  color: rgba(255, 255, 255, 0.3) !important;
-}
-
-/* Segmented Tab Track — clean track without hardcoded black background */
-.librepods-tab-pill-track {
+/* Tab Bar */
+.librepods-tab-bar {
   border-radius: 9999px;
   padding: 3px;
-  height: 36px;
+  spacing: 2px;
+  background-color: rgba(255, 255, 255, 0.08);
+  margin-top: 4px;
+  margin-bottom: 4px;
 }
 
-/* Tabs are fully self-styled (no theme `button` class) so no theme rule —
-   hover, active, first-child, shadows — can resize or reshape them */
-.librepods-tab-pill-btn {
+.librepods-tab-button {
   border-radius: 9999px;
   padding: 6px 4px;
   font-size: 11.5px;
   font-weight: 600;
   text-align: center;
-  background-color: rgba(255, 255, 255, 0.1);
-  color: #ffffff;
+  color: rgba(255, 255, 255, 0.6);
 }
 
-.librepods-tab-pill-btn:hover,
-.librepods-tab-pill-btn:focus {
-  background-color: rgba(255, 255, 255, 0.14);
+.librepods-tab-button:hover {
+  color: rgba(255, 255, 255, 0.85);
 }
 
-.librepods-tab-pill-btn.librepods-active {
+.librepods-tab-button:selected {
   background-color: -st-accent-color;
   color: -st-accent-fg-color;
 }
 
-/* Section Header Label */
-.librepods-section-header-label {
+/* Tab Pages */
+.librepods-tab-page {
+  spacing: 8px;
+  padding-top: 4px;
+}
+
+/* Toggle Row */
+.librepods-toggle-row {
+  spacing: 6px;
+}
+
+.librepods-toggle-row>* {
+  min-width: 0;
+}
+
+/* Section Labels */
+.librepods-section-label {
   font-size: 10.5px;
   font-weight: bold;
   opacity: 0.55;
   letter-spacing: 0.9px;
-  margin-top: 4px;
-  margin-bottom: 4px;
   padding-left: 4px;
-}
-
-.librepods-section-header-label-second {
-  margin-top: 16px;
-}
-
-.librepods-noise-group {
-  spacing: 0px;
-}
-
-.librepods-noise-pill-row {
-  height: 82px;
-}
-
-.librepods-noise-pill-btn {
-  border-radius: 9999px;
-  padding: 0px 0px 0px 14px;
-  min-height: 48px;
-}
-
-/* Half-pill arrow section at the right end (flat seam, curved right cap),
-   like the quick-settings toggle arrow button */
-.librepods-quick-pill-arrow-chip {
-  background-color: rgba(255, 255, 255, 0.15);
-  border-radius: 0px 9999px 9999px 0px;
-  padding: 12px 8px;
-}
-
-.librepods-noise-pill-btn:active,
-.librepods-noise-pill-btn.librepods-active {
-  background-color: -st-accent-color;
-  color: -st-accent-fg-color;
-}
-
-/* Off mode: pill content sits dimmed until a mode is engaged */
-.librepods-noise-pill-btn .librepods-quick-pill-title,
-.librepods-noise-pill-btn .librepods-quick-pill-icon {
-  opacity: 0.6;
-}
-
-.librepods-noise-pill-btn.librepods-active .librepods-quick-pill-title,
-.librepods-noise-pill-btn.librepods-active .librepods-quick-pill-icon {
-  opacity: 1;
-}
-
-.librepods-noise-pill-btn:insensitive {
-  opacity: 0.5;
-}
-
-/* Inline expanding noise-mode options (quick-settings submenu card style) */
-.librepods-noise-options {
-  spacing: 2px;
-  margin-top: 8px;
-  padding: 6px;
-  background-color: rgba(255, 255, 255, 0.12);
-  border-radius: 18px;
-}
-
-.librepods-noise-option-row {
-  border-radius: 14px;
-  padding: 12px 14px;
-}
-
-.librepods-noise-option-row:hover,
-.librepods-noise-option-row:focus {
-  background-color: rgba(255, 255, 255, 0.16);
-}
-
-.librepods-noise-option-row-box {
-  spacing: 8px;
-}
-
-.librepods-noise-option-label {
-  font-size: 14px;
-  font-weight: 500;
-  color: #ffffff !important;
-  opacity: 1 !important;
-}
-
-.librepods-noise-option-check {
-  icon-size: 16px;
-  color: #ffffff !important;
-  opacity: 1 !important;
-}
-
-.librepods-quick-pill-chevron-icon {
-  icon-size: 16px;
-  opacity: 0.6;
-}
-
-.librepods-noise-pill-inner {
-  align-items: center;
-  spacing: 4px;
-}
-
-.librepods-noise-pill-icon {
-  icon-size: 18px;
-}
-
-.librepods-noise-pill-label {
-  font-size: 10.5px;
-  font-weight: 600;
-  text-align: center;
-  spacing: 0px;
-}
-
-/* 2-Column Grid Layout */
-.librepods-views-stack {
-  spacing: 8px;
-}
-
-.librepods-view-page {
-  spacing: 10px;
-}
-
-.librepods-quick-grid-row {
-  height: 56px;
-}
-
-.librepods-quick-pill-btn {
-  border-radius: 999px;
-  padding: 0px 14px;
-}
-
-.librepods-quick-pill-btn:active,
-.librepods-quick-pill-btn.librepods-active {
-  background-color: -st-accent-color;
-  color: -st-accent-fg-color;
-}
-
-.librepods-quick-pill-box {
-  align-items: center;
-  spacing: 12px;
-}
-
-.librepods-quick-pill-icon {
-  icon-size: 20px;
-}
-
-.librepods-quick-pill-text-stack {
-  spacing: 0px;
-}
-
-.librepods-quick-pill-title {
-  font-size: 13.5px;
-  font-weight: bold;
-}
-
-.librepods-quick-pill-subtitle {
-  font-size: 11px;
-  opacity: 0.7;
-}
-
-/* Tab 2 Battery List Rows */
-.librepods-battery-list {
-  spacing: 8px;
-}
-
-.librepods-battery-row {
-  border-radius: 14px;
-  padding: 10px 14px;
-  background-color: rgba(255, 255, 255, 0.08);
-  align-items: center;
-  spacing: 12px;
-}
-
-.librepods-battery-row:hover {
-  background-color: rgba(255, 255, 255, 0.12);
-}
-
-.librepods-battery-row-icon-box {
-  align-items: center;
-  justify-content: center;
-}
-
-.librepods-battery-row-icon {
-  icon-size: 22px;
-  color: #ffffff;
-  opacity: 1;
-}
-
-.librepods-battery-row-info {
-  spacing: 4px;
-}
-
-.librepods-battery-row-title {
-  font-size: 13px;
-  font-weight: bold;
-  color: #ffffff;
-  opacity: 1;
-}
-
-.librepods-battery-row-bar-track {
-  height: 6px;
-  min-width: 140px;
-  border-radius: 3px;
-  background-color: rgba(255, 255, 255, 0.18);
-  margin-top: 2px;
   margin-bottom: 2px;
 }
 
-.librepods-battery-row-bar-fill {
-  height: 6px;
-  border-radius: 3px;
-  background-color: -st-accent-color;
+/* Battery Cards */
+.librepods-battery-card {
+  border-radius: 14px;
+  padding: 10px 14px;
+  background-color: rgba(255, 255, 255, 0.08);
+  spacing: 4px;
 }
 
-.librepods-battery-row-sub {
+.librepods-battery-card:hover {
+  background-color: rgba(255, 255, 255, 0.12);
+}
+
+.librepods-battery-name {
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.librepods-battery-bar {
+  -barlevel-height: 6px;
+  -barlevel-background-color: rgba(255, 255, 255, 0.18);
+  -barlevel-active-background-color: -st-accent-color;
+  margin: 4px 0;
+}
+
+.librepods-battery-status {
   font-size: 10.5px;
   color: rgba(255, 255, 255, 0.75);
 }
 
-.librepods-battery-row-pct {
+.librepods-battery-pct {
   font-size: 13.5px;
   font-weight: bold;
-  color: #ffffff;
-  opacity: 1;
 }
 
-/* Battery row disconnected dimmed state */
-.librepods-battery-list.disconnected .librepods-battery-row-title,
-.librepods-battery-list.disconnected .librepods-battery-row-pct,
-.librepods-battery-list.disconnected .librepods-battery-row-icon {
-  opacity: 0.4 !important;
-  color: rgba(255, 255, 255, 0.4) !important;
+/* Info Rows */
+.librepods-info-item {
+  border-radius: 10px;
+  padding: 8px 10px;
+  margin: 2px 0;
+  background-color: rgba(255, 255, 255, 0.05);
+  color: rgba(255, 255, 255, 0.7);
 }
 
-.librepods-battery-list.disconnected .librepods-battery-row-sub {
-  opacity: 0.3 !important;
-  color: rgba(255, 255, 255, 0.3) !important;
-}
-
-.librepods-battery-list.disconnected .librepods-battery-row-bar-fill {
-  background-color: rgba(255, 255, 255, 0.2) !important;
-}
-
-/* Tab 3 Grouped Settings Cards */
-.librepods-settings-group-list {
-  spacing: 8px;
-}
-
-.librepods-setting-card-item {
-  border-radius: 14px !important;
-  padding: 10px 14px !important;
-}
-
-/* Condition 1: Individually disabled setting card */
-.librepods-setting-card-item.item-disabled .librepods-adwaita-hero-title,
-.librepods-setting-card-item.item-disabled .librepods-adwaita-hero-subtitle,
-.librepods-setting-card-item.item-disabled .librepods-hero-icon {
-  opacity: 0.45 !important;
-  color: rgba(255, 255, 255, 0.45) !important;
-}
-
-/* Condition 2: Globally disabled setting card (when main hero connection is OFF) */
-.librepods-setting-card-item.globally-disabled {
-  opacity: 0.5;
-}
-
-.librepods-setting-card-item.globally-disabled .librepods-adwaita-hero-title,
-.librepods-setting-card-item.globally-disabled .librepods-adwaita-hero-subtitle,
-.librepods-setting-card-item.globally-disabled .librepods-hero-icon {
-  opacity: 0.35 !important;
-  color: rgba(255, 255, 255, 0.35) !important;
-}
-
-.librepods-info-card {
-  border-radius: 18px;
-  padding: 12px 14px;
-  spacing: 6px;
-}
-
-.librepods-info-row {
-  align-items: center;
-  padding: 3px 0px;
-}
-
-.librepods-info-key {
-  font-size: 11.5px;
-  opacity: 0.6;
-}
-
-.librepods-info-val {
-  font-size: 11.5px;
+.librepods-info-item .popup-status-menu-item {
+  color: rgba(255, 255, 255, 0.55);
   font-weight: 600;
 }
 
-/* Footer Status Bar */
-.librepods-adwaita-footer {
-  padding-top: 6px;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  align-items: center;
+/* Advanced Tab Setting Items */
+.librepods-setting-item {
+  border-radius: 10px;
+  padding: 8px 10px;
+  margin: 2px 0;
+  background-color: rgba(255, 255, 255, 0.05);
+  color: rgba(255, 255, 255, 0.7);
+  transition-duration: 150ms;
 }
 
-.librepods-footer-status {
-  spacing: 6px;
-  align-items: center;
+.librepods-setting-item:selected {
+  background-color: rgba(255, 255, 255, 0.15);
+  color: white;
 }
 
-.librepods-status-dot {
-  width: 6px;
-  height: 6px;
-  border-radius: 3px;
-  background-color: -st-accent-color;
-}
-
-.librepods-footer-text {
-  font-size: 11px;
-  opacity: 0.65;
-}
-
-.librepods-footer-link {
-  font-size: 11px;
-  opacity: 0.85;
-  font-weight: 600;
+.librepods-setting-item:active {
+  background-color: rgba(255, 255, 255, 0.15);
+  color: white;
 }
