@@ -245,6 +245,18 @@ class Notebook extends St.BoxLayout {
         next.tabBtn.add_style_pseudo_class('selected');
         next.child.visible = true;
         this._selectedIndex = index;
+
+        const container = this._pageContainer;
+        const currentHeight = container.height >= 0 ? container.height : container.get_preferred_height(-1)[1];
+        const [, targetHeight] = next.child.get_preferred_height(-1);
+
+        container.height = currentHeight;
+        container.ease({
+            height: targetHeight,
+            duration: 250,
+            mode: Clutter.AnimationMode.EASE_OUT_EXPO,
+            onComplete: () => container.set_height(-1),
+        });
     }
 
     get selectedIndex() {
