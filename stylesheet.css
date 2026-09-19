@@ -37,6 +37,11 @@
   color: white !important;
 }
 
+.librepods-hero:checked {
+  background-color: rgba(255, 255, 255, 0.15) !important;
+  color: white !important;
+}
+
 .librepods-hero-icon {
   icon-size: 22px;
 }
@@ -83,6 +88,10 @@
 .librepods-tab-page {
   spacing: 8px;
   padding-top: 4px;
+}
+
+.librepods-tab-page-tight {
+  spacing: 2px;
 }
 
 /* Toggle Row */
@@ -141,8 +150,8 @@
 /* Info Rows */
 .librepods-info-item {
   border-radius: 10px;
-  padding: 8px 10px;
-  margin: 2px 0;
+  padding: 6px 10px;
+  margin: 0;
   background-color: rgba(255, 255, 255, 0.05);
   color: rgba(255, 255, 255, 0.7);
 }
@@ -155,8 +164,8 @@
 /* Advanced Tab Setting Items */
 .librepods-setting-item {
   border-radius: 10px;
-  padding: 8px 10px;
-  margin: 2px 0;
+  padding: 6px 10px;
+  margin: 0;
   background-color: rgba(255, 255, 255, 0.05);
   color: rgba(255, 255, 255, 0.7);
   transition-duration: 150ms;

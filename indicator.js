@@ -5,6 +5,7 @@ import Pango from 'gi://Pango';
 import St from 'gi://St';
 
 import * as BarLevel from 'resource:///org/gnome/shell/ui/barLevel.js';
+import * as Main from 'resource:///org/gnome/shell/ui/main.js';
 import * as PopupMenu from 'resource:///org/gnome/shell/ui/popupMenu.js';
 import * as PanelMenu from 'resource:///org/gnome/shell/ui/panelMenu.js';
 import {QuickMenuToggle, QuickToggle} from 'resource:///org/gnome/shell/ui/quickSettings.js';
@@ -69,9 +70,20 @@ class LibrePodsHeroToggle extends PopupMenu.PopupBaseMenuItem {
         this._switch = new PopupMenu.Switch(false);
         this.add_child(this._switch);
 
+        this._switch.connect('notify::state', () => this._syncCheckedStyle());
+
         this.connect('activate', () => {
             this._switch.toggle();
         });
+
+        this._syncCheckedStyle();
+    }
+
+    _syncCheckedStyle() {
+        if (this._switch.state)
+            this.add_style_pseudo_class('checked');
+        else
+            this.remove_style_pseudo_class('checked');
     }
 
     setStatus(connected, deviceName) {
@@ -318,7 +330,7 @@ function _buildBatteryPage() {
 function _buildAdvancedPage() {
     const page = new St.BoxLayout({
         orientation: Clutter.Orientation.VERTICAL,
-        style_class: 'librepods-tab-page',
+        style_class: 'librepods-tab-page librepods-tab-page-tight',
         x_expand: true,
     });
 
@@ -364,7 +376,7 @@ function _buildAdvancedPage() {
 function _buildInfoPage() {
     const page = new St.BoxLayout({
         orientation: Clutter.Orientation.VERTICAL,
-        style_class: 'librepods-tab-page',
+        style_class: 'librepods-tab-page librepods-tab-page-tight',
         x_expand: true,
     });
 
@@ -440,6 +452,10 @@ class LibrePodsIndicator extends PanelMenu.Button {
 
         // Controls tab widgets
         this._noiseControl = new NoiseControlToggle();
+        // QuickMenuToggle's own submenu is normally registered with the shared
+        // menu manager by GNOME's QuickSettings grid; standalone, that never
+        // happens, so the arrow's dropdown never opens without this.
+        Main.panel.menuManager.addMenu(this._noiseControl.menu);
         this._conversationDetect = new ConversationDetectToggle();
         this._personalizedVolume = new PersonalizedVolumeToggle();
 
