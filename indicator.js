@@ -5,7 +5,6 @@ import Pango from 'gi://Pango';
 import St from 'gi://St';
 
 import * as BarLevel from 'resource:///org/gnome/shell/ui/barLevel.js';
-import * as Main from 'resource:///org/gnome/shell/ui/main.js';
 import * as PopupMenu from 'resource:///org/gnome/shell/ui/popupMenu.js';
 import * as PanelMenu from 'resource:///org/gnome/shell/ui/panelMenu.js';
 import {QuickMenuToggle, QuickToggle} from 'resource:///org/gnome/shell/ui/quickSettings.js';
@@ -464,10 +463,15 @@ class LibrePodsIndicator extends PanelMenu.Button {
 
         // Controls tab widgets
         this._noiseControl = new NoiseControlToggle();
-        // QuickMenuToggle's own submenu is normally registered with the shared
-        // menu manager by GNOME's QuickSettings grid; standalone, that never
-        // happens, so the arrow's dropdown never opens without this.
-        Main.panel.menuManager.addMenu(this._noiseControl.menu);
+        // QuickMenuToggle's own submenu is normally registered with a menu
+        // manager by GNOME's QuickSettings grid; standalone, that never
+        // happens, so the arrow's dropdown never opens without this. Use a
+        // manager of our own rather than Main.panel.menuManager — sharing
+        // the panel's manager makes the submenu a "sibling" of our own
+        // outer popup, and hovering it then triggers the manager's
+        // switch-active-menu-on-hover behavior, closing the whole popup.
+        this._quickMenuManager = new PopupMenu.PopupMenuManager(this);
+        this._quickMenuManager.addMenu(this._noiseControl.menu);
         this._conversationDetect = new ConversationDetectToggle();
         this._personalizedVolume = new PersonalizedVolumeToggle();
 
