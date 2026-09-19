@@ -377,6 +377,15 @@ function _buildAdvancedPage() {
             menuItem._switch.reactive = false;
             menuItem.style_class = 'popup-menu-item librepods-setting-item';
 
+            const syncCheckedStyle = () => {
+                if (menuItem._switch.state)
+                    menuItem.add_style_pseudo_class('checked');
+                else
+                    menuItem.remove_style_pseudo_class('checked');
+            };
+            menuItem._switch.connect('notify::state', syncCheckedStyle);
+            syncCheckedStyle();
+
             page._settingCards.push({id: item.id, menuItem});
             page.add_child(menuItem);
         }
