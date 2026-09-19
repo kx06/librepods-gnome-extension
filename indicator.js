@@ -1,7 +1,6 @@
 import Clutter from 'gi://Clutter';
 import Gio from 'gi://Gio';
 import GObject from 'gi://GObject';
-import Pango from 'gi://Pango';
 import St from 'gi://St';
 
 import * as BarLevel from 'resource:///org/gnome/shell/ui/barLevel.js';
@@ -91,7 +90,7 @@ class LibrePodsHeroToggle extends PopupMenu.PopupBaseMenuItem {
     }
 });
 
-// ── Noise Control Toggle ───────────────────────────────────────────────
+// ── Noise Control ────────────────────────────────────────────────────
 
 const NoiseControlToggle = GObject.registerClass(
 class NoiseControlToggle extends QuickMenuToggle {
@@ -107,8 +106,6 @@ class NoiseControlToggle extends QuickMenuToggle {
         });
 
         this._mode = NoiseMode.OFF;
-
-        this.menu.setHeader('audio-headphones-symbolic', 'Noise Control');
 
         this._modeItems = new Map();
         for (const {mode, label} of NOISE_MODE_DEFS) {
@@ -273,6 +270,10 @@ function _buildControlsPage(noiseControl, conversationDetect, personalizedVolume
     });
 
     page.add_child(noiseControl);
+
+    // Parent the QuickToggleMenu actor as a sibling so the Y-constraint works
+    noiseControl.menu.actor.hide();
+    page.add_child(noiseControl.menu.actor);
 
     const row = new St.BoxLayout({
         style_class: 'librepods-toggle-row',
@@ -463,15 +464,6 @@ class LibrePodsIndicator extends PanelMenu.Button {
 
         // Controls tab widgets
         this._noiseControl = new NoiseControlToggle();
-        // QuickMenuToggle's own submenu is normally registered with a menu
-        // manager by GNOME's QuickSettings grid; standalone, that never
-        // happens, so the arrow's dropdown never opens without this. Use a
-        // manager of our own rather than Main.panel.menuManager — sharing
-        // the panel's manager makes the submenu a "sibling" of our own
-        // outer popup, and hovering it then triggers the manager's
-        // switch-active-menu-on-hover behavior, closing the whole popup.
-        this._quickMenuManager = new PopupMenu.PopupMenuManager(this);
-        this._quickMenuManager.addMenu(this._noiseControl.menu);
         this._conversationDetect = new ConversationDetectToggle();
         this._personalizedVolume = new PersonalizedVolumeToggle();
 
