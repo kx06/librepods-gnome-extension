@@ -1,7 +1,15 @@
 /* LibrePods — clean rewrite for GNOME Shell 45+ */
 
+.librepods-menu-box {
+  padding: 8px !important;
+}
+
+.librepods-wrapper-item {
+  padding: 0 !important;
+}
+
 .librepods-container {
-  padding: 6px;
+  padding: 0;
   min-width: 380px;
 }
 
@@ -49,7 +57,7 @@
   padding: 3px;
   spacing: 2px;
   background-color: rgba(255, 255, 255, 0.08);
-  margin-top: 4px;
+  margin-top: 12px;
   margin-bottom: 4px;
 }
 

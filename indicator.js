@@ -92,6 +92,7 @@ class NoiseControlToggle extends QuickMenuToggle {
             toggle_mode: true,
             checked: false,
             menu_enabled: true,
+            x_expand: true,
         });
 
         this._mode = NoiseMode.OFF;
@@ -142,6 +143,7 @@ class ConversationDetectToggle extends QuickToggle {
             icon_name: 'audio-input-microphone-symbolic',
             toggle_mode: true,
             checked: false,
+            x_expand: true,
         });
         this.connect('clicked', () => {
             this.subtitle = this.checked ? 'On' : 'Off';
@@ -158,6 +160,7 @@ class PersonalizedVolumeToggle extends QuickToggle {
             icon_name: 'audio-volume-high-symbolic',
             toggle_mode: true,
             checked: false,
+            x_expand: true,
         });
         this.connect('clicked', () => {
             this.subtitle = this.checked ? 'On' : 'Off';
@@ -182,6 +185,7 @@ class Notebook extends St.BoxLayout {
         this.add_child(this._tabBar);
 
         this._pageContainer = new St.Widget({
+            layout_manager: new Clutter.BinLayout(),
             x_expand: true,
             y_expand: true,
         });
@@ -250,6 +254,7 @@ function _buildControlsPage(noiseControl, conversationDetect, personalizedVolume
     const row = new St.BoxLayout({
         style_class: 'librepods-toggle-row',
         x_expand: true,
+        homogeneous: true,
     });
     row.add_child(conversationDetect);
     row.add_child(personalizedVolume);
@@ -415,12 +420,14 @@ class LibrePodsIndicator extends PanelMenu.Button {
 
         // ── Menu ──
         this._menu = new PopupMenu.PopupMenu(this, 0.0, St.Side.TOP);
+        this._menu.box.add_style_class_name('librepods-menu-box');
 
         // Single wrapper item that holds all custom UI
         this._wrapperItem = new PopupMenu.PopupBaseMenuItem({
             reactive: false,
             can_focus: false,
         });
+        this._wrapperItem.add_style_class_name('librepods-wrapper-item');
 
         this._contentBox = new St.BoxLayout({
             orientation: Clutter.Orientation.VERTICAL,
