@@ -1,852 +1,494 @@
-   ~/librepods/linux-rust/target/release ❯                                                                                        at   00:51:07
-   ~/librepods/linux-rust/target/release on    feat/high-res-mic-a2dp +40 !2 ❯ /home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev
-   ~/.l/sh/gnome-sh/extensions/librepods@krishhh.dev on    develop !2 ❯ dbus-run-session gnome-shell --devkit --wayland         at   00:51:13
-dbus-daemon[244425]: [session uid=1000 pid=244425 pidfd=5] Activating service name='org.gtk.vfs.Daemon' requested by ':1.0' (uid=1000 pid=244426 comm="gnome-shell --devkit --wayland")
-dbus-daemon[244425]: [session uid=1000 pid=244425 pidfd=5] Successfully activated service 'org.gtk.vfs.Daemon'
+   ~ ❯                                                                                                                                                                                                                                                 at   02:12:28
+   ~ ❯ dbus-run-session gnome-shell --devkit --wayland                                                                                                                                                                                                 at   02:12:28
+dbus-daemon[12861]: [session uid=1000 pid=12861 pidfd=5] Activating service name='org.gtk.vfs.Daemon' requested by ':1.0' (uid=1000 pid=12863 comm="gnome-shell --devkit --wayland")
+dbus-daemon[12861]: [session uid=1000 pid=12861 pidfd=5] Successfully activated service 'org.gtk.vfs.Daemon'
 fusermount3: failed to access mountpoint /run/user/1000/gvfs: Permission denied
-libmutter-Message: 00:51:15.361: Running GNOME Shell (using mutter 50.4) as a Wayland display server
-libmutter-Message: 00:51:15.515: Added device '/dev/dri/renderD128' (nvidia-drm) using no mode setting.
-libmutter-Message: 00:51:15.536: Added device '/dev/dri/renderD129' (amdgpu) using no mode setting.
-libmutter-Message: 00:51:15.540: Created gbm renderer for '/dev/dri/renderD128'
-libmutter-Message: 00:51:15.542: Created gbm renderer for '/dev/dri/renderD129'
-libmutter-Message: 00:51:15.542: GPU /dev/dri/renderD128 selected primary given udev rule
-** Message: 00:51:15.543: Obtained a high priority EGL context
-dbus-daemon[244425]: [session uid=1000 pid=244425 pidfd=5] Activating service name='org.a11y.Bus' requested by ':1.2' (uid=1000 pid=244426 comm="gnome-shell --devkit --wayland")
-dbus-daemon[244425]: [session uid=1000 pid=244425 pidfd=5] Successfully activated service 'org.a11y.Bus'
-dbus-daemon[244425]: [session uid=1000 pid=244425 pidfd=5] Activating service name='org.freedesktop.systemd1' requested by ':1.4' (uid=1000 pid=244470 comm="/usr/bin/dbus-broker-launch --config-file=/usr/sha")
-libmutter-Message: 00:51:15.577: Using public X11 display :2, (using unix:/tmp/.X11-unix/X3 for managed services)
-
-(gnome-shell:244426): libmutter-WARNING **: 00:51:15.577: WL: unable to lock lockfile /run/user/1000/wayland-0.lock, maybe another compositor is running
-
-libmutter-Message: 00:51:15.577: Using Wayland display name 'wayland-1'
-dbus-daemon[244425]: [session uid=1000 pid=244425 pidfd=5] Activated service 'org.freedesktop.systemd1' failed: Process org.freedesktop.systemd1 exited with status 1
-dbus-daemon[244425]: [session uid=1000 pid=244425 pidfd=5] Activating service name='org.freedesktop.systemd1' requested by ':1.4' (uid=1000 pid=244470 comm="/usr/bin/dbus-broker-launch --config-file=/usr/sha")
-dbus-daemon[244425]: [session uid=1000 pid=244425 pidfd=5] Activated service 'org.freedesktop.systemd1' failed: Process org.freedesktop.systemd1 exited with status 1
-
-** (gnome-shell:244426): WARNING **: 00:51:15.645: AT-SPI: Could not obtain desktop path or name
-
-dbus-daemon[244425]: [session uid=1000 pid=244425 pidfd=5] Activating service name='org.freedesktop.systemd1' requested by ':1.4' (uid=1000 pid=244470 comm="/usr/bin/dbus-broker-launch --config-file=/usr/sha")
-dbus-daemon[244425]: [session uid=1000 pid=244425 pidfd=5] Activated service 'org.freedesktop.systemd1' failed: Process org.freedesktop.systemd1 exited with status 1
-GNOME Shell-Message: 00:51:15.957: Unset XDG_SESSION_ID, getCurrentSessionProxy() called outside a user session. Asking logind directly.
-dbus-daemon[244425]: [session uid=1000 pid=244425 pidfd=5] Activating service name='org.gnome.Shell.Screencast' requested by ':1.0' (uid=1000 pid=244426 comm="gnome-shell --devkit --wayland")
-dbus-daemon[244425]: [session uid=1000 pid=244425 pidfd=5] Activating service name='org.freedesktop.impl.portal.PermissionStore' requested by ':1.0' (uid=1000 pid=244426 comm="gnome-shell --devkit --wayland")
-dbus-daemon[244425]: [session uid=1000 pid=244425 pidfd=5] Activating service name='org.gnome.Shell.CalendarServer' requested by ':1.0' (uid=1000 pid=244426 comm="gnome-shell --devkit --wayland")
-dbus-daemon[244425]: [session uid=1000 pid=244425 pidfd=5] Successfully activated service 'org.freedesktop.impl.portal.PermissionStore'
-dbus-daemon[244425]: [session uid=1000 pid=244425 pidfd=5] Activating service name='org.gnome.evolution.dataserver.Sources5' requested by ':1.8' (uid=1000 pid=244503 comm="/usr/lib/gnome-shell-calendar-server")
-GNOME Shell-Message: 00:51:16.082: Registering session with GDM
-dbus-daemon[244425]: [session uid=1000 pid=244425 pidfd=5] Activating service name='org.gnome.Shell.Notifications' requested by ':1.0' (uid=1000 pid=244426 comm="gnome-shell --devkit --wayland")
-dbus-daemon[244425]: [session uid=1000 pid=244425 pidfd=5] Activating service name='org.freedesktop.portal.Desktop' requested by ':1.6' (uid=1000 pid=244483 comm="/usr/bin/gjs -m /usr/share/gnome-shell/org.gnome.S")
-dbus-daemon[244425]: [session uid=1000 pid=244425 pidfd=5] Activating service name='org.gnome.OnlineAccounts' requested by ':1.9' (uid=1000 pid=244512 comm="/usr/lib/evolution-source-registry")
-dbus-daemon[244425]: [session uid=1000 pid=244425 pidfd=5] Activating service name='org.freedesktop.portal.Documents' requested by ':1.11' (uid=1000 pid=244524 comm="/usr/lib/xdg-desktop-portal")
-
-(process:244476): mdk-WARNING **: 00:51:16.107: Invalid application ID 'org.gnome.Ptyxis'
-dbus-daemon[244425]: [session uid=1000 pid=244425 pidfd=5] Successfully activated service 'org.gnome.evolution.dataserver.Sources5'
-dbus-daemon[244425]: [session uid=1000 pid=244425 pidfd=5] Activating service name='org.gtk.GLib.PACRunner' requested by ':1.0' (uid=1000 pid=244426 comm="gnome-shell --devkit --wayland")
-dbus-daemon[244425]: [session uid=1000 pid=244425 pidfd=5] Successfully activated service 'org.freedesktop.portal.Documents'
-dbus-daemon[244425]: [session uid=1000 pid=244425 pidfd=5] Activating service name='org.freedesktop.impl.portal.desktop.gnome' requested by ':1.11' (uid=1000 pid=244524 comm="/usr/lib/xdg-desktop-portal")
-dbus-daemon[244425]: [session uid=1000 pid=244425 pidfd=5] Activating service name='org.gnome.evolution.dataserver.Calendar8' requested by ':1.8' (uid=1000 pid=244503 comm="/usr/lib/gnome-shell-calendar-server")
-dbus-daemon[244425]: [session uid=1000 pid=244425 pidfd=5] Successfully activated service 'org.gnome.Shell.CalendarServer'
-dbus-daemon[244425]: [session uid=1000 pid=244425 pidfd=5] Successfully activated service 'org.gtk.GLib.PACRunner'
-
-** (gnome-shell:244426): WARNING **: 00:51:16.144: atk-bridge: GetRegisteredEvents returned message with unknown signature
-
-** (gnome-shell:244426): WARNING **: 00:51:16.148: atk-bridge: get_device_events_reply: unknown signature
-GNOME Shell-Message: 00:51:16.149: Will monitor session 3
-goa-daemon-Message: 00:51:16.154: goa-daemon version 3.58.1 starting
-dbus-daemon[244425]: [session uid=1000 pid=244425 pidfd=5] Activating service name='org.gnome.Identity' requested by ':1.15' (uid=1000 pid=244531 comm="/usr/lib/goa-daemon")
-dbus-daemon[244425]: [session uid=1000 pid=244425 pidfd=5] Successfully activated service 'org.gnome.Shell.Notifications'
-dbus-daemon[244425]: [session uid=1000 pid=244425 pidfd=5] Successfully activated service 'org.gnome.OnlineAccounts'
-dbus-daemon[244425]: [session uid=1000 pid=244425 pidfd=5] Successfully activated service 'org.gnome.Identity'
-dbus-daemon[244425]: [session uid=1000 pid=244425 pidfd=5] Successfully activated service 'org.gnome.evolution.dataserver.Calendar8'
-GNOME Shell-Message: 00:51:16.172: Error looking up permission: GDBus.Error:org.freedesktop.portal.Error.NotFound: No entry for geolocation
-dbus-daemon[244425]: [session uid=1000 pid=244425 pidfd=5] Activating service name='org.gnome.evolution.dataserver.AddressBook10' requested by ':1.14' (uid=1000 pid=244568 comm="/usr/lib/evolution-calendar-factory")
-dbus-daemon[244425]: [session uid=1000 pid=244425 pidfd=5] Activating service name='org.gtk.vfs.UDisks2VolumeMonitor' requested by ':1.0' (uid=1000 pid=244426 comm="gnome-shell --devkit --wayland")
-dbus-daemon[244425]: [session uid=1000 pid=244425 pidfd=5] Activating service name='org.freedesktop.portal.IBus' requested by ':1.18' (uid=1000 pid=244573 comm="ibus-daemon --panel disable")
-dbus-daemon[244425]: [session uid=1000 pid=244425 pidfd=5] Successfully activated service 'org.freedesktop.portal.IBus'
-dbus-daemon[244425]: [session uid=1000 pid=244425 pidfd=5] Successfully activated service 'org.gtk.vfs.UDisks2VolumeMonitor'
-dbus-daemon[244425]: [session uid=1000 pid=244425 pidfd=5] Activating service name='org.gtk.vfs.MTPVolumeMonitor' requested by ':1.0' (uid=1000 pid=244426 comm="gnome-shell --devkit --wayland")
-dbus-daemon[244425]: [session uid=1000 pid=244425 pidfd=5] Successfully activated service 'org.gtk.vfs.MTPVolumeMonitor'
-dbus-daemon[244425]: [session uid=1000 pid=244425 pidfd=5] Successfully activated service 'org.gnome.evolution.dataserver.AddressBook10'
-dbus-daemon[244425]: [session uid=1000 pid=244425 pidfd=5] Activating service name='org.gtk.vfs.GPhoto2VolumeMonitor' requested by ':1.0' (uid=1000 pid=244426 comm="gnome-shell --devkit --wayland")
-dbus-daemon[244425]: [session uid=1000 pid=244425 pidfd=5] Successfully activated service 'org.gtk.vfs.GPhoto2VolumeMonitor'
-dbus-daemon[244425]: [session uid=1000 pid=244425 pidfd=5] Activating service name='org.gtk.vfs.GoaVolumeMonitor' requested by ':1.0' (uid=1000 pid=244426 comm="gnome-shell --devkit --wayland")
-dbus-daemon[244425]: [session uid=1000 pid=244425 pidfd=5] Successfully activated service 'org.gtk.vfs.GoaVolumeMonitor'
-dbus-daemon[244425]: [session uid=1000 pid=244425 pidfd=5] Activating service name='org.gtk.vfs.AfcVolumeMonitor' requested by ':1.0' (uid=1000 pid=244426 comm="gnome-shell --devkit --wayland")
-dbus-daemon[244425]: [session uid=1000 pid=244425 pidfd=5] Successfully activated service 'org.gtk.vfs.AfcVolumeMonitor'
-GNOME Shell-Message: 00:51:16.377: Failed to register AuthenticationAgent
-dbus-daemon[244425]: [session uid=1000 pid=244425 pidfd=5] Activating service name='ca.desrt.dconf' requested by ':1.0' (uid=1000 pid=244426 comm="gnome-shell --devkit --wayland")
-dbus-daemon[244425]: [session uid=1000 pid=244425 pidfd=5] Successfully activated service 'ca.desrt.dconf'
-dbus-daemon[244425]: [session uid=1000 pid=244425 pidfd=5] Reloaded configuration
-dbus-daemon[244425]: [session uid=1000 pid=244425 pidfd=5] Reloaded configuration
-dbus-daemon[244425]: [session uid=1000 pid=244425 pidfd=5] Activating service name='org.gnome.Shell.Extensions.GSConnect' requested by ':1.0' (uid=1000 pid=244426 comm="gnome-shell --devkit --wayland")
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.767: st_widget_get_theme_node called on the widget [0x5625a3fb57c0 Gjs_librepods_krishhh_dev_indicator_Notebook:insensitive ("Controls")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.767: st_widget_get_theme_node called on the widget [0x5625a3fb7d90 StWidget:insensitive ("Noise Control")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.767: st_widget_get_theme_node called on the widget [0x5625a3fb57c0 Gjs_librepods_krishhh_dev_indicator_Notebook:insensitive ("Controls")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.767: st_widget_get_theme_node called on the widget [0x5625a3fb7d90 StWidget:insensitive ("Noise Control")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.767: st_widget_get_theme_node called on the widget [0x5625a3fb8ea0 StBoxLayout.librepods-tab-page:insensitive ("Noise Control")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.767: st_widget_get_theme_node called on the widget [0x5625a3fb57c0 Gjs_librepods_krishhh_dev_indicator_Notebook:insensitive ("Controls")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.767: st_widget_get_theme_node called on the widget [0x5625a3fb7d90 StWidget:insensitive ("Noise Control")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.767: st_widget_get_theme_node called on the widget [0x5625a3fb8ea0 StBoxLayout.librepods-tab-page:insensitive ("Noise Control")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.767: st_widget_get_theme_node called on the widget [0x5625a3f59f00 Gjs_librepods_krishhh_dev_indicator_NoiseControlMenuItem.popup-menu-item librepods-noise-item ("Noise Control")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.767: st_widget_get_theme_node called on the widget [0x5625a3fb57c0 Gjs_librepods_krishhh_dev_indicator_Notebook:insensitive ("Controls")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.767: st_widget_get_theme_node called on the widget [0x5625a3fb7d90 StWidget:insensitive ("Noise Control")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.767: st_widget_get_theme_node called on the widget [0x5625a3fb8ea0 StBoxLayout.librepods-tab-page:insensitive ("Noise Control")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.767: st_widget_get_theme_node called on the widget [0x5625a3f59f00 Gjs_librepods_krishhh_dev_indicator_NoiseControlMenuItem.popup-menu-item librepods-noise-item ("Noise Control")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.767: st_widget_get_theme_node called on the widget [0x5625a3f5cc70 StIcon.popup-menu-icon:insensitive] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.767: st_widget_get_theme_node called on the widget [0x5625a3fb57c0 Gjs_librepods_krishhh_dev_indicator_Notebook:insensitive ("Controls")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.767: st_widget_get_theme_node called on the widget [0x5625a3fb7d90 StWidget:insensitive ("Noise Control")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.767: st_widget_get_theme_node called on the widget [0x5625a3fb8ea0 StBoxLayout.librepods-tab-page:insensitive ("Noise Control")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.767: st_widget_get_theme_node called on the widget [0x5625a3f59f00 Gjs_librepods_krishhh_dev_indicator_NoiseControlMenuItem.popup-menu-item librepods-noise-item ("Noise Control")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.767: st_widget_get_theme_node called on the widget [0x5625a3f5def0 StLabel:insensitive ("Noise Control")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.767: st_widget_get_theme_node called on the widget [0x5625a3fb57c0 Gjs_librepods_krishhh_dev_indicator_Notebook:insensitive ("Controls")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.767: st_widget_get_theme_node called on the widget [0x5625a3fb7d90 StWidget:insensitive ("Noise Control")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.767: st_widget_get_theme_node called on the widget [0x5625a3fb8ea0 StBoxLayout.librepods-tab-page:insensitive ("Noise Control")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.767: st_widget_get_theme_node called on the widget [0x5625a3f59f00 Gjs_librepods_krishhh_dev_indicator_NoiseControlMenuItem.popup-menu-item librepods-noise-item ("Noise Control")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.767: st_widget_get_theme_node called on the widget [0x5625a3f63280 StLabel.popup-status-label:insensitive ("Off")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.768: st_widget_get_theme_node called on the widget [0x5625a3fb57c0 Gjs_librepods_krishhh_dev_indicator_Notebook:insensitive ("Controls")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.768: st_widget_get_theme_node called on the widget [0x5625a3fb7d90 StWidget:insensitive ("Noise Control")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.768: st_widget_get_theme_node called on the widget [0x5625a3fb8ea0 StBoxLayout.librepods-tab-page:insensitive ("Noise Control")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.768: st_widget_get_theme_node called on the widget [0x5625a3f59f00 Gjs_librepods_krishhh_dev_indicator_NoiseControlMenuItem.popup-menu-item librepods-noise-item ("Noise Control")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.768: st_widget_get_theme_node called on the widget [0x5625a3f68690 StIcon.popup-menu-icon:insensitive] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.768: st_widget_get_theme_node called on the widget [0x5625a3fb57c0 Gjs_librepods_krishhh_dev_indicator_Notebook:insensitive ("Controls")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.768: st_widget_get_theme_node called on the widget [0x5625a3fb7d90 StWidget:insensitive ("Noise Control")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.768: st_widget_get_theme_node called on the widget [0x5625a3fb8ea0 StBoxLayout.librepods-tab-page:insensitive ("Noise Control")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.768: st_widget_get_theme_node called on the widget [0x5625a3fba1c0 StBoxLayout.librepods-toggle-row:insensitive ("Conversation")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.768: st_widget_get_theme_node called on the widget [0x5625a3fb57c0 Gjs_librepods_krishhh_dev_indicator_Notebook:insensitive ("Controls")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.768: st_widget_get_theme_node called on the widget [0x5625a3fb7d90 StWidget:insensitive ("Noise Control")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.768: st_widget_get_theme_node called on the widget [0x5625a3fb8ea0 StBoxLayout.librepods-tab-page:insensitive ("Noise Control")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.768: st_widget_get_theme_node called on the widget [0x5625a3fba1c0 StBoxLayout.librepods-toggle-row:insensitive ("Conversation")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.768: st_widget_get_theme_node called on the widget [0x5625a3f92930 Gjs_librepods_krishhh_dev_indicator_ConversationDetectToggle.quick-toggle button ("Conversation")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.768: st_widget_get_theme_node called on the widget [0x5625a3fb57c0 Gjs_librepods_krishhh_dev_indicator_Notebook:insensitive ("Controls")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.768: st_widget_get_theme_node called on the widget [0x5625a3fb7d90 StWidget:insensitive ("Noise Control")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.768: st_widget_get_theme_node called on the widget [0x5625a3fb8ea0 StBoxLayout.librepods-tab-page:insensitive ("Noise Control")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.768: st_widget_get_theme_node called on the widget [0x5625a3fba1c0 StBoxLayout.librepods-toggle-row:insensitive ("Conversation")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.768: st_widget_get_theme_node called on the widget [0x5625a3f92930 Gjs_librepods_krishhh_dev_indicator_ConversationDetectToggle.quick-toggle button ("Conversation")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.768: st_widget_get_theme_node called on the widget [0x5625a3f94080 StBoxLayout:insensitive ("Conversation")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.768: st_widget_get_theme_node called on the widget [0x5625a3fb57c0 Gjs_librepods_krishhh_dev_indicator_Notebook:insensitive ("Controls")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.768: st_widget_get_theme_node called on the widget [0x5625a3fb7d90 StWidget:insensitive ("Noise Control")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.768: st_widget_get_theme_node called on the widget [0x5625a3fb8ea0 StBoxLayout.librepods-tab-page:insensitive ("Noise Control")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.768: st_widget_get_theme_node called on the widget [0x5625a3fba1c0 StBoxLayout.librepods-toggle-row:insensitive ("Conversation")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.768: st_widget_get_theme_node called on the widget [0x5625a3f92930 Gjs_librepods_krishhh_dev_indicator_ConversationDetectToggle.quick-toggle button ("Conversation")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.768: st_widget_get_theme_node called on the widget [0x5625a3f94080 StBoxLayout:insensitive ("Conversation")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.768: st_widget_get_theme_node called on the widget [0x5625a3f95380 StIcon.quick-toggle-icon:insensitive] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.768: st_widget_get_theme_node called on the widget [0x5625a3fb57c0 Gjs_librepods_krishhh_dev_indicator_Notebook:insensitive ("Controls")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.768: st_widget_get_theme_node called on the widget [0x5625a3fb7d90 StWidget:insensitive ("Noise Control")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.768: st_widget_get_theme_node called on the widget [0x5625a3fb8ea0 StBoxLayout.librepods-tab-page:insensitive ("Noise Control")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.768: st_widget_get_theme_node called on the widget [0x5625a3fba1c0 StBoxLayout.librepods-toggle-row:insensitive ("Conversation")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.768: st_widget_get_theme_node called on the widget [0x5625a3f92930 Gjs_librepods_krishhh_dev_indicator_ConversationDetectToggle.quick-toggle button ("Conversation")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.768: st_widget_get_theme_node called on the widget [0x5625a3f94080 StBoxLayout:insensitive ("Conversation")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.768: st_widget_get_theme_node called on the widget [0x5625a3fa1660 StBoxLayout:insensitive ("Conversation")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.768: st_widget_get_theme_node called on the widget [0x5625a3fb57c0 Gjs_librepods_krishhh_dev_indicator_Notebook:insensitive ("Controls")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.768: st_widget_get_theme_node called on the widget [0x5625a3fb7d90 StWidget:insensitive ("Noise Control")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.768: st_widget_get_theme_node called on the widget [0x5625a3fb8ea0 StBoxLayout.librepods-tab-page:insensitive ("Noise Control")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.768: st_widget_get_theme_node called on the widget [0x5625a3fba1c0 StBoxLayout.librepods-toggle-row:insensitive ("Conversation")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.768: st_widget_get_theme_node called on the widget [0x5625a3f92930 Gjs_librepods_krishhh_dev_indicator_ConversationDetectToggle.quick-toggle button ("Conversation")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.768: st_widget_get_theme_node called on the widget [0x5625a3f94080 StBoxLayout:insensitive ("Conversation")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.768: st_widget_get_theme_node called on the widget [0x5625a3fa1660 StBoxLayout:insensitive ("Conversation")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.768: st_widget_get_theme_node called on the widget [0x5625a3f97270 StLabel.quick-toggle-title:insensitive ("Conversation")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.768: st_widget_get_theme_node called on the widget [0x5625a3fb57c0 Gjs_librepods_krishhh_dev_indicator_Notebook:insensitive ("Controls")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.768: st_widget_get_theme_node called on the widget [0x5625a3fb7d90 StWidget:insensitive ("Noise Control")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.768: st_widget_get_theme_node called on the widget [0x5625a3fb8ea0 StBoxLayout.librepods-tab-page:insensitive ("Noise Control")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.768: st_widget_get_theme_node called on the widget [0x5625a3fba1c0 StBoxLayout.librepods-toggle-row:insensitive ("Conversation")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.768: st_widget_get_theme_node called on the widget [0x5625a3f92930 Gjs_librepods_krishhh_dev_indicator_ConversationDetectToggle.quick-toggle button ("Conversation")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.768: st_widget_get_theme_node called on the widget [0x5625a3f94080 StBoxLayout:insensitive ("Conversation")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.768: st_widget_get_theme_node called on the widget [0x5625a3fa1660 StBoxLayout:insensitive ("Conversation")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.768: st_widget_get_theme_node called on the widget [0x5625a3f9c420 StLabel.quick-toggle-subtitle:insensitive ("Off")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.768: st_widget_get_theme_node called on the widget [0x5625a3fb57c0 Gjs_librepods_krishhh_dev_indicator_Notebook:insensitive ("Controls")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.768: st_widget_get_theme_node called on the widget [0x5625a3fb7d90 StWidget:insensitive ("Noise Control")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.768: st_widget_get_theme_node called on the widget [0x5625a3fb8ea0 StBoxLayout.librepods-tab-page:insensitive ("Noise Control")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.768: st_widget_get_theme_node called on the widget [0x5625a3fba1c0 StBoxLayout.librepods-toggle-row:insensitive ("Conversation")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.768: st_widget_get_theme_node called on the widget [0x5625a3fa4220 Gjs_librepods_krishhh_dev_indicator_PersonalizedVolumeToggle.quick-toggle button ("Personalized Volume")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.768: st_widget_get_theme_node called on the widget [0x5625a3fb57c0 Gjs_librepods_krishhh_dev_indicator_Notebook:insensitive ("Controls")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.768: st_widget_get_theme_node called on the widget [0x5625a3fb7d90 StWidget:insensitive ("Noise Control")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.768: st_widget_get_theme_node called on the widget [0x5625a3fb8ea0 StBoxLayout.librepods-tab-page:insensitive ("Noise Control")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.768: st_widget_get_theme_node called on the widget [0x5625a3fba1c0 StBoxLayout.librepods-toggle-row:insensitive ("Conversation")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.768: st_widget_get_theme_node called on the widget [0x5625a3fa4220 Gjs_librepods_krishhh_dev_indicator_PersonalizedVolumeToggle.quick-toggle button ("Personalized Volume")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.769: st_widget_get_theme_node called on the widget [0x5625a3fa5920 StBoxLayout:insensitive ("Personalized Volume")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.769: st_widget_get_theme_node called on the widget [0x5625a3fb57c0 Gjs_librepods_krishhh_dev_indicator_Notebook:insensitive ("Controls")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.769: st_widget_get_theme_node called on the widget [0x5625a3fb7d90 StWidget:insensitive ("Noise Control")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.769: st_widget_get_theme_node called on the widget [0x5625a3fb8ea0 StBoxLayout.librepods-tab-page:insensitive ("Noise Control")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.769: st_widget_get_theme_node called on the widget [0x5625a3fba1c0 StBoxLayout.librepods-toggle-row:insensitive ("Conversation")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.769: st_widget_get_theme_node called on the widget [0x5625a3fa4220 Gjs_librepods_krishhh_dev_indicator_PersonalizedVolumeToggle.quick-toggle button ("Personalized Volume")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.769: st_widget_get_theme_node called on the widget [0x5625a3fa5920 StBoxLayout:insensitive ("Personalized Volume")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.769: st_widget_get_theme_node called on the widget [0x5625a3fa6be0 StIcon.quick-toggle-icon:insensitive] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.769: st_widget_get_theme_node called on the widget [0x5625a3fb57c0 Gjs_librepods_krishhh_dev_indicator_Notebook:insensitive ("Controls")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.769: st_widget_get_theme_node called on the widget [0x5625a3fb7d90 StWidget:insensitive ("Noise Control")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.769: st_widget_get_theme_node called on the widget [0x5625a3fb8ea0 StBoxLayout.librepods-tab-page:insensitive ("Noise Control")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.769: st_widget_get_theme_node called on the widget [0x5625a3fba1c0 StBoxLayout.librepods-toggle-row:insensitive ("Conversation")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.769: st_widget_get_theme_node called on the widget [0x5625a3fa4220 Gjs_librepods_krishhh_dev_indicator_PersonalizedVolumeToggle.quick-toggle button ("Personalized Volume")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.769: st_widget_get_theme_node called on the widget [0x5625a3fa5920 StBoxLayout:insensitive ("Personalized Volume")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.769: st_widget_get_theme_node called on the widget [0x5625a3fb2e50 StBoxLayout:insensitive ("Personalized Volume")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.769: st_widget_get_theme_node called on the widget [0x5625a3fb57c0 Gjs_librepods_krishhh_dev_indicator_Notebook:insensitive ("Controls")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.769: st_widget_get_theme_node called on the widget [0x5625a3fb7d90 StWidget:insensitive ("Noise Control")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.769: st_widget_get_theme_node called on the widget [0x5625a3fb8ea0 StBoxLayout.librepods-tab-page:insensitive ("Noise Control")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.769: st_widget_get_theme_node called on the widget [0x5625a3fba1c0 StBoxLayout.librepods-toggle-row:insensitive ("Conversation")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.769: st_widget_get_theme_node called on the widget [0x5625a3fa4220 Gjs_librepods_krishhh_dev_indicator_PersonalizedVolumeToggle.quick-toggle button ("Personalized Volume")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.769: st_widget_get_theme_node called on the widget [0x5625a3fa5920 StBoxLayout:insensitive ("Personalized Volume")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.769: st_widget_get_theme_node called on the widget [0x5625a3fb2e50 StBoxLayout:insensitive ("Personalized Volume")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.769: st_widget_get_theme_node called on the widget [0x5625a3fa8a60 StLabel.quick-toggle-title:insensitive ("Personalized Volume")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.769: st_widget_get_theme_node called on the widget [0x5625a3fb57c0 Gjs_librepods_krishhh_dev_indicator_Notebook:insensitive ("Controls")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.769: st_widget_get_theme_node called on the widget [0x5625a3fb7d90 StWidget:insensitive ("Noise Control")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.769: st_widget_get_theme_node called on the widget [0x5625a3fb8ea0 StBoxLayout.librepods-tab-page:insensitive ("Noise Control")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.769: st_widget_get_theme_node called on the widget [0x5625a3fba1c0 StBoxLayout.librepods-toggle-row:insensitive ("Conversation")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.769: st_widget_get_theme_node called on the widget [0x5625a3fa4220 Gjs_librepods_krishhh_dev_indicator_PersonalizedVolumeToggle.quick-toggle button ("Personalized Volume")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.769: st_widget_get_theme_node called on the widget [0x5625a3fa5920 StBoxLayout:insensitive ("Personalized Volume")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.769: st_widget_get_theme_node called on the widget [0x5625a3fb2e50 StBoxLayout:insensitive ("Personalized Volume")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.769: st_widget_get_theme_node called on the widget [0x5625a3fadc10 StLabel.quick-toggle-subtitle:insensitive ("Off")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.769: st_widget_get_theme_node called on the widget [0x5625a3fb57c0 Gjs_librepods_krishhh_dev_indicator_Notebook:insensitive ("Controls")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.769: st_widget_get_theme_node called on the widget [0x5625a3fb7d90 StWidget:insensitive ("Noise Control")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.769: st_widget_get_theme_node called on the widget [0x5625a3fb57c0 Gjs_librepods_krishhh_dev_indicator_Notebook:insensitive ("Controls")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.769: st_widget_get_theme_node called on the widget [0x5625a3fb7d90 StWidget:insensitive ("Noise Control")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.769: st_widget_get_theme_node called on the widget [0x5625a3fb8ea0 StBoxLayout.librepods-tab-page:insensitive ("Noise Control")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.769: st_widget_get_theme_node called on the widget [0x5625a3fb57c0 Gjs_librepods_krishhh_dev_indicator_Notebook:insensitive ("Controls")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.769: st_widget_get_theme_node called on the widget [0x5625a3fb7d90 StWidget:insensitive ("Noise Control")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.769: st_widget_get_theme_node called on the widget [0x5625a3fb8ea0 StBoxLayout.librepods-tab-page:insensitive ("Noise Control")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.769: st_widget_get_theme_node called on the widget [0x5625a3f59f00 Gjs_librepods_krishhh_dev_indicator_NoiseControlMenuItem.popup-menu-item librepods-noise-item ("Noise Control")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.769: st_widget_get_theme_node called on the widget [0x5625a3fb57c0 Gjs_librepods_krishhh_dev_indicator_Notebook:insensitive ("Controls")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.769: st_widget_get_theme_node called on the widget [0x5625a3fb7d90 StWidget:insensitive ("Noise Control")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.769: st_widget_get_theme_node called on the widget [0x5625a3fb8ea0 StBoxLayout.librepods-tab-page:insensitive ("Noise Control")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.769: st_widget_get_theme_node called on the widget [0x5625a3f59f00 Gjs_librepods_krishhh_dev_indicator_NoiseControlMenuItem.popup-menu-item librepods-noise-item ("Noise Control")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.769: st_widget_get_theme_node called on the widget [0x5625a3f5cc70 StIcon.popup-menu-icon:insensitive] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.769: st_widget_get_theme_node called on the widget [0x5625a3fb57c0 Gjs_librepods_krishhh_dev_indicator_Notebook:insensitive ("Controls")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.769: st_widget_get_theme_node called on the widget [0x5625a3fb7d90 StWidget:insensitive ("Noise Control")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.769: st_widget_get_theme_node called on the widget [0x5625a3fb8ea0 StBoxLayout.librepods-tab-page:insensitive ("Noise Control")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.769: st_widget_get_theme_node called on the widget [0x5625a3f59f00 Gjs_librepods_krishhh_dev_indicator_NoiseControlMenuItem.popup-menu-item librepods-noise-item ("Noise Control")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.769: st_widget_get_theme_node called on the widget [0x5625a3f5def0 StLabel:insensitive ("Noise Control")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.769: st_widget_get_theme_node called on the widget [0x5625a3fb57c0 Gjs_librepods_krishhh_dev_indicator_Notebook:insensitive ("Controls")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.769: st_widget_get_theme_node called on the widget [0x5625a3fb7d90 StWidget:insensitive ("Noise Control")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.769: st_widget_get_theme_node called on the widget [0x5625a3fb8ea0 StBoxLayout.librepods-tab-page:insensitive ("Noise Control")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.769: st_widget_get_theme_node called on the widget [0x5625a3f59f00 Gjs_librepods_krishhh_dev_indicator_NoiseControlMenuItem.popup-menu-item librepods-noise-item ("Noise Control")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.769: st_widget_get_theme_node called on the widget [0x5625a3f63280 StLabel.popup-status-label:insensitive ("Off")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.769: st_widget_get_theme_node called on the widget [0x5625a3fb57c0 Gjs_librepods_krishhh_dev_indicator_Notebook:insensitive ("Controls")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.769: st_widget_get_theme_node called on the widget [0x5625a3fb7d90 StWidget:insensitive ("Noise Control")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.769: st_widget_get_theme_node called on the widget [0x5625a3fb8ea0 StBoxLayout.librepods-tab-page:insensitive ("Noise Control")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.769: st_widget_get_theme_node called on the widget [0x5625a3f59f00 Gjs_librepods_krishhh_dev_indicator_NoiseControlMenuItem.popup-menu-item librepods-noise-item ("Noise Control")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.769: st_widget_get_theme_node called on the widget [0x5625a3f68690 StIcon.popup-menu-icon:insensitive] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.769: st_widget_get_theme_node called on the widget [0x5625a3fb57c0 Gjs_librepods_krishhh_dev_indicator_Notebook:insensitive ("Controls")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.770: st_widget_get_theme_node called on the widget [0x5625a3fb7d90 StWidget:insensitive ("Noise Control")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.770: st_widget_get_theme_node called on the widget [0x5625a3fb8ea0 StBoxLayout.librepods-tab-page:insensitive ("Noise Control")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.770: st_widget_get_theme_node called on the widget [0x5625a3fba1c0 StBoxLayout.librepods-toggle-row:insensitive ("Conversation")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.770: st_widget_get_theme_node called on the widget [0x5625a3fb57c0 Gjs_librepods_krishhh_dev_indicator_Notebook:insensitive ("Controls")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.770: st_widget_get_theme_node called on the widget [0x5625a3fb7d90 StWidget:insensitive ("Noise Control")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.770: st_widget_get_theme_node called on the widget [0x5625a3fb8ea0 StBoxLayout.librepods-tab-page:insensitive ("Noise Control")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.770: st_widget_get_theme_node called on the widget [0x5625a3fba1c0 StBoxLayout.librepods-toggle-row:insensitive ("Conversation")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.770: st_widget_get_theme_node called on the widget [0x5625a3f92930 Gjs_librepods_krishhh_dev_indicator_ConversationDetectToggle.quick-toggle button ("Conversation")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.770: st_widget_get_theme_node called on the widget [0x5625a3fb57c0 Gjs_librepods_krishhh_dev_indicator_Notebook:insensitive ("Controls")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.770: st_widget_get_theme_node called on the widget [0x5625a3fb7d90 StWidget:insensitive ("Noise Control")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.770: st_widget_get_theme_node called on the widget [0x5625a3fb8ea0 StBoxLayout.librepods-tab-page:insensitive ("Noise Control")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.770: st_widget_get_theme_node called on the widget [0x5625a3fba1c0 StBoxLayout.librepods-toggle-row:insensitive ("Conversation")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.770: st_widget_get_theme_node called on the widget [0x5625a3f92930 Gjs_librepods_krishhh_dev_indicator_ConversationDetectToggle.quick-toggle button ("Conversation")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.770: st_widget_get_theme_node called on the widget [0x5625a3f94080 StBoxLayout:insensitive ("Conversation")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.770: st_widget_get_theme_node called on the widget [0x5625a3fb57c0 Gjs_librepods_krishhh_dev_indicator_Notebook:insensitive ("Controls")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.770: st_widget_get_theme_node called on the widget [0x5625a3fb7d90 StWidget:insensitive ("Noise Control")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.770: st_widget_get_theme_node called on the widget [0x5625a3fb8ea0 StBoxLayout.librepods-tab-page:insensitive ("Noise Control")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.770: st_widget_get_theme_node called on the widget [0x5625a3fba1c0 StBoxLayout.librepods-toggle-row:insensitive ("Conversation")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.770: st_widget_get_theme_node called on the widget [0x5625a3f92930 Gjs_librepods_krishhh_dev_indicator_ConversationDetectToggle.quick-toggle button ("Conversation")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.770: st_widget_get_theme_node called on the widget [0x5625a3f94080 StBoxLayout:insensitive ("Conversation")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.770: st_widget_get_theme_node called on the widget [0x5625a3f95380 StIcon.quick-toggle-icon:insensitive] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.770: st_widget_get_theme_node called on the widget [0x5625a3fb57c0 Gjs_librepods_krishhh_dev_indicator_Notebook:insensitive ("Controls")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.770: st_widget_get_theme_node called on the widget [0x5625a3fb7d90 StWidget:insensitive ("Noise Control")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.770: st_widget_get_theme_node called on the widget [0x5625a3fb8ea0 StBoxLayout.librepods-tab-page:insensitive ("Noise Control")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.770: st_widget_get_theme_node called on the widget [0x5625a3fba1c0 StBoxLayout.librepods-toggle-row:insensitive ("Conversation")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.770: st_widget_get_theme_node called on the widget [0x5625a3f92930 Gjs_librepods_krishhh_dev_indicator_ConversationDetectToggle.quick-toggle button ("Conversation")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.770: st_widget_get_theme_node called on the widget [0x5625a3f94080 StBoxLayout:insensitive ("Conversation")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.770: st_widget_get_theme_node called on the widget [0x5625a3fa1660 StBoxLayout:insensitive ("Conversation")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.770: st_widget_get_theme_node called on the widget [0x5625a3fb57c0 Gjs_librepods_krishhh_dev_indicator_Notebook:insensitive ("Controls")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.770: st_widget_get_theme_node called on the widget [0x5625a3fb7d90 StWidget:insensitive ("Noise Control")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.770: st_widget_get_theme_node called on the widget [0x5625a3fb8ea0 StBoxLayout.librepods-tab-page:insensitive ("Noise Control")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.770: st_widget_get_theme_node called on the widget [0x5625a3fba1c0 StBoxLayout.librepods-toggle-row:insensitive ("Conversation")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.770: st_widget_get_theme_node called on the widget [0x5625a3f92930 Gjs_librepods_krishhh_dev_indicator_ConversationDetectToggle.quick-toggle button ("Conversation")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.770: st_widget_get_theme_node called on the widget [0x5625a3f94080 StBoxLayout:insensitive ("Conversation")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.770: st_widget_get_theme_node called on the widget [0x5625a3fa1660 StBoxLayout:insensitive ("Conversation")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.770: st_widget_get_theme_node called on the widget [0x5625a3f97270 StLabel.quick-toggle-title:insensitive ("Conversation")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.770: st_widget_get_theme_node called on the widget [0x5625a3fb57c0 Gjs_librepods_krishhh_dev_indicator_Notebook:insensitive ("Controls")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.770: st_widget_get_theme_node called on the widget [0x5625a3fb7d90 StWidget:insensitive ("Noise Control")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.770: st_widget_get_theme_node called on the widget [0x5625a3fb8ea0 StBoxLayout.librepods-tab-page:insensitive ("Noise Control")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.770: st_widget_get_theme_node called on the widget [0x5625a3fba1c0 StBoxLayout.librepods-toggle-row:insensitive ("Conversation")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.770: st_widget_get_theme_node called on the widget [0x5625a3f92930 Gjs_librepods_krishhh_dev_indicator_ConversationDetectToggle.quick-toggle button ("Conversation")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.770: st_widget_get_theme_node called on the widget [0x5625a3f94080 StBoxLayout:insensitive ("Conversation")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.770: st_widget_get_theme_node called on the widget [0x5625a3fa1660 StBoxLayout:insensitive ("Conversation")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.770: st_widget_get_theme_node called on the widget [0x5625a3f9c420 StLabel.quick-toggle-subtitle:insensitive ("Off")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.770: st_widget_get_theme_node called on the widget [0x5625a3fb57c0 Gjs_librepods_krishhh_dev_indicator_Notebook:insensitive ("Controls")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.770: st_widget_get_theme_node called on the widget [0x5625a3fb7d90 StWidget:insensitive ("Noise Control")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.770: st_widget_get_theme_node called on the widget [0x5625a3fb8ea0 StBoxLayout.librepods-tab-page:insensitive ("Noise Control")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.770: st_widget_get_theme_node called on the widget [0x5625a3fba1c0 StBoxLayout.librepods-toggle-row:insensitive ("Conversation")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.770: st_widget_get_theme_node called on the widget [0x5625a3fa4220 Gjs_librepods_krishhh_dev_indicator_PersonalizedVolumeToggle.quick-toggle button ("Personalized Volume")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.770: st_widget_get_theme_node called on the widget [0x5625a3fb57c0 Gjs_librepods_krishhh_dev_indicator_Notebook:insensitive ("Controls")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.770: st_widget_get_theme_node called on the widget [0x5625a3fb7d90 StWidget:insensitive ("Noise Control")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.770: st_widget_get_theme_node called on the widget [0x5625a3fb8ea0 StBoxLayout.librepods-tab-page:insensitive ("Noise Control")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.770: st_widget_get_theme_node called on the widget [0x5625a3fba1c0 StBoxLayout.librepods-toggle-row:insensitive ("Conversation")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.770: st_widget_get_theme_node called on the widget [0x5625a3fa4220 Gjs_librepods_krishhh_dev_indicator_PersonalizedVolumeToggle.quick-toggle button ("Personalized Volume")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.770: st_widget_get_theme_node called on the widget [0x5625a3fa5920 StBoxLayout:insensitive ("Personalized Volume")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.770: st_widget_get_theme_node called on the widget [0x5625a3fb57c0 Gjs_librepods_krishhh_dev_indicator_Notebook:insensitive ("Controls")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.770: st_widget_get_theme_node called on the widget [0x5625a3fb7d90 StWidget:insensitive ("Noise Control")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.770: st_widget_get_theme_node called on the widget [0x5625a3fb8ea0 StBoxLayout.librepods-tab-page:insensitive ("Noise Control")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.770: st_widget_get_theme_node called on the widget [0x5625a3fba1c0 StBoxLayout.librepods-toggle-row:insensitive ("Conversation")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.770: st_widget_get_theme_node called on the widget [0x5625a3fa4220 Gjs_librepods_krishhh_dev_indicator_PersonalizedVolumeToggle.quick-toggle button ("Personalized Volume")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.770: st_widget_get_theme_node called on the widget [0x5625a3fa5920 StBoxLayout:insensitive ("Personalized Volume")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.770: st_widget_get_theme_node called on the widget [0x5625a3fa6be0 StIcon.quick-toggle-icon:insensitive] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.770: st_widget_get_theme_node called on the widget [0x5625a3fb57c0 Gjs_librepods_krishhh_dev_indicator_Notebook:insensitive ("Controls")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.770: st_widget_get_theme_node called on the widget [0x5625a3fb7d90 StWidget:insensitive ("Noise Control")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.770: st_widget_get_theme_node called on the widget [0x5625a3fb8ea0 StBoxLayout.librepods-tab-page:insensitive ("Noise Control")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.770: st_widget_get_theme_node called on the widget [0x5625a3fba1c0 StBoxLayout.librepods-toggle-row:insensitive ("Conversation")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.770: st_widget_get_theme_node called on the widget [0x5625a3fa4220 Gjs_librepods_krishhh_dev_indicator_PersonalizedVolumeToggle.quick-toggle button ("Personalized Volume")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.770: st_widget_get_theme_node called on the widget [0x5625a3fa5920 StBoxLayout:insensitive ("Personalized Volume")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.770: st_widget_get_theme_node called on the widget [0x5625a3fb2e50 StBoxLayout:insensitive ("Personalized Volume")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.770: st_widget_get_theme_node called on the widget [0x5625a3fb57c0 Gjs_librepods_krishhh_dev_indicator_Notebook:insensitive ("Controls")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.770: st_widget_get_theme_node called on the widget [0x5625a3fb7d90 StWidget:insensitive ("Noise Control")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.770: st_widget_get_theme_node called on the widget [0x5625a3fb8ea0 StBoxLayout.librepods-tab-page:insensitive ("Noise Control")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.770: st_widget_get_theme_node called on the widget [0x5625a3fba1c0 StBoxLayout.librepods-toggle-row:insensitive ("Conversation")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.770: st_widget_get_theme_node called on the widget [0x5625a3fa4220 Gjs_librepods_krishhh_dev_indicator_PersonalizedVolumeToggle.quick-toggle button ("Personalized Volume")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.770: st_widget_get_theme_node called on the widget [0x5625a3fa5920 StBoxLayout:insensitive ("Personalized Volume")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.770: st_widget_get_theme_node called on the widget [0x5625a3fb2e50 StBoxLayout:insensitive ("Personalized Volume")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.770: st_widget_get_theme_node called on the widget [0x5625a3fa8a60 StLabel.quick-toggle-title:insensitive ("Personalized Volume")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.770: st_widget_get_theme_node called on the widget [0x5625a3fb57c0 Gjs_librepods_krishhh_dev_indicator_Notebook:insensitive ("Controls")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.770: st_widget_get_theme_node called on the widget [0x5625a3fb7d90 StWidget:insensitive ("Noise Control")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.770: st_widget_get_theme_node called on the widget [0x5625a3fb8ea0 StBoxLayout.librepods-tab-page:insensitive ("Noise Control")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.770: st_widget_get_theme_node called on the widget [0x5625a3fba1c0 StBoxLayout.librepods-toggle-row:insensitive ("Conversation")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.770: st_widget_get_theme_node called on the widget [0x5625a3fa4220 Gjs_librepods_krishhh_dev_indicator_PersonalizedVolumeToggle.quick-toggle button ("Personalized Volume")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.770: st_widget_get_theme_node called on the widget [0x5625a3fa5920 StBoxLayout:insensitive ("Personalized Volume")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.770: st_widget_get_theme_node called on the widget [0x5625a3fb2e50 StBoxLayout:insensitive ("Personalized Volume")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.770: st_widget_get_theme_node called on the widget [0x5625a3fadc10 StLabel.quick-toggle-subtitle:insensitive ("Off")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.770: st_widget_get_theme_node called on the widget [0x5625a3fb57c0 Gjs_librepods_krishhh_dev_indicator_Notebook:insensitive ("Controls")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.770: st_widget_get_theme_node called on the widget [0x5625a3fb7d90 StWidget:insensitive ("Noise Control")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.771: st_widget_get_theme_node called on the widget [0x5625a3fb8ea0 StBoxLayout.librepods-tab-page:insensitive ("Noise Control")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.771: st_widget_get_theme_node called on the widget [0x5625a3fb57c0 Gjs_librepods_krishhh_dev_indicator_Notebook:insensitive ("Controls")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.771: st_widget_get_theme_node called on the widget [0x5625a3fb7d90 StWidget:insensitive ("Noise Control")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.771: st_widget_get_theme_node called on the widget [0x5625a3fb8ea0 StBoxLayout.librepods-tab-page:insensitive ("Noise Control")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.771: st_widget_get_theme_node called on the widget [0x5625a3f59f00 Gjs_librepods_krishhh_dev_indicator_NoiseControlMenuItem.popup-menu-item librepods-noise-item ("Noise Control")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.771: st_widget_get_theme_node called on the widget [0x5625a3fb57c0 Gjs_librepods_krishhh_dev_indicator_Notebook:insensitive ("Controls")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.771: st_widget_get_theme_node called on the widget [0x5625a3fb7d90 StWidget:insensitive ("Noise Control")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.771: st_widget_get_theme_node called on the widget [0x5625a3fb8ea0 StBoxLayout.librepods-tab-page:insensitive ("Noise Control")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.771: st_widget_get_theme_node called on the widget [0x5625a3f59f00 Gjs_librepods_krishhh_dev_indicator_NoiseControlMenuItem.popup-menu-item librepods-noise-item ("Noise Control")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.771: st_widget_get_theme_node called on the widget [0x5625a3f5cc70 StIcon.popup-menu-icon:insensitive] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.771: st_widget_get_theme_node called on the widget [0x5625a3fb57c0 Gjs_librepods_krishhh_dev_indicator_Notebook:insensitive ("Controls")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.771: st_widget_get_theme_node called on the widget [0x5625a3fb7d90 StWidget:insensitive ("Noise Control")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.771: st_widget_get_theme_node called on the widget [0x5625a3fb8ea0 StBoxLayout.librepods-tab-page:insensitive ("Noise Control")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.771: st_widget_get_theme_node called on the widget [0x5625a3f59f00 Gjs_librepods_krishhh_dev_indicator_NoiseControlMenuItem.popup-menu-item librepods-noise-item ("Noise Control")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.771: st_widget_get_theme_node called on the widget [0x5625a3f5def0 StLabel:insensitive ("Noise Control")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.771: st_widget_get_theme_node called on the widget [0x5625a3fb57c0 Gjs_librepods_krishhh_dev_indicator_Notebook:insensitive ("Controls")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.771: st_widget_get_theme_node called on the widget [0x5625a3fb7d90 StWidget:insensitive ("Noise Control")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.771: st_widget_get_theme_node called on the widget [0x5625a3fb8ea0 StBoxLayout.librepods-tab-page:insensitive ("Noise Control")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.771: st_widget_get_theme_node called on the widget [0x5625a3f59f00 Gjs_librepods_krishhh_dev_indicator_NoiseControlMenuItem.popup-menu-item librepods-noise-item ("Noise Control")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.771: st_widget_get_theme_node called on the widget [0x5625a3f63280 StLabel.popup-status-label:insensitive ("Off")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.771: st_widget_get_theme_node called on the widget [0x5625a3fb57c0 Gjs_librepods_krishhh_dev_indicator_Notebook:insensitive ("Controls")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.771: st_widget_get_theme_node called on the widget [0x5625a3fb7d90 StWidget:insensitive ("Noise Control")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.771: st_widget_get_theme_node called on the widget [0x5625a3fb8ea0 StBoxLayout.librepods-tab-page:insensitive ("Noise Control")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.771: st_widget_get_theme_node called on the widget [0x5625a3f59f00 Gjs_librepods_krishhh_dev_indicator_NoiseControlMenuItem.popup-menu-item librepods-noise-item ("Noise Control")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.771: st_widget_get_theme_node called on the widget [0x5625a3f68690 StIcon.popup-menu-icon:insensitive] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.771: st_widget_get_theme_node called on the widget [0x5625a3fb57c0 Gjs_librepods_krishhh_dev_indicator_Notebook:insensitive ("Controls")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.771: st_widget_get_theme_node called on the widget [0x5625a3fb7d90 StWidget:insensitive ("Noise Control")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.771: st_widget_get_theme_node called on the widget [0x5625a3fb8ea0 StBoxLayout.librepods-tab-page:insensitive ("Noise Control")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.771: st_widget_get_theme_node called on the widget [0x5625a3fba1c0 StBoxLayout.librepods-toggle-row:insensitive ("Conversation")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.771: st_widget_get_theme_node called on the widget [0x5625a3fb57c0 Gjs_librepods_krishhh_dev_indicator_Notebook:insensitive ("Controls")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.771: st_widget_get_theme_node called on the widget [0x5625a3fb7d90 StWidget:insensitive ("Noise Control")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.771: st_widget_get_theme_node called on the widget [0x5625a3fb8ea0 StBoxLayout.librepods-tab-page:insensitive ("Noise Control")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.771: st_widget_get_theme_node called on the widget [0x5625a3fba1c0 StBoxLayout.librepods-toggle-row:insensitive ("Conversation")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.771: st_widget_get_theme_node called on the widget [0x5625a3f92930 Gjs_librepods_krishhh_dev_indicator_ConversationDetectToggle.quick-toggle button ("Conversation")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.771: st_widget_get_theme_node called on the widget [0x5625a3fb57c0 Gjs_librepods_krishhh_dev_indicator_Notebook:insensitive ("Controls")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.771: st_widget_get_theme_node called on the widget [0x5625a3fb7d90 StWidget:insensitive ("Noise Control")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.771: st_widget_get_theme_node called on the widget [0x5625a3fb8ea0 StBoxLayout.librepods-tab-page:insensitive ("Noise Control")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.771: st_widget_get_theme_node called on the widget [0x5625a3fba1c0 StBoxLayout.librepods-toggle-row:insensitive ("Conversation")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.771: st_widget_get_theme_node called on the widget [0x5625a3f92930 Gjs_librepods_krishhh_dev_indicator_ConversationDetectToggle.quick-toggle button ("Conversation")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.771: st_widget_get_theme_node called on the widget [0x5625a3f94080 StBoxLayout:insensitive ("Conversation")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.771: st_widget_get_theme_node called on the widget [0x5625a3fb57c0 Gjs_librepods_krishhh_dev_indicator_Notebook:insensitive ("Controls")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.771: st_widget_get_theme_node called on the widget [0x5625a3fb7d90 StWidget:insensitive ("Noise Control")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.771: st_widget_get_theme_node called on the widget [0x5625a3fb8ea0 StBoxLayout.librepods-tab-page:insensitive ("Noise Control")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.771: st_widget_get_theme_node called on the widget [0x5625a3fba1c0 StBoxLayout.librepods-toggle-row:insensitive ("Conversation")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.771: st_widget_get_theme_node called on the widget [0x5625a3f92930 Gjs_librepods_krishhh_dev_indicator_ConversationDetectToggle.quick-toggle button ("Conversation")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.771: st_widget_get_theme_node called on the widget [0x5625a3f94080 StBoxLayout:insensitive ("Conversation")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.771: st_widget_get_theme_node called on the widget [0x5625a3f95380 StIcon.quick-toggle-icon:insensitive] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.771: st_widget_get_theme_node called on the widget [0x5625a3fb57c0 Gjs_librepods_krishhh_dev_indicator_Notebook:insensitive ("Controls")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.771: st_widget_get_theme_node called on the widget [0x5625a3fb7d90 StWidget:insensitive ("Noise Control")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.771: st_widget_get_theme_node called on the widget [0x5625a3fb8ea0 StBoxLayout.librepods-tab-page:insensitive ("Noise Control")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.771: st_widget_get_theme_node called on the widget [0x5625a3fba1c0 StBoxLayout.librepods-toggle-row:insensitive ("Conversation")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.771: st_widget_get_theme_node called on the widget [0x5625a3f92930 Gjs_librepods_krishhh_dev_indicator_ConversationDetectToggle.quick-toggle button ("Conversation")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.771: st_widget_get_theme_node called on the widget [0x5625a3f94080 StBoxLayout:insensitive ("Conversation")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.771: st_widget_get_theme_node called on the widget [0x5625a3fa1660 StBoxLayout:insensitive ("Conversation")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.771: st_widget_get_theme_node called on the widget [0x5625a3fb57c0 Gjs_librepods_krishhh_dev_indicator_Notebook:insensitive ("Controls")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.771: st_widget_get_theme_node called on the widget [0x5625a3fb7d90 StWidget:insensitive ("Noise Control")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.771: st_widget_get_theme_node called on the widget [0x5625a3fb8ea0 StBoxLayout.librepods-tab-page:insensitive ("Noise Control")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.771: st_widget_get_theme_node called on the widget [0x5625a3fba1c0 StBoxLayout.librepods-toggle-row:insensitive ("Conversation")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.771: st_widget_get_theme_node called on the widget [0x5625a3f92930 Gjs_librepods_krishhh_dev_indicator_ConversationDetectToggle.quick-toggle button ("Conversation")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.771: st_widget_get_theme_node called on the widget [0x5625a3f94080 StBoxLayout:insensitive ("Conversation")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.771: st_widget_get_theme_node called on the widget [0x5625a3fa1660 StBoxLayout:insensitive ("Conversation")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.771: st_widget_get_theme_node called on the widget [0x5625a3f97270 StLabel.quick-toggle-title:insensitive ("Conversation")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.771: st_widget_get_theme_node called on the widget [0x5625a3fb57c0 Gjs_librepods_krishhh_dev_indicator_Notebook:insensitive ("Controls")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.771: st_widget_get_theme_node called on the widget [0x5625a3fb7d90 StWidget:insensitive ("Noise Control")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.771: st_widget_get_theme_node called on the widget [0x5625a3fb8ea0 StBoxLayout.librepods-tab-page:insensitive ("Noise Control")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.771: st_widget_get_theme_node called on the widget [0x5625a3fba1c0 StBoxLayout.librepods-toggle-row:insensitive ("Conversation")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.771: st_widget_get_theme_node called on the widget [0x5625a3f92930 Gjs_librepods_krishhh_dev_indicator_ConversationDetectToggle.quick-toggle button ("Conversation")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.771: st_widget_get_theme_node called on the widget [0x5625a3f94080 StBoxLayout:insensitive ("Conversation")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.771: st_widget_get_theme_node called on the widget [0x5625a3fa1660 StBoxLayout:insensitive ("Conversation")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.771: st_widget_get_theme_node called on the widget [0x5625a3f9c420 StLabel.quick-toggle-subtitle:insensitive ("Off")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.771: st_widget_get_theme_node called on the widget [0x5625a3fb57c0 Gjs_librepods_krishhh_dev_indicator_Notebook:insensitive ("Controls")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.771: st_widget_get_theme_node called on the widget [0x5625a3fb7d90 StWidget:insensitive ("Noise Control")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.771: st_widget_get_theme_node called on the widget [0x5625a3fb8ea0 StBoxLayout.librepods-tab-page:insensitive ("Noise Control")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.771: st_widget_get_theme_node called on the widget [0x5625a3fba1c0 StBoxLayout.librepods-toggle-row:insensitive ("Conversation")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.771: st_widget_get_theme_node called on the widget [0x5625a3fa4220 Gjs_librepods_krishhh_dev_indicator_PersonalizedVolumeToggle.quick-toggle button ("Personalized Volume")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.771: st_widget_get_theme_node called on the widget [0x5625a3fb57c0 Gjs_librepods_krishhh_dev_indicator_Notebook:insensitive ("Controls")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.771: st_widget_get_theme_node called on the widget [0x5625a3fb7d90 StWidget:insensitive ("Noise Control")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.771: st_widget_get_theme_node called on the widget [0x5625a3fb8ea0 StBoxLayout.librepods-tab-page:insensitive ("Noise Control")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.771: st_widget_get_theme_node called on the widget [0x5625a3fba1c0 StBoxLayout.librepods-toggle-row:insensitive ("Conversation")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.771: st_widget_get_theme_node called on the widget [0x5625a3fa4220 Gjs_librepods_krishhh_dev_indicator_PersonalizedVolumeToggle.quick-toggle button ("Personalized Volume")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.771: st_widget_get_theme_node called on the widget [0x5625a3fa5920 StBoxLayout:insensitive ("Personalized Volume")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.771: st_widget_get_theme_node called on the widget [0x5625a3fb57c0 Gjs_librepods_krishhh_dev_indicator_Notebook:insensitive ("Controls")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.771: st_widget_get_theme_node called on the widget [0x5625a3fb7d90 StWidget:insensitive ("Noise Control")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.771: st_widget_get_theme_node called on the widget [0x5625a3fb8ea0 StBoxLayout.librepods-tab-page:insensitive ("Noise Control")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.771: st_widget_get_theme_node called on the widget [0x5625a3fba1c0 StBoxLayout.librepods-toggle-row:insensitive ("Conversation")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.771: st_widget_get_theme_node called on the widget [0x5625a3fa4220 Gjs_librepods_krishhh_dev_indicator_PersonalizedVolumeToggle.quick-toggle button ("Personalized Volume")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.771: st_widget_get_theme_node called on the widget [0x5625a3fa5920 StBoxLayout:insensitive ("Personalized Volume")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.771: st_widget_get_theme_node called on the widget [0x5625a3fa6be0 StIcon.quick-toggle-icon:insensitive] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.771: st_widget_get_theme_node called on the widget [0x5625a3fb57c0 Gjs_librepods_krishhh_dev_indicator_Notebook:insensitive ("Controls")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.772: st_widget_get_theme_node called on the widget [0x5625a3fb7d90 StWidget:insensitive ("Noise Control")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.772: st_widget_get_theme_node called on the widget [0x5625a3fb8ea0 StBoxLayout.librepods-tab-page:insensitive ("Noise Control")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.772: st_widget_get_theme_node called on the widget [0x5625a3fba1c0 StBoxLayout.librepods-toggle-row:insensitive ("Conversation")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.772: st_widget_get_theme_node called on the widget [0x5625a3fa4220 Gjs_librepods_krishhh_dev_indicator_PersonalizedVolumeToggle.quick-toggle button ("Personalized Volume")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.772: st_widget_get_theme_node called on the widget [0x5625a3fa5920 StBoxLayout:insensitive ("Personalized Volume")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.772: st_widget_get_theme_node called on the widget [0x5625a3fb2e50 StBoxLayout:insensitive ("Personalized Volume")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.772: st_widget_get_theme_node called on the widget [0x5625a3fb57c0 Gjs_librepods_krishhh_dev_indicator_Notebook:insensitive ("Controls")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.772: st_widget_get_theme_node called on the widget [0x5625a3fb7d90 StWidget:insensitive ("Noise Control")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.772: st_widget_get_theme_node called on the widget [0x5625a3fb8ea0 StBoxLayout.librepods-tab-page:insensitive ("Noise Control")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.772: st_widget_get_theme_node called on the widget [0x5625a3fba1c0 StBoxLayout.librepods-toggle-row:insensitive ("Conversation")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.772: st_widget_get_theme_node called on the widget [0x5625a3fa4220 Gjs_librepods_krishhh_dev_indicator_PersonalizedVolumeToggle.quick-toggle button ("Personalized Volume")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.772: st_widget_get_theme_node called on the widget [0x5625a3fa5920 StBoxLayout:insensitive ("Personalized Volume")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.772: st_widget_get_theme_node called on the widget [0x5625a3fb2e50 StBoxLayout:insensitive ("Personalized Volume")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.772: st_widget_get_theme_node called on the widget [0x5625a3fa8a60 StLabel.quick-toggle-title:insensitive ("Personalized Volume")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.772: st_widget_get_theme_node called on the widget [0x5625a3fb57c0 Gjs_librepods_krishhh_dev_indicator_Notebook:insensitive ("Controls")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.772: st_widget_get_theme_node called on the widget [0x5625a3fb7d90 StWidget:insensitive ("Noise Control")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.772: st_widget_get_theme_node called on the widget [0x5625a3fb8ea0 StBoxLayout.librepods-tab-page:insensitive ("Noise Control")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.772: st_widget_get_theme_node called on the widget [0x5625a3fba1c0 StBoxLayout.librepods-toggle-row:insensitive ("Conversation")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.772: st_widget_get_theme_node called on the widget [0x5625a3fa4220 Gjs_librepods_krishhh_dev_indicator_PersonalizedVolumeToggle.quick-toggle button ("Personalized Volume")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.772: st_widget_get_theme_node called on the widget [0x5625a3fa5920 StBoxLayout:insensitive ("Personalized Volume")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.772: st_widget_get_theme_node called on the widget [0x5625a3fb2e50 StBoxLayout:insensitive ("Personalized Volume")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.772: st_widget_get_theme_node called on the widget [0x5625a3fadc10 StLabel.quick-toggle-subtitle:insensitive ("Off")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.772: st_widget_get_theme_node called on the widget [0x5625a3fb57c0 Gjs_librepods_krishhh_dev_indicator_Notebook:insensitive ("Controls")] which is not in the stage.
-
-(gnome-shell:244426): St-CRITICAL **: 00:51:16.772: st_widget_get_theme_node called on the widget [0x5625a3fb7d90 StWidget:insensitive ("Noise Control")] which is not in the stage.
-dbus-daemon[244425]: [session uid=1000 pid=244425 pidfd=5] Activating service name='org.gnome.Settings.GlobalShortcutsProvider' requested by ':1.17' (uid=1000 pid=244560 comm="/usr/lib/xdg-desktop-portal-gnome")
-dbus-daemon[244425]: [session uid=1000 pid=244425 pidfd=5] Successfully activated service 'org.gnome.Shell.Extensions.GSConnect'
-dbus-daemon[244425]: [session uid=1000 pid=244425 pidfd=5] Successfully activated service 'org.gnome.Settings.GlobalShortcutsProvider'
-dbus-daemon[244425]: [session uid=1000 pid=244425 pidfd=5] Successfully activated service 'org.freedesktop.impl.portal.desktop.gnome'
-dbus-daemon[244425]: [session uid=1000 pid=244425 pidfd=5] Activating service name='org.freedesktop.impl.portal.desktop.gtk' requested by ':1.11' (uid=1000 pid=244524 comm="/usr/lib/xdg-desktop-portal")
-dbus-daemon[244425]: [session uid=1000 pid=244425 pidfd=5] Activating service name='org.freedesktop.systemd1' requested by ':1.4' (uid=1000 pid=244470 comm="/usr/bin/dbus-broker-launch --config-file=/usr/sha")
-dbus-daemon[244425]: [session uid=1000 pid=244425 pidfd=5] Activated service 'org.freedesktop.systemd1' failed: Process org.freedesktop.systemd1 exited with status 1
-dbus-daemon[244425]: [session uid=1000 pid=244425 pidfd=5] Successfully activated service 'org.freedesktop.impl.portal.desktop.gtk'
-
-** (xdg-desktop-portal-gtk:244755): WARNING **: 00:51:17.053: AT-SPI: Could not obtain desktop path or name
-
-dbus-daemon[244425]: [session uid=1000 pid=244425 pidfd=5] Activating service name='org.freedesktop.systemd1' requested by ':1.4' (uid=1000 pid=244470 comm="/usr/bin/dbus-broker-launch --config-file=/usr/sha")
-dbus-daemon[244425]: [session uid=1000 pid=244425 pidfd=5] Activated service 'org.freedesktop.systemd1' failed: Process org.freedesktop.systemd1 exited with status 1
-
-** (xdg-desktop-portal-gtk:244755): WARNING **: 00:51:17.055: atk-bridge: GetRegisteredEvents returned message with unknown signature
-
-** (xdg-desktop-portal-gtk:244755): WARNING **: 00:51:17.055: atk-bridge: get_device_events_reply: unknown signature
-dbus-daemon[244425]: [session uid=1000 pid=244425 pidfd=5] Activating service name='org.freedesktop.secrets' requested by ':1.11' (uid=1000 pid=244524 comm="/usr/lib/xdg-desktop-portal")
+libmutter-Message: 02:12:33.812: Running GNOME Shell (using mutter 50.4) as a Wayland display server
+libmutter-Message: 02:12:33.930: Added device '/dev/dri/renderD128' (nvidia-drm) using no mode setting.
+libmutter-Message: 02:12:33.948: Added device '/dev/dri/renderD129' (amdgpu) using no mode setting.
+libmutter-Message: 02:12:33.950: Created gbm renderer for '/dev/dri/renderD128'
+libmutter-Message: 02:12:33.951: Created gbm renderer for '/dev/dri/renderD129'
+libmutter-Message: 02:12:33.951: GPU /dev/dri/renderD128 selected primary given udev rule
+** Message: 02:12:33.952: Obtained a high priority EGL context
+dbus-daemon[12861]: [session uid=1000 pid=12861 pidfd=5] Activating service name='org.a11y.Bus' requested by ':1.2' (uid=1000 pid=12863 comm="gnome-shell --devkit --wayland")
+dbus-daemon[12861]: [session uid=1000 pid=12861 pidfd=5] Successfully activated service 'org.a11y.Bus'
+dbus-daemon[12861]: [session uid=1000 pid=12861 pidfd=5] Activating service name='org.freedesktop.systemd1' requested by ':1.4' (uid=1000 pid=12911 comm="/usr/bin/dbus-broker-launch --config-file=/usr/sha")
+libmutter-Message: 02:12:33.977: Using public X11 display :2, (using unix:/tmp/.X11-unix/X3 for managed services)
+
+(gnome-shell:12863): libmutter-WARNING **: 02:12:33.978: WL: unable to lock lockfile /run/user/1000/wayland-0.lock, maybe another compositor is running
+
+libmutter-Message: 02:12:33.978: Using Wayland display name 'wayland-1'
+dbus-daemon[12861]: [session uid=1000 pid=12861 pidfd=5] Activated service 'org.freedesktop.systemd1' failed: Process org.freedesktop.systemd1 exited with status 1
+dbus-daemon[12861]: [session uid=1000 pid=12861 pidfd=5] Activating service name='org.freedesktop.systemd1' requested by ':1.4' (uid=1000 pid=12911 comm="/usr/bin/dbus-broker-launch --config-file=/usr/sha")
+dbus-daemon[12861]: [session uid=1000 pid=12861 pidfd=5] Activated service 'org.freedesktop.systemd1' failed: Process org.freedesktop.systemd1 exited with status 1
+
+** (gnome-shell:12863): WARNING **: 02:12:34.028: AT-SPI: Could not obtain desktop path or name
+
+dbus-daemon[12861]: [session uid=1000 pid=12861 pidfd=5] Activating service name='org.freedesktop.systemd1' requested by ':1.4' (uid=1000 pid=12911 comm="/usr/bin/dbus-broker-launch --config-file=/usr/sha")
+dbus-daemon[12861]: [session uid=1000 pid=12861 pidfd=5] Activated service 'org.freedesktop.systemd1' failed: Process org.freedesktop.systemd1 exited with status 1
+GNOME Shell-Message: 02:12:34.252: Unset XDG_SESSION_ID, getCurrentSessionProxy() called outside a user session. Asking logind directly.
+dbus-daemon[12861]: [session uid=1000 pid=12861 pidfd=5] Activating service name='org.gnome.Shell.Screencast' requested by ':1.0' (uid=1000 pid=12863 comm="gnome-shell --devkit --wayland")
+dbus-daemon[12861]: [session uid=1000 pid=12861 pidfd=5] Activating service name='org.freedesktop.impl.portal.PermissionStore' requested by ':1.0' (uid=1000 pid=12863 comm="gnome-shell --devkit --wayland")
+dbus-daemon[12861]: [session uid=1000 pid=12861 pidfd=5] Activating service name='org.gnome.Shell.CalendarServer' requested by ':1.0' (uid=1000 pid=12863 comm="gnome-shell --devkit --wayland")
+dbus-daemon[12861]: [session uid=1000 pid=12861 pidfd=5] Successfully activated service 'org.freedesktop.impl.portal.PermissionStore'
+dbus-daemon[12861]: [session uid=1000 pid=12861 pidfd=5] Activating service name='org.gnome.evolution.dataserver.Sources5' requested by ':1.8' (uid=1000 pid=12942 comm="/usr/lib/gnome-shell-calendar-server")
+GNOME Shell-Message: 02:12:34.344: Registering session with GDM
+dbus-daemon[12861]: [session uid=1000 pid=12861 pidfd=5] Activating service name='org.gnome.Shell.Notifications' requested by ':1.0' (uid=1000 pid=12863 comm="gnome-shell --devkit --wayland")
+dbus-daemon[12861]: [session uid=1000 pid=12861 pidfd=5] Activating service name='org.freedesktop.portal.Desktop' requested by ':1.6' (uid=1000 pid=12924 comm="/usr/bin/gjs -m /usr/share/gnome-shell/org.gnome.S")
+dbus-daemon[12861]: [session uid=1000 pid=12861 pidfd=5] Activating service name='org.gnome.OnlineAccounts' requested by ':1.9' (uid=1000 pid=12953 comm="/usr/lib/evolution-source-registry")
+dbus-daemon[12861]: [session uid=1000 pid=12861 pidfd=5] Activating service name='org.freedesktop.portal.Documents' requested by ':1.11' (uid=1000 pid=12964 comm="/usr/lib/xdg-desktop-portal")
+
+** (gnome-shell:12863): WARNING **: 02:12:34.363: atk-bridge: GetRegisteredEvents returned message with unknown signature
+dbus-daemon[12861]: [session uid=1000 pid=12861 pidfd=5] Successfully activated service 'org.gnome.evolution.dataserver.Sources5'
+dbus-daemon[12861]: [session uid=1000 pid=12861 pidfd=5] Successfully activated service 'org.freedesktop.portal.Documents'
+
+(process:12917): mdk-WARNING **: 02:12:34.366: Invalid application ID 'org.gnome.Ptyxis'
+dbus-daemon[12861]: [session uid=1000 pid=12861 pidfd=5] Activating service name='org.freedesktop.impl.portal.desktop.gnome' requested by ':1.11' (uid=1000 pid=12964 comm="/usr/lib/xdg-desktop-portal")
+dbus-daemon[12861]: [session uid=1000 pid=12861 pidfd=5] Activating service name='org.gtk.GLib.PACRunner' requested by ':1.0' (uid=1000 pid=12863 comm="gnome-shell --devkit --wayland")
+dbus-daemon[12861]: [session uid=1000 pid=12861 pidfd=5] Activating service name='org.gnome.evolution.dataserver.Calendar8' requested by ':1.8' (uid=1000 pid=12942 comm="/usr/lib/gnome-shell-calendar-server")
+dbus-daemon[12861]: [session uid=1000 pid=12861 pidfd=5] Successfully activated service 'org.gnome.Shell.CalendarServer'
+dbus-daemon[12861]: [session uid=1000 pid=12861 pidfd=5] Successfully activated service 'org.gtk.GLib.PACRunner'
+goa-daemon-Message: 02:12:34.392: goa-daemon version 3.58.1 starting
+dbus-daemon[12861]: [session uid=1000 pid=12861 pidfd=5] Activating service name='org.gnome.Identity' requested by ':1.15' (uid=1000 pid=12973 comm="/usr/lib/goa-daemon")
+
+** (gnome-shell:12863): WARNING **: 02:12:34.394: atk-bridge: get_device_events_reply: unknown signature
+dbus-daemon[12861]: [session uid=1000 pid=12861 pidfd=5] Successfully activated service 'org.gnome.Shell.Notifications'
+GNOME Shell-Message: 02:12:34.398: Will monitor session 3
+dbus-daemon[12861]: [session uid=1000 pid=12861 pidfd=5] Successfully activated service 'org.gnome.OnlineAccounts'
+dbus-daemon[12861]: [session uid=1000 pid=12861 pidfd=5] Successfully activated service 'org.gnome.Identity'
+dbus-daemon[12861]: [session uid=1000 pid=12861 pidfd=5] Successfully activated service 'org.gnome.evolution.dataserver.Calendar8'
+GNOME Shell-Message: 02:12:34.413: Error looking up permission: GDBus.Error:org.freedesktop.portal.Error.NotFound: No entry for geolocation
+dbus-daemon[12861]: [session uid=1000 pid=12861 pidfd=5] Activating service name='org.gnome.evolution.dataserver.AddressBook10' requested by ':1.14' (uid=1000 pid=13007 comm="/usr/lib/evolution-calendar-factory")
+dbus-daemon[12861]: [session uid=1000 pid=12861 pidfd=5] Activating service name='org.freedesktop.portal.IBus' requested by ':1.18' (uid=1000 pid=13016 comm="ibus-daemon --panel disable")
+dbus-daemon[12861]: [session uid=1000 pid=12861 pidfd=5] Activating service name='org.gtk.vfs.UDisks2VolumeMonitor' requested by ':1.0' (uid=1000 pid=12863 comm="gnome-shell --devkit --wayland")
+dbus-daemon[12861]: [session uid=1000 pid=12861 pidfd=5] Successfully activated service 'org.freedesktop.portal.IBus'
+dbus-daemon[12861]: [session uid=1000 pid=12861 pidfd=5] Successfully activated service 'org.gtk.vfs.UDisks2VolumeMonitor'
+dbus-daemon[12861]: [session uid=1000 pid=12861 pidfd=5] Activating service name='org.gtk.vfs.MTPVolumeMonitor' requested by ':1.0' (uid=1000 pid=12863 comm="gnome-shell --devkit --wayland")
+dbus-daemon[12861]: [session uid=1000 pid=12861 pidfd=5] Successfully activated service 'org.gnome.evolution.dataserver.AddressBook10'
+dbus-daemon[12861]: [session uid=1000 pid=12861 pidfd=5] Successfully activated service 'org.gtk.vfs.MTPVolumeMonitor'
+dbus-daemon[12861]: [session uid=1000 pid=12861 pidfd=5] Activating service name='org.gtk.vfs.GPhoto2VolumeMonitor' requested by ':1.0' (uid=1000 pid=12863 comm="gnome-shell --devkit --wayland")
+dbus-daemon[12861]: [session uid=1000 pid=12861 pidfd=5] Successfully activated service 'org.gtk.vfs.GPhoto2VolumeMonitor'
+dbus-daemon[12861]: [session uid=1000 pid=12861 pidfd=5] Activating service name='org.gtk.vfs.GoaVolumeMonitor' requested by ':1.0' (uid=1000 pid=12863 comm="gnome-shell --devkit --wayland")
+dbus-daemon[12861]: [session uid=1000 pid=12861 pidfd=5] Successfully activated service 'org.gtk.vfs.GoaVolumeMonitor'
+dbus-daemon[12861]: [session uid=1000 pid=12861 pidfd=5] Activating service name='org.gtk.vfs.AfcVolumeMonitor' requested by ':1.0' (uid=1000 pid=12863 comm="gnome-shell --devkit --wayland")
+dbus-daemon[12861]: [session uid=1000 pid=12861 pidfd=5] Successfully activated service 'org.gtk.vfs.AfcVolumeMonitor'
+GNOME Shell-Message: 02:12:34.564: Failed to register AuthenticationAgent
+dbus-daemon[12861]: [session uid=1000 pid=12861 pidfd=5] Activating service name='ca.desrt.dconf' requested by ':1.0' (uid=1000 pid=12863 comm="gnome-shell --devkit --wayland")
+dbus-daemon[12861]: [session uid=1000 pid=12861 pidfd=5] Successfully activated service 'ca.desrt.dconf'
+dbus-daemon[12861]: [session uid=1000 pid=12861 pidfd=5] Reloaded configuration
+dbus-daemon[12861]: [session uid=1000 pid=12861 pidfd=5] Reloaded configuration
+dbus-daemon[12861]: [session uid=1000 pid=12861 pidfd=5] Activating service name='org.gnome.Shell.Extensions.GSConnect' requested by ':1.0' (uid=1000 pid=12863 comm="gnome-shell --devkit --wayland")
+
+(gnome-shell:12863): GNOME Shell-CRITICAL **: 02:12:34.866: Extension librepods@krishhh.dev: TypeError: this._switch.set_state is not a function
+
+Stack trace:
+  _updateFromState@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/indicator.js:264:22
+  _init@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/indicator.js:258:14
+  PopupBaseMenuItem@resource:///org/gnome/shell/ui/popupMenu.js:79:4
+  LibrePodsHeroToggle@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/indicator.js:213:1
+  _init@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/indicator.js:798:28
+  ButtonBox@resource:///org/gnome/shell/ui/panelMenu.js:10:1
+  PanelMenuButton@resource:///org/gnome/shell/ui/panelMenu.js:95:4
+  LibrePodsIndicator@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/indicator.js:761:1
+  enable@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/extension.js:8:27
+  _callExtensionEnable@resource:///org/gnome/shell/ui/extensionSystem.js:264:38
+  loadExtension@resource:///org/gnome/shell/ui/extensionSystem.js:431:32
+  async*_loadExtensions@resource:///org/gnome/shell/ui/extensionSystem.js:743:24
+  async*_enableAllExtensions@resource:///org/gnome/shell/ui/extensionSystem.js:749:48
+  _sessionUpdated@resource:///org/gnome/shell/ui/extensionSystem.js:784:20
+  async*init@resource:///org/gnome/shell/ui/extensionSystem.js:75:14
+  _initializeUI@resource:///org/gnome/shell/ui/main.js:323:22
+  start@resource:///org/gnome/shell/ui/main.js:182:11
+  @resource:///org/gnome/shell/ui/init.js:12:47
+  @resource:///org/gnome/shell/ui/init.js:20:20
+
+dbus-daemon[12861]: [session uid=1000 pid=12861 pidfd=5] Activating service name='org.librepods.Service' requested by ':1.0' (uid=1000 pid=12863 comm="gnome-shell --devkit --wayland")
+[2026-09-19T20:42:34Z INFO  librepods] Running in headless daemon mode (no GUI)
+dbus-daemon[12861]: [session uid=1000 pid=12861 pidfd=5] Successfully activated service 'org.librepods.Service'
+[2026-09-19T20:42:34Z INFO  librepods::dbus_server] D-Bus service org.librepods.Service available at /org/librepods/Service
+[2026-09-19T20:42:34Z WARN  librepods] Failed to start system tray (failed to register to the StatusNotifierWatcher: org.freedesktop.DBus.Error.ServiceUnknown: The name org.kde.StatusNotifierWatcher was not provided by any .service files); continuing without tray. Your environment may lack a StatusNotifier/AppIndicator watcher.
+[2026-09-19T20:42:34Z INFO  librepods] Listening for new connections.
+[2026-09-19T20:42:34Z INFO  librepods] Checking for connected devices...
+[2026-09-19T20:42:34Z INFO  librepods] Starting LE monitor...
+[2026-09-19T20:42:34Z INFO  librepods] Found connected AirPods: AirPods Pro, initializing.
+[2026-09-19T20:42:34Z INFO  librepods::devices::airpods] Creating new AirPodsDevice for A4:F6:E6:88:BA:ED
+[2026-09-19T20:42:34Z INFO  librepods::bluetooth::aacp] AACPManager connecting to A4:F6:E6:88:BA:ED on PSM 0x1001...
+
+(gnome-shell:12863): GNOME Shell-CRITICAL **: 02:12:34.898: [LibrePods] Initial DBus connect failed: InternalError: too much recursion
+logError@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:320:5
+logError@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:320:13
+logError@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:320:13
+logError@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:320:13
+logError@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:320:13
+logError@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:320:13
+logError@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:320:13
+logError@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:320:13
+logError@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:320:13
+logError@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:320:13
+logError@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:320:13
+logError@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:320:13
+logError@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:320:13
+logError@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:320:13
+logError@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:320:13
+logError@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:320:13
+logError@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:320:13
+logError@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:320:13
+logError@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:320:13
+logError@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:320:13
+logError@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:320:13
+logError@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:320:13
+logError@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:320:13
+logError@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:320:13
+logError@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:320:13
+logError@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:320:13
+logError@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:320:13
+logError@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:320:13
+logError@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:320:13
+logError@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:320:13
+logError@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:320:13
+logError@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:320:13
+logError@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:320:13
+logError@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:320:13
+logError@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:320:13
+logError@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:320:13
+logError@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:320:13
+logError@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:320:13
+logError@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:320:13
+logError@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:320:13
+logError@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:320:13
+logError@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:320:13
+logError@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:320:13
+logError@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:320:13
+logError@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:320:13
+logError@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:320:13
+logError@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:320:13
+logError@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:320:13
+logError@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:320:13
+logError@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:320:13
+logError@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:320:13
+logError@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:320:13
+logError@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:320:13
+logError@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:320:13
+logError@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:320:13
+logError@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:320:13
+logError@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:320:13
+logError@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:320:13
+logError@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:320:13
+logError@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:320:13
+logError@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:320:13
+logError@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:320:13
+logError@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:320:13
+logError@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:320:13
+logError@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:320:13
+logError@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:320:13
+logError@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:320:13
+logError@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:320:13
+logError@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:320:13
+logError@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:320:13
+logError@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:320:13
+logError@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:320:13
+logError@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:320:13
+logError@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:320:13
+logError@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:320:13
+logError@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:320:13
+logError@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:320:13
+logError@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:320:13
+logError@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:320:13
+logError@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:320:13
+logError@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:320:13
+logError@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:320:13
+logError@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:320:13
+logError@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:320:13
+logError@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:320:13
+logError@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:320:13
+logError@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:320:13
+logError@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:320:13
+logError@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:320:13
+logError@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:320:13
+logError@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:320:13
+logError@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:320:13
+logError@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:320:13
+logError@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:320:13
+logError@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:320:13
+logError@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:320:13
+logError@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:320:13
+logError@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:320:13
+logError@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:320:13
+logError@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:320:13
+logError@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:320:13
+logError@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:320:13
+logError@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:320:13
+logError@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:320:13
+logError@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:320:13
+logError@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:320:13
+logError@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:320:13
+logError@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:320:13
+logError@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:320:13
+logError@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:320:13
+logError@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:320:13
+logError@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:320:13
+logError@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:320:13
+logError@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:320:13
+logError@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:320:13
+logError@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:320:13
+logError@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:320:13
+logError@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:320:13
+logError@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:320:13
+logError@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:320:13
+logError@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:320:13
+logError@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:320:13
+logError@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:320:13
+logError@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:320:13
+logError@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:320:13
+logError@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:320:13
+logError@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:320:13
+logError@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:320:13
+
+
+(gnome-shell:12863): Gjs-CRITICAL **: 02:12:34.900: JS ERROR: too much recursion
+log@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:316:5
+log@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:316:8
+log@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:316:8
+log@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:316:8
+log@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:316:8
+log@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:316:8
+log@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:316:8
+log@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:316:8
+log@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:316:8
+log@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:316:8
+log@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:316:8
+log@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:316:8
+log@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:316:8
+log@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:316:8
+log@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:316:8
+log@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:316:8
+log@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:316:8
+log@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:316:8
+log@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:316:8
+log@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:316:8
+log@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:316:8
+log@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:316:8
+log@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:316:8
+log@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:316:8
+log@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:316:8
+log@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:316:8
+log@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:316:8
+log@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:316:8
+log@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:316:8
+log@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:316:8
+log@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:316:8
+log@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:316:8
+log@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:316:8
+log@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:316:8
+log@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:316:8
+log@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:316:8
+log@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:316:8
+log@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:316:8
+log@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:316:8
+log@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:316:8
+log@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:316:8
+log@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:316:8
+log@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:316:8
+log@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:316:8
+log@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:316:8
+log@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:316:8
+log@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:316:8
+log@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:316:8
+log@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:316:8
+log@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:316:8
+log@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:316:8
+log@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:316:8
+log@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:316:8
+log@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:316:8
+log@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:316:8
+log@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:316:8
+log@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:316:8
+log@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:316:8
+log@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:316:8
+log@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:316:8
+log@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:316:8
+log@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:316:8
+log@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:316:8
+log@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:316:8
+log@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:316:8
+log@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:316:8
+log@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:316:8
+log@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:316:8
+log@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:316:8
+log@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:316:8
+log@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:316:8
+log@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:316:8
+log@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:316:8
+log@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:316:8
+log@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:316:8
+log@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:316:8
+log@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:316:8
+log@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:316:8
+log@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:316:8
+log@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:316:8
+log@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:316:8
+log@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:316:8
+log@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:316:8
+log@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:316:8
+log@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:316:8
+log@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:316:8
+log@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:316:8
+log@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:316:8
+log@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:316:8
+log@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:316:8
+log@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:316:8
+log@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:316:8
+log@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:316:8
+log@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:316:8
+log@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:316:8
+log@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:316:8
+log@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:316:8
+log@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:316:8
+log@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:316:8
+log@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:316:8
+log@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:316:8
+log@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:316:8
+log@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:316:8
+log@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:316:8
+log@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:316:8
+log@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:316:8
+log@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:316:8
+log@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:316:8
+log@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:316:8
+log@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:316:8
+log@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:316:8
+log@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:316:8
+log@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:316:8
+log@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:316:8
+log@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:316:8
+log@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:316:8
+log@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:316:8
+log@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:316:8
+log@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:316:8
+log@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:316:8
+log@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:316:8
+log@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:316:8
+log@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:316:8
+log@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:316:8
+log@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:316:8
+log@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:316:8
+log@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:316:8
+log@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/dbus.js:316:8
+dbus-daemon[12861]: [session uid=1000 pid=12861 pidfd=5] Activating service name='org.gnome.Settings.GlobalShortcutsProvider' requested by ':1.17' (uid=1000 pid=12999 comm="/usr/lib/xdg-desktop-portal-gnome")
+dbus-daemon[12861]: [session uid=1000 pid=12861 pidfd=5] Successfully activated service 'org.gnome.Settings.GlobalShortcutsProvider'
+dbus-daemon[12861]: [session uid=1000 pid=12861 pidfd=5] Successfully activated service 'org.gnome.Shell.Extensions.GSConnect'
+dbus-daemon[12861]: [session uid=1000 pid=12861 pidfd=5] Successfully activated service 'org.freedesktop.impl.portal.desktop.gnome'
+dbus-daemon[12861]: [session uid=1000 pid=12861 pidfd=5] Activating service name='org.freedesktop.impl.portal.desktop.gtk' requested by ':1.11' (uid=1000 pid=12964 comm="/usr/lib/xdg-desktop-portal")
+dbus-daemon[12861]: [session uid=1000 pid=12861 pidfd=5] Activating service name='org.freedesktop.systemd1' requested by ':1.4' (uid=1000 pid=12911 comm="/usr/bin/dbus-broker-launch --config-file=/usr/sha")
+dbus-daemon[12861]: [session uid=1000 pid=12861 pidfd=5] Activated service 'org.freedesktop.systemd1' failed: Process org.freedesktop.systemd1 exited with status 1
+dbus-daemon[12861]: [session uid=1000 pid=12861 pidfd=5] Successfully activated service 'org.freedesktop.impl.portal.desktop.gtk'
+
+** (xdg-desktop-portal-gtk:13237): WARNING **: 02:12:35.066: AT-SPI: Could not obtain desktop path or name
+
+dbus-daemon[12861]: [session uid=1000 pid=12861 pidfd=5] Activating service name='org.freedesktop.systemd1' requested by ':1.4' (uid=1000 pid=12911 comm="/usr/bin/dbus-broker-launch --config-file=/usr/sha")
+dbus-daemon[12861]: [session uid=1000 pid=12861 pidfd=5] Activated service 'org.freedesktop.systemd1' failed: Process org.freedesktop.systemd1 exited with status 1
+
+** (xdg-desktop-portal-gtk:13237): WARNING **: 02:12:35.068: atk-bridge: GetRegisteredEvents returned message with unknown signature
+
+** (xdg-desktop-portal-gtk:13237): WARNING **: 02:12:35.068: atk-bridge: get_device_events_reply: unknown signature
+dbus-daemon[12861]: [session uid=1000 pid=12861 pidfd=5] Activating service name='org.freedesktop.secrets' requested by ':1.11' (uid=1000 pid=12964 comm="/usr/lib/xdg-desktop-portal")
 discover_other_daemon: 1GNOME_KEYRING_CONTROL=/run/user/1000/keyring
-dbus-daemon[244425]: [session uid=1000 pid=244425 pidfd=5] Successfully activated service 'org.freedesktop.portal.Desktop'
-dbus-daemon[244425]: [session uid=1000 pid=244425 pidfd=5] Activating service name='org.freedesktop.systemd1' requested by ':1.4' (uid=1000 pid=244470 comm="/usr/bin/dbus-broker-launch --config-file=/usr/sha")
-dbus-daemon[244425]: [session uid=1000 pid=244425 pidfd=5] Activated service 'org.freedesktop.systemd1' failed: Process org.freedesktop.systemd1 exited with status 1
-dbus-daemon[244425]: [session uid=1000 pid=244425 pidfd=5] Successfully activated service 'org.gnome.Shell.Screencast'
-dbus-daemon[244425]: [session uid=1000 pid=244425 pidfd=5] Activating service name='org.freedesktop.systemd1' requested by ':1.4' (uid=1000 pid=244470 comm="/usr/bin/dbus-broker-launch --config-file=/usr/sha")
-dbus-daemon[244425]: [session uid=1000 pid=244425 pidfd=5] Activated service 'org.freedesktop.systemd1' failed: Process org.freedesktop.systemd1 exited with status 1
-dbus-daemon[244425]: [session uid=1000 pid=244425 pidfd=5] Activating service name='org.freedesktop.systemd1' requested by ':1.4' (uid=1000 pid=244470 comm="/usr/bin/dbus-broker-launch --config-file=/usr/sha")
-dbus-daemon[244425]: [session uid=1000 pid=244425 pidfd=5] Activated service 'org.freedesktop.systemd1' failed: Process org.freedesktop.systemd1 exited with status 1
+dbus-daemon[12861]: [session uid=1000 pid=12861 pidfd=5] Successfully activated service 'org.freedesktop.portal.Desktop'
+dbus-daemon[12861]: [session uid=1000 pid=12861 pidfd=5] Activating service name='org.freedesktop.systemd1' requested by ':1.4' (uid=1000 pid=12911 comm="/usr/bin/dbus-broker-launch --config-file=/usr/sha")
+dbus-daemon[12861]: [session uid=1000 pid=12861 pidfd=5] Activated service 'org.freedesktop.systemd1' failed: Process org.freedesktop.systemd1 exited with status 1
+[2026-09-19T20:42:35Z INFO  librepods::bluetooth::aacp] L2CAP connection established with A4:F6:E6:88:BA:ED
+[2026-09-19T20:42:35Z INFO  librepods::devices::airpods] Sending handshake
+[2026-09-19T20:42:35Z WARN  librepods::audio::output] [pw] unloading stale hi-res module 536870916
+dbus-daemon[12861]: [session uid=1000 pid=12861 pidfd=5] Successfully activated service 'org.gnome.Shell.Screencast'
+dbus-daemon[12861]: [session uid=1000 pid=12861 pidfd=5] Activating service name='org.freedesktop.systemd1' requested by ':1.4' (uid=1000 pid=12911 comm="/usr/bin/dbus-broker-launch --config-file=/usr/sha")
+dbus-daemon[12861]: [session uid=1000 pid=12861 pidfd=5] Activated service 'org.freedesktop.systemd1' failed: Process org.freedesktop.systemd1 exited with status 1
+[2026-09-19T20:42:35Z INFO  librepods::audio::output] [pw] hi-res mic ready: select 'AirPodsHiRes' as your microphone
+[2026-09-19T20:42:35Z INFO  librepods::audio::hires_mic] [hires] activity monitor started, watching 'AirPodsHiRes'
+dbus-daemon[12861]: [session uid=1000 pid=12861 pidfd=5] Activating service name='org.freedesktop.systemd1' requested by ':1.4' (uid=1000 pid=12911 comm="/usr/bin/dbus-broker-launch --config-file=/usr/sha")
+dbus-daemon[12861]: [session uid=1000 pid=12861 pidfd=5] Activated service 'org.freedesktop.systemd1' failed: Process org.freedesktop.systemd1 exited with status 1
 
-** (gsconnect:244720): WARNING **: 00:51:17.153: AT-SPI: Could not obtain desktop path or name
+** (gsconnect:13187): WARNING **: 02:12:35.140: AT-SPI: Could not obtain desktop path or name
 
-dbus-daemon[244425]: [session uid=1000 pid=244425 pidfd=5] Activating service name='org.freedesktop.systemd1' requested by ':1.4' (uid=1000 pid=244470 comm="/usr/bin/dbus-broker-launch --config-file=/usr/sha")
-dbus-daemon[244425]: [session uid=1000 pid=244425 pidfd=5] Activated service 'org.freedesktop.systemd1' failed: Process org.freedesktop.systemd1 exited with status 1
+dbus-daemon[12861]: [session uid=1000 pid=12861 pidfd=5] Activating service name='org.freedesktop.systemd1' requested by ':1.4' (uid=1000 pid=12911 comm="/usr/bin/dbus-broker-launch --config-file=/usr/sha")
+dbus-daemon[12861]: [session uid=1000 pid=12861 pidfd=5] Activated service 'org.freedesktop.systemd1' failed: Process org.freedesktop.systemd1 exited with status 1
 
-** (gsconnect:244720): WARNING **: 00:51:17.155: atk-bridge: GetRegisteredEvents returned message with unknown signature
+** (gsconnect:13187): WARNING **: 02:12:35.142: atk-bridge: GetRegisteredEvents returned message with unknown signature
 
-** (gsconnect:244720): WARNING **: 00:51:17.155: atk-bridge: get_device_events_reply: unknown signature
+** (gsconnect:13187): WARNING **: 02:12:35.142: atk-bridge: get_device_events_reply: unknown signature
+[2026-09-19T20:42:35Z INFO  librepods::bluetooth::aacp] Received Information: AirPodsInformation { name: "AirPods Pro", model_number: "A3047", manufacturer: "Apple Inc.", serial_number: "K26QMT6HKC", version1: "90.3431000025000000.6807", version2: "90.3431000025000000.6807", hardware_revision: "1.0.0", updater_identifier: "com.apple.accessory.updater.app.71", left_serial_number: "H3RQ6E8S26JY", right_serial_number: "H3QQ7LWA26K0", version3: "9442752", le_keys: AirPodsLEKeys { irk: "", enc_key: "" } }
+[2026-09-19T20:42:35Z INFO  librepods::bluetooth::aacp] Received Control Command: ListeningMode, value: 01
+[2026-09-19T20:42:35Z INFO  librepods::bluetooth::aacp] Received Control Command: ClickHoldInterval, value: 00
+[2026-09-19T20:42:35Z INFO  librepods::bluetooth::aacp] Received Control Command: DoubleClickInterval, value: 00
+[2026-09-19T20:42:35Z INFO  librepods::bluetooth::aacp] Received Control Command: VolumeSwipeMode, value: 01
+[2026-09-19T20:42:35Z INFO  librepods::bluetooth::aacp] Received Control Command: VolumeSwipeInterval, value: 00
+[2026-09-19T20:42:35Z INFO  librepods::bluetooth::aacp] Received Control Command: ChimeVolume, value: 5050
+[2026-09-19T20:42:35Z INFO  librepods::bluetooth::aacp] Received Control Command: CallManagementConfig, value: 0003
 Invalid MIT-MAGIC-COOKIE-1 key
-dbus-daemon[244425]: [session uid=1000 pid=244425 pidfd=5] Activating service name='org.freedesktop.systemd1' requested by ':1.4' (uid=1000 pid=244470 comm="/usr/bin/dbus-broker-launch --config-file=/usr/sha")
-dbus-daemon[244425]: [session uid=1000 pid=244425 pidfd=5] Activated service 'org.freedesktop.systemd1' failed: Process org.freedesktop.systemd1 exited with status 1
+[2026-09-19T20:42:35Z INFO  librepods::bluetooth::aacp] Received Control Command: ConversationDetectConfig, value: 02
+[2026-09-19T20:42:35Z INFO  librepods::bluetooth::aacp] Received Control Command: AdaptiveVolumeConfig, value: 02
+[2026-09-19T20:42:35Z INFO  librepods::bluetooth::aacp] Received Control Command: Ssl, value: 02
+[2026-09-19T20:42:35Z INFO  librepods::bluetooth::aacp] Received Control Command: HearingAid, value: 0202
+[2026-09-19T20:42:35Z INFO  librepods::bluetooth::aacp] Received Control Command: HpsGainSwipe, value: 00
+[2026-09-19T20:42:35Z INFO  librepods::bluetooth::aacp] Received Control Command: HearingAssistConfig, value: 00
+[2026-09-19T20:42:35Z INFO  librepods::bluetooth::aacp] Received Control Command: AutoAncStrength, value: 00
+[2026-09-19T20:42:35Z INFO  librepods::bluetooth::aacp] Received Control Command: OneBudAncMode, value: 02
+[2026-09-19T20:42:35Z INFO  librepods::bluetooth::aacp] Received Control Command: SleepDetectionConfig, value: 02
+[2026-09-19T20:42:35Z ERROR librepods::bluetooth::aacp] Unknown Control Command identifier: 0x3e
+[2026-09-19T20:42:35Z INFO  librepods::devices::airpods] Setting feature flags
+dbus-daemon[12861]: [session uid=1000 pid=12861 pidfd=5] Activating service name='org.freedesktop.systemd1' requested by ':1.4' (uid=1000 pid=12911 comm="/usr/bin/dbus-broker-launch --config-file=/usr/sha")
+dbus-daemon[12861]: [session uid=1000 pid=12861 pidfd=5] Activated service 'org.freedesktop.systemd1' failed: Process org.freedesktop.systemd1 exited with status 1
 
-(mutter-devkit:244476): Gtk-CRITICAL **: 00:51:17.476: Unable to register the application: GDBus.Error:org.freedesktop.DBus.Error.NameHasNoOwner: Could not activate remote peer 'org.a11y.atspi.Registry': unit failed
-libmutter-Message: 00:51:17.514: Added virtual monitor Meta-0
-dbus-daemon[244425]: [session uid=1000 pid=244425 pidfd=5] Activating service name='org.gtk.vfs.Metadata' requested by ':1.0' (uid=1000 pid=244426 comm="gnome-shell --devkit --wayland")
-dbus-daemon[244425]: [session uid=1000 pid=244425 pidfd=5] Successfully activated service 'org.gtk.vfs.Metadata'
-dbus-daemon[244425]: [session uid=1000 pid=244425 pidfd=5] Activating service name='org.freedesktop.systemd1' requested by ':1.4' (uid=1000 pid=244470 comm="/usr/bin/dbus-broker-launch --config-file=/usr/sha")
-dbus-daemon[244425]: [session uid=1000 pid=244425 pidfd=5] Activated service 'org.freedesktop.systemd1' failed: Process org.freedesktop.systemd1 exited with status 1
+(mutter-devkit:12917): Gtk-CRITICAL **: 02:12:35.426: Unable to register the application: GDBus.Error:org.freedesktop.DBus.Error.NameHasNoOwner: Could not activate remote peer 'org.a11y.atspi.Registry': unit failed
+[2026-09-19T20:42:35Z INFO  librepods::bluetooth::aacp] Received Connected Devices: [ConnectedDevice { mac: "28:0C:50:0F:20:AC", info1: 2, info2: 2, type: None }]
+libmutter-Message: 02:12:35.454: Added virtual monitor Meta-0
+[2026-09-19T20:42:35Z INFO  librepods::bluetooth::aacp] Received Control Command: ListeningMode, value: 01
+dbus-daemon[12861]: [session uid=1000 pid=12861 pidfd=5] Activating service name='org.gtk.vfs.Metadata' requested by ':1.0' (uid=1000 pid=12863 comm="gnome-shell --devkit --wayland")
+dbus-daemon[12861]: [session uid=1000 pid=12861 pidfd=5] Successfully activated service 'org.gtk.vfs.Metadata'
+dbus-daemon[12861]: [session uid=1000 pid=12861 pidfd=5] Activating service name='org.freedesktop.systemd1' requested by ':1.4' (uid=1000 pid=12911 comm="/usr/bin/dbus-broker-launch --config-file=/usr/sha")
+dbus-daemon[12861]: [session uid=1000 pid=12861 pidfd=5] Activated service 'org.freedesktop.systemd1' failed: Process org.freedesktop.systemd1 exited with status 1
 
-(mutter-devkit:244476): Gtk-CRITICAL **: 00:51:17.806: Unable to register the application: GDBus.Error:org.freedesktop.DBus.Error.NameHasNoOwner: Could not activate remote peer 'org.a11y.atspi.Registry': unit failed
-GNOME Shell-Message: 00:51:18.897: GNOME Shell started at Sun Sep 20 2026 00:51:16 GMT+0530 (India Standard Time)
-GNOME Shell-Message: 00:51:18.898: Registering display with GDM
+(mutter-devkit:12917): Gtk-CRITICAL **: 02:12:35.643: Unable to register the application: GDBus.Error:org.freedesktop.DBus.Error.NameHasNoOwner: Could not activate remote peer 'org.a11y.atspi.Registry': unit failed
+[2026-09-19T20:42:35Z INFO  librepods::devices::airpods] Requesting notifications
+[2026-09-19T20:42:35Z INFO  librepods::devices::airpods] sending some packet
+[2026-09-19T20:42:35Z INFO  librepods::devices::airpods] Requesting Proximity Keys: IRK and ENC_KEY
+[2026-09-19T20:42:35Z INFO  librepods::media_controller] Starting playback listener loop
+[2026-09-19T20:42:35Z INFO  librepods::media_controller] Found audio device index for MAC A4:F6:E6:88:BA:ED: 89
+[2026-09-19T20:42:35Z INFO  librepods] No other managed devices found.
+[2026-09-19T20:42:35Z INFO  librepods] Listening for Bluetooth connections via D-Bus...
+[2026-09-19T20:42:35Z INFO  librepods::bluetooth::aacp] Received Battery Info: [BatteryInfo { component: Right, level: 64, status: NotCharging }, BatteryInfo { component: Left, level: 53, status: NotCharging }]
+[2026-09-19T20:42:35Z INFO  librepods::bluetooth::aacp] Received Audio Source: Some(AudioSource { mac: "28:0C:50:0F:20:AC", type: None })
+[2026-09-19T20:42:35Z INFO  librepods::bluetooth::aacp] Received Connected Devices: [ConnectedDevice { mac: "28:0C:50:0F:20:AC", info1: 2, info2: 2, type: None }]
+[2026-09-19T20:42:35Z INFO  librepods::bluetooth::aacp] Received Ear Detection Status: [InEar, InEar]
+[2026-09-19T20:42:35Z INFO  librepods::bluetooth::aacp] Received Proximity Keys Response: [(1, "469f9439c76d88525b82aae00cd08111"), (4, "e2d5be1525af5c8819e702fdd558fb81")]
+[2026-09-19T20:42:35Z INFO  librepods::media_controller] Found audio device index for MAC A4:F6:E6:88:BA:ED: 89
+[2026-09-19T20:42:35Z INFO  librepods::media_controller] Ear Detection - old_in_ear_data: [], new_in_ear_data: [true, true]
+GNOME Shell-Message: 02:12:36.791: GNOME Shell started at Sun Sep 20 2026 02:12:34 GMT+0530 (India Standard Time)
+GNOME Shell-Message: 02:12:36.791: Registering display with GDM
+libmutter-Message: 02:12:37.238: Removed virtual monitor Meta-0
 
-(gnome-shell:244426): St-CRITICAL **: 00:51:21.276: st_widget_get_theme_node called on the widget [0x5625a3f6b3c0 Gjs_ui_boxpointer_BoxPointer.popup-menu-boxpointer popup-menu ("Off")] which is not in the stage.
+(gnome-shell:12863): libmutter-CRITICAL **: 02:12:37.246: meta_monitor_manager_get_logical_monitor_from_number: assertion '(unsigned int) number < g_list_length (manager->logical_monitors)' failed
 
-(gnome-shell:244426): Gjs-CRITICAL **: 00:51:21.276: JS ERROR: TypeError: can't access property "set_child_above_sibling", this.actor.get_parent() is null
-open@resource:///org/gnome/shell/ui/popupMenu.js:1069:20
-toggle@resource:///org/gnome/shell/ui/popupMenu.js:944:18
-_init/<@file:///home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/indicator.js:147:28
-activate@resource:///org/gnome/shell/ui/popupMenu.js:193:14
-_init/<@resource:///org/gnome/shell/ui/popupMenu.js:110:24
-@resource:///org/gnome/shell/ui/init.js:20:20
+(gnome-shell:12863): libmutter-CRITICAL **: 02:12:37.246: meta_workspace_get_work_area_for_monitor: assertion 'logical_monitor != NULL' failed
 
-(gnome-shell:244426): St-CRITICAL **: 00:51:22.524: st_widget_get_theme_node called on the widget [0x5625a3f6b3c0 Gjs_ui_boxpointer_BoxPointer.popup-menu-boxpointer popup-menu ("Off")] which is not in the stage.
-libmutter-Message: 00:51:23.074: Removed virtual monitor Meta-0
-** Message: 00:51:23.294: Shutting down GNOME Shell
+(gnome-shell:12863): libmutter-CRITICAL **: 02:12:37.246: meta_monitor_manager_get_logical_monitor_from_number: assertion '(unsigned int) number < g_list_length (manager->logical_monitors)' failed
 
-(gnome-shell:244426): libmutter-CRITICAL **: 00:51:23.358: meta_monitor_manager_get_logical_monitor_from_number: assertion '(unsigned int) number < g_list_length (manager->logical_monitors)' failed
+(gnome-shell:12863): libmutter-CRITICAL **: 02:12:37.246: meta_workspace_get_work_area_for_monitor: assertion 'logical_monitor != NULL' failed
+** Message: 02:12:37.299: Shutting down GNOME Shell
 
-(gnome-shell:244426): libmutter-CRITICAL **: 00:51:23.358: meta_workspace_get_work_area_for_monitor: assertion 'logical_monitor != NULL' failed
-Gdk-Message: 00:51:23.462: Lost connection to Wayland compositor.
-Gdk-Message: 00:51:23.462: Lost connection to Wayland compositor.
-Gdk-Message: 00:51:23.462: Error reading events from display: Broken pipe
-Gdk-Message: 00:51:23.462: Error reading events from display: Broken pipe
+(gnome-shell:12863): Gjs-CRITICAL **: 02:12:37.375: Attempting to call back into JSAPI during the sweeping phase of GC. This is most likely caused by not destroying a Clutter actor or Gtk+ widget with ::destroy signals connected, but can also be caused by using the destroy(), dispose(), or remove() vfuncs. Because it would crash the application, it has been blocked and the JS callback not invoked.
+== Stack trace for context 0x5650f5dafe70 ==
+The offending signal was destroy on Gjs_librepods_krishhh_dev_indicator_LibrePodsIndicator 0x5650fa227e90.
+Gdk-Message: 02:12:37.418: Lost connection to Wayland compositor.
+Gdk-Message: 02:12:37.418: Lost connection to Wayland compositor.
+Gdk-Message: 02:12:37.418: Lost connection to Wayland compositor.
+Gdk-Message: 02:12:37.418: Error reading events from display: Broken pipe
+Gdk-Message: 02:12:37.418: Error reading events from display: Broken pipe
 A connection to the bus can't be made
-gnome-shell-calendar-server[244503]: Lost (or failed to acquire) the name org.gnome.Shell.CalendarServer - exiting
+gnome-shell-calendar-server[12942]: Lost (or failed to acquire) the name org.gnome.Shell.CalendarServer - exiting
 
-(evolution-calendar-factory:244568): libedbus-private-WARNING **: 00:51:23.545: Error setting property 'ConnectionStatus' on interface org.gnome.evolution.dataserver.Source: The connection is closed (g-io-error-quark, 18)
+(evolution-calendar-factory:13007): libedbus-private-WARNING **: 02:12:37.479: Error setting property 'ConnectionStatus' on interface org.gnome.evolution.dataserver.Source: The connection is closed (g-io-error-quark, 18)
 
-(/usr/lib/xdg-desktop-portal:244524): xdg-desktop-portal-WARNING **: 00:51:23.545: Failed to create secret proxy: Error calling StartServiceByName for org.freedesktop.secrets: The connection is closed
+(/usr/lib/xdg-desktop-portal:12964): xdg-desktop-portal-WARNING **: 02:12:37.479: Failed to create secret proxy: Error calling StartServiceByName for org.freedesktop.secrets: The connection is closed
+[2026-09-19T20:42:37Z WARN  zbus::connection] Failed to parse `NameLost` signal: I/O error: failed to read from socket
 
-(evolution-addressbook-factory:244608): libedbus-private-WARNING **: 00:51:23.545: Error setting property 'ConnectionStatus' on interface org.gnome.evolution.dataserver.Source: The connection is closed (g-io-error-quark, 18)
-   ~/.l/sh/gnome-sh/extensions/librepods@krishhh.dev on    develop !2 ❯                                              took   8s at   00:51:23
+(evolution-addressbook-factory:13050): libedbus-private-WARNING **: 02:12:37.481: Error setting property 'ConnectionStatus' on interface org.gnome.evolution.dataserver.Source: The connection is closed (g-io-error-quark, 18)
