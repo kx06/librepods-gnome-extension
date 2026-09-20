@@ -13,20 +13,20 @@ class LibrePodsDBus extends GObject.Object {
         this._proxy = null;
         this._proxyReady = false;
         this._connecting = false;
+        this._connectResolvers = [];
         this._callbacks = new Map();
-        this._signalHandlers = new Map();
         this._nameOwnerId = null;
         this._retryTimeoutId = null;
     }
 
-    async connect() {
+    async ensureDBusConnected() {
         if (this._proxyReady && this._proxy) {
             return true;
         }
 
         if (this._connecting) {
             return new Promise((resolve) => {
-                this._callbacks.set('connect', resolve);
+                this._connectResolvers.push(resolve);
             });
         }
 
@@ -36,14 +36,16 @@ class LibrePodsDBus extends GObject.Object {
             await this._createProxy();
             this._proxyReady = true;
             this._connecting = false;
-            this._callbacks.forEach((resolve) => resolve(true));
-            this._callbacks.clear();
+            this._connectResolvers.forEach((resolve) => resolve(true));
+            this._connectResolvers = [];
             return true;
         } catch (e) {
             this._connecting = false;
+            this._connectResolvers.forEach((resolve) => resolve(false));
+            this._connectResolvers = [];
             logError('Failed to connect to LibrePods D-Bus service:', e);
             await this._tryStartService();
-            // Don't recursively call connect() here - let the name owner watcher handle it
+            // Don't recursively call ensureDBusConnected() here - let the name owner watcher handle it
             return false;
         }
     }
@@ -74,24 +76,12 @@ class LibrePodsDBus extends GObject.Object {
     }
 
     _setupSignalHandlers() {
-        const props = [
-            'Connected', 'Address', 'DeviceName',
-            'BatteryHeadphone', 'BatteryHeadphoneStatus',
-            'BatteryLeft', 'BatteryLeftStatus',
-            'BatteryRight', 'BatteryRightStatus',
-            'BatteryCase', 'BatteryCaseStatus',
-            'ListeningMode', 'AllowOff',
-            'ConversationDetect', 'PersonalizedVolume',
-            'EarPrimary', 'EarSecondary', 'ConversationalAwareness'
-        ];
-
-        for (const prop of props) {
-            const signalName = prop[0].toLowerCase() + prop.slice(1) + '-changed';
-            const handlerId = this._proxy.connect('g-signal', (proxy, sender, signalName, params) => {
-                this._emitPropertyChanged(prop, params.get_child_value(0).deep_unpack());
-            });
-            this._signalHandlers.set(prop, handlerId);
-        }
+        this._propertiesChangedId = this._proxy.connect('g-properties-changed', (proxy, changed, invalidated) => {
+            const unpacked = changed.deep_unpack();
+            for (const [prop, variant] of Object.entries(unpacked)) {
+                this._emitPropertyChanged(prop, variant.deep_unpack());
+            }
+        });
     }
 
     _watchNameOwner() {
@@ -107,7 +97,7 @@ class LibrePodsDBus extends GObject.Object {
                     this._scheduleReconnect();
                 } else if (!this._proxyReady && !this._connecting) {
                     log('LibrePods service reappeared, reconnecting...');
-                    this.connect();
+                    this.ensureDBusConnected();
                 }
             },
             null
@@ -119,7 +109,7 @@ class LibrePodsDBus extends GObject.Object {
             GLib.source_remove(this._retryTimeoutId);
         }
         this._retryTimeoutId = GLib.timeout_add(GLib.PRIORITY_DEFAULT, 2000, () => {
-            this.connect();
+            this.ensureDBusConnected();
             return GLib.SOURCE_REMOVE;
         });
     }
@@ -146,41 +136,40 @@ class LibrePodsDBus extends GObject.Object {
         }
     }
 
+    async refresh() {
+        await this._fetchAllProperties();
+    }
+
     async _fetchAllProperties() {
         if (!this._proxy) return;
 
-        const props = [
-            'Connected', 'Address', 'DeviceName',
-            'BatteryHeadphone', 'BatteryHeadphoneStatus',
-            'BatteryLeft', 'BatteryLeftStatus',
-            'BatteryRight', 'BatteryRightStatus',
-            'BatteryCase', 'BatteryCaseStatus',
-            'ListeningMode', 'AllowOff',
-            'ConversationDetect', 'PersonalizedVolume',
-            'EarPrimary', 'EarSecondary', 'ConversationalAwareness'
-        ];
-
-        for (const prop of props) {
-            try {
-                const value = await this._callGetProperty(prop);
-                this._emitPropertyChanged(prop, value);
-            } catch (e) {
-                logError(`Failed to fetch ${prop}:`, e);
-            }
-        }
-    }
-
-    _callGetProperty(prop) {
-        return new Promise((resolve, reject) => {
-            this._proxy.get_property(prop, (proxy, res) => {
-                try {
-                    const value = proxy.get_property_finish(res);
-                    resolve(value.deep_unpack());
-                } catch (e) {
-                    reject(e);
-                }
+        try {
+            const allProps = await new Promise((resolve, reject) => {
+                this._proxy.call(
+                    'org.freedesktop.DBus.Properties.GetAll',
+                    new GLib.Variant('(s)', ['org.librepods.Service']),
+                    Gio.DBusCallFlags.NONE,
+                    -1,
+                    null,
+                    (proxy, res) => {
+                        try {
+                            const result = proxy.call_finish(res);
+                            const unpacked = result.deep_unpack();
+                            resolve(unpacked[0]);
+                        } catch (e) {
+                            reject(e);
+                        }
+                    }
+                );
             });
-        });
+
+            for (const [prop, variant] of Object.entries(allProps)) {
+                const value = variant.deep_unpack ? variant.deep_unpack() : variant;
+                this._emitPropertyChanged(prop, value);
+            }
+        } catch (e) {
+            logError('Failed to fetch all properties via GetAll:', e);
+        }
     }
 
     _emitPropertyChanged(prop, value) {
@@ -202,7 +191,7 @@ class LibrePodsDBus extends GObject.Object {
     }
 
     async callListDevices() {
-        await this.connect();
+        await this.ensureDBusConnected();
         return new Promise((resolve, reject) => {
             this._proxy.call('ListDevices', null, Gio.DBusCallFlags.NONE, -1, null, (proxy, res) => {
                 try {
@@ -217,9 +206,10 @@ class LibrePodsDBus extends GObject.Object {
     }
 
     async callConnectDevice(address) {
-        await this.connect();
+        await this.ensureDBusConnected();
+        const addrStr = String(Array.isArray(address) ? address[0] : address);
         return new Promise((resolve, reject) => {
-            const params = new GLib.Variant('(s)', [address]);
+            const params = new GLib.Variant('(s)', [addrStr]);
             this._proxy.call('ConnectDevice', params, Gio.DBusCallFlags.NONE, -1, null, (proxy, res) => {
                 try {
                     proxy.call_finish(res);
@@ -232,9 +222,10 @@ class LibrePodsDBus extends GObject.Object {
     }
 
     async callDisconnectDevice(address) {
-        await this.connect();
+        await this.ensureDBusConnected();
+        const addrStr = String(Array.isArray(address) ? address[0] : address);
         return new Promise((resolve, reject) => {
-            const params = new GLib.Variant('(s)', [address]);
+            const params = new GLib.Variant('(s)', [addrStr]);
             this._proxy.call('DisconnectDevice', params, Gio.DBusCallFlags.NONE, -1, null, (proxy, res) => {
                 try {
                     proxy.call_finish(res);
@@ -247,25 +238,25 @@ class LibrePodsDBus extends GObject.Object {
     }
 
     async callSetListeningMode(mode) {
-        await this.connect();
+        await this.ensureDBusConnected();
         const params = new GLib.Variant('(y)', [mode]);
         return this._callMethod('SetListeningMode', params);
     }
 
     async callSetConversationDetect(enabled) {
-        await this.connect();
+        await this.ensureDBusConnected();
         const params = new GLib.Variant('(b)', [enabled]);
         return this._callMethod('SetConversationDetect', params);
     }
 
     async callSetPersonalizedVolume(enabled) {
-        await this.connect();
+        await this.ensureDBusConnected();
         const params = new GLib.Variant('(b)', [enabled]);
         return this._callMethod('SetPersonalizedVolume', params);
     }
 
     async callSetAllowOff(enabled) {
-        await this.connect();
+        await this.ensureDBusConnected();
         const params = new GLib.Variant('(b)', [enabled]);
         return this._callMethod('SetAllowOff', params);
     }
@@ -293,10 +284,10 @@ class LibrePodsDBus extends GObject.Object {
             this._retryTimeoutId = null;
         }
         if (this._proxy) {
-            for (const [prop, handlerId] of this._signalHandlers) {
-                this._proxy.disconnect(handlerId);
+            if (this._propertiesChangedId) {
+                this._proxy.disconnect(this._propertiesChangedId);
+                this._propertiesChangedId = null;
             }
-            this._signalHandlers.clear();
             this._proxy = null;
         }
         this._proxyReady = false;

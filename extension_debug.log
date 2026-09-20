@@ -1,0 +1,1014 @@
+Address: "A4:F6:E6:88:BA:ED"
+DeviceName: "AirPods Pro"
+BatteryLeft: 64 (Status: 2)
+BatteryRight: 64 (Status: 2)
+BatteryCase: 255 (Status: 4)
+BatteryHeadphone: 255
+ListeningMode: 1
+AllowOff: 0
+ConversationDetect: false
+PersonalizedVolume: false
+EarPrimary: 0, EarSecondary: 0
+==================================
+[2026-09-20T11:36:27.631Z] 
+=== IN-MEMORY STATE TABLE DUMP ===
+Connected: true
+Address: "A4:F6:E6:88:BA:ED"
+DeviceName: "AirPods Pro"
+BatteryLeft: 64 (Status: 2)
+BatteryRight: 64 (Status: 2)
+BatteryCase: 255 (Status: 4)
+BatteryHeadphone: 255
+ListeningMode: 1
+AllowOff: 0
+ConversationDetect: false
+PersonalizedVolume: false
+EarPrimary: 0, EarSecondary: 0
+==================================
+[2026-09-20T11:36:30.631Z] 
+=== IN-MEMORY STATE TABLE DUMP ===
+Connected: true
+Address: "A4:F6:E6:88:BA:ED"
+DeviceName: "AirPods Pro"
+BatteryLeft: 64 (Status: 2)
+BatteryRight: 64 (Status: 2)
+BatteryCase: 255 (Status: 4)
+BatteryHeadphone: 255
+ListeningMode: 1
+AllowOff: 0
+ConversationDetect: false
+PersonalizedVolume: false
+EarPrimary: 0, EarSecondary: 0
+==================================
+[2026-09-20T11:36:33.632Z] 
+=== IN-MEMORY STATE TABLE DUMP ===
+Connected: true
+Address: "A4:F6:E6:88:BA:ED"
+DeviceName: "AirPods Pro"
+BatteryLeft: 64 (Status: 2)
+BatteryRight: 64 (Status: 2)
+BatteryCase: 255 (Status: 4)
+BatteryHeadphone: 255
+ListeningMode: 1
+AllowOff: 0
+ConversationDetect: false
+PersonalizedVolume: false
+EarPrimary: 0, EarSecondary: 0
+==================================
+[2026-09-20T11:36:36.632Z] 
+=== IN-MEMORY STATE TABLE DUMP ===
+Connected: true
+Address: "A4:F6:E6:88:BA:ED"
+DeviceName: "AirPods Pro"
+BatteryLeft: 64 (Status: 2)
+BatteryRight: 64 (Status: 2)
+BatteryCase: 255 (Status: 4)
+BatteryHeadphone: 255
+ListeningMode: 1
+AllowOff: 0
+ConversationDetect: false
+PersonalizedVolume: false
+EarPrimary: 0, EarSecondary: 0
+==================================
+[2026-09-20T11:36:39.658Z] 
+=== IN-MEMORY STATE TABLE DUMP ===
+Connected: true
+Address: "A4:F6:E6:88:BA:ED"
+DeviceName: "AirPods Pro"
+BatteryLeft: 64 (Status: 2)
+BatteryRight: 64 (Status: 2)
+BatteryCase: 255 (Status: 4)
+BatteryHeadphone: 255
+ListeningMode: 1
+AllowOff: 0
+ConversationDetect: false
+PersonalizedVolume: false
+EarPrimary: 0, EarSecondary: 0
+==================================
+[2026-09-20T11:36:40.183Z] [INFO] Manual refresh requested
+[2026-09-20T11:36:40.210Z] [INFO] [HERO UI UPDATE] Setting title: "AirPods Pro", connected: true
+[2026-09-20T11:36:40.212Z] [INFO] [BATTERY ROW UPDATE] type: left, level: 64, status: 2
+[2026-09-20T11:36:40.214Z] [INFO] [BATTERY ROW UPDATE] type: right, level: 64, status: 2
+[2026-09-20T11:36:40.216Z] [INFO] [BATTERY ROW UPDATE] type: case, level: 255, status: 4
+[2026-09-20T11:36:42.658Z] 
+=== IN-MEMORY STATE TABLE DUMP ===
+Connected: true
+Address: "A4:F6:E6:88:BA:ED"
+DeviceName: "AirPods Pro"
+BatteryLeft: 64 (Status: 2)
+BatteryRight: 64 (Status: 2)
+BatteryCase: 255 (Status: 4)
+BatteryHeadphone: 255
+ListeningMode: 1
+AllowOff: 0
+ConversationDetect: false
+PersonalizedVolume: false
+EarPrimary: 0, EarSecondary: 0
+==================================
+[2026-09-20T11:36:44.323Z] [INFO] Manual refresh requested
+[2026-09-20T11:36:44.341Z] [INFO] [HERO UI UPDATE] Setting title: "AirPods Pro", connected: true
+[2026-09-20T11:36:44.343Z] [INFO] [BATTERY ROW UPDATE] type: left, level: 64, status: 2
+[2026-09-20T11:36:44.345Z] [INFO] [BATTERY ROW UPDATE] type: right, level: 64, status: 2
+[2026-09-20T11:36:44.347Z] [INFO] [BATTERY ROW UPDATE] type: case, level: 255, status: 4
+[2026-09-20T11:36:45.658Z] 
+=== IN-MEMORY STATE TABLE DUMP ===
+Connected: true
+Address: "A4:F6:E6:88:BA:ED"
+DeviceName: "AirPods Pro"
+BatteryLeft: 64 (Status: 2)
+BatteryRight: 64 (Status: 2)
+BatteryCase: 255 (Status: 4)
+BatteryHeadphone: 255
+ListeningMode: 1
+AllowOff: 0
+ConversationDetect: false
+PersonalizedVolume: false
+EarPrimary: 0, EarSecondary: 0
+==================================
+[2026-09-20T11:36:48.659Z] 
+=== IN-MEMORY STATE TABLE DUMP ===
+Connected: true
+Address: "A4:F6:E6:88:BA:ED"
+DeviceName: "AirPods Pro"
+BatteryLeft: 64 (Status: 2)
+BatteryRight: 64 (Status: 2)
+BatteryCase: 255 (Status: 4)
+BatteryHeadphone: 255
+ListeningMode: 1
+AllowOff: 0
+ConversationDetect: false
+PersonalizedVolume: false
+EarPrimary: 0, EarSecondary: 0
+==================================
+[2026-09-20T11:36:49.799Z] [INFO] [STATE CHANGE] BatteryLeft: 64 -> 63
+[2026-09-20T11:36:51.659Z] 
+=== IN-MEMORY STATE TABLE DUMP ===
+Connected: true
+Address: "A4:F6:E6:88:BA:ED"
+DeviceName: "AirPods Pro"
+BatteryLeft: 63 (Status: 2)
+BatteryRight: 64 (Status: 2)
+BatteryCase: 255 (Status: 4)
+BatteryHeadphone: 255
+ListeningMode: 1
+AllowOff: 0
+ConversationDetect: false
+PersonalizedVolume: false
+EarPrimary: 0, EarSecondary: 0
+==================================
+[2026-09-20T11:36:54.659Z] 
+=== IN-MEMORY STATE TABLE DUMP ===
+Connected: true
+Address: "A4:F6:E6:88:BA:ED"
+DeviceName: "AirPods Pro"
+BatteryLeft: 63 (Status: 2)
+BatteryRight: 64 (Status: 2)
+BatteryCase: 255 (Status: 4)
+BatteryHeadphone: 255
+ListeningMode: 1
+AllowOff: 0
+ConversationDetect: false
+PersonalizedVolume: false
+EarPrimary: 0, EarSecondary: 0
+==================================
+[2026-09-20T11:36:57.660Z] 
+=== IN-MEMORY STATE TABLE DUMP ===
+Connected: true
+Address: "A4:F6:E6:88:BA:ED"
+DeviceName: "AirPods Pro"
+BatteryLeft: 63 (Status: 2)
+BatteryRight: 64 (Status: 2)
+BatteryCase: 255 (Status: 4)
+BatteryHeadphone: 255
+ListeningMode: 1
+AllowOff: 0
+ConversationDetect: false
+PersonalizedVolume: false
+EarPrimary: 0, EarSecondary: 0
+==================================
+[2026-09-20T11:37:00.660Z] 
+=== IN-MEMORY STATE TABLE DUMP ===
+Connected: true
+Address: "A4:F6:E6:88:BA:ED"
+DeviceName: "AirPods Pro"
+BatteryLeft: 63 (Status: 2)
+BatteryRight: 64 (Status: 2)
+BatteryCase: 255 (Status: 4)
+BatteryHeadphone: 255
+ListeningMode: 1
+AllowOff: 0
+ConversationDetect: false
+PersonalizedVolume: false
+EarPrimary: 0, EarSecondary: 0
+==================================
+[2026-09-20T11:37:03.661Z] 
+=== IN-MEMORY STATE TABLE DUMP ===
+Connected: true
+Address: "A4:F6:E6:88:BA:ED"
+DeviceName: "AirPods Pro"
+BatteryLeft: 63 (Status: 2)
+BatteryRight: 64 (Status: 2)
+BatteryCase: 255 (Status: 4)
+BatteryHeadphone: 255
+ListeningMode: 1
+AllowOff: 0
+ConversationDetect: false
+PersonalizedVolume: false
+EarPrimary: 0, EarSecondary: 0
+==================================
+[2026-09-20T11:37:06.661Z] 
+=== IN-MEMORY STATE TABLE DUMP ===
+Connected: true
+Address: "A4:F6:E6:88:BA:ED"
+DeviceName: "AirPods Pro"
+BatteryLeft: 63 (Status: 2)
+BatteryRight: 64 (Status: 2)
+BatteryCase: 255 (Status: 4)
+BatteryHeadphone: 255
+ListeningMode: 1
+AllowOff: 0
+ConversationDetect: false
+PersonalizedVolume: false
+EarPrimary: 0, EarSecondary: 0
+==================================
+[2026-09-20T11:37:09.661Z] 
+=== IN-MEMORY STATE TABLE DUMP ===
+Connected: true
+Address: "A4:F6:E6:88:BA:ED"
+DeviceName: "AirPods Pro"
+BatteryLeft: 63 (Status: 2)
+BatteryRight: 64 (Status: 2)
+BatteryCase: 255 (Status: 4)
+BatteryHeadphone: 255
+ListeningMode: 1
+AllowOff: 0
+ConversationDetect: false
+PersonalizedVolume: false
+EarPrimary: 0, EarSecondary: 0
+==================================
+[2026-09-20T11:37:12.661Z] 
+=== IN-MEMORY STATE TABLE DUMP ===
+Connected: true
+Address: "A4:F6:E6:88:BA:ED"
+DeviceName: "AirPods Pro"
+BatteryLeft: 63 (Status: 2)
+BatteryRight: 64 (Status: 2)
+BatteryCase: 255 (Status: 4)
+BatteryHeadphone: 255
+ListeningMode: 1
+AllowOff: 0
+ConversationDetect: false
+PersonalizedVolume: false
+EarPrimary: 0, EarSecondary: 0
+==================================
+[2026-09-20T11:37:15.662Z] 
+=== IN-MEMORY STATE TABLE DUMP ===
+Connected: true
+Address: "A4:F6:E6:88:BA:ED"
+DeviceName: "AirPods Pro"
+BatteryLeft: 63 (Status: 2)
+BatteryRight: 64 (Status: 2)
+BatteryCase: 255 (Status: 4)
+BatteryHeadphone: 255
+ListeningMode: 1
+AllowOff: 0
+ConversationDetect: false
+PersonalizedVolume: false
+EarPrimary: 0, EarSecondary: 0
+==================================
+[2026-09-20T11:37:18.662Z] 
+=== IN-MEMORY STATE TABLE DUMP ===
+Connected: true
+Address: "A4:F6:E6:88:BA:ED"
+DeviceName: "AirPods Pro"
+BatteryLeft: 63 (Status: 2)
+BatteryRight: 64 (Status: 2)
+BatteryCase: 255 (Status: 4)
+BatteryHeadphone: 255
+ListeningMode: 1
+AllowOff: 0
+ConversationDetect: false
+PersonalizedVolume: false
+EarPrimary: 0, EarSecondary: 0
+==================================
+[2026-09-20T11:37:21.662Z] 
+=== IN-MEMORY STATE TABLE DUMP ===
+Connected: true
+Address: "A4:F6:E6:88:BA:ED"
+DeviceName: "AirPods Pro"
+BatteryLeft: 63 (Status: 2)
+BatteryRight: 64 (Status: 2)
+BatteryCase: 255 (Status: 4)
+BatteryHeadphone: 255
+ListeningMode: 1
+AllowOff: 0
+ConversationDetect: false
+PersonalizedVolume: false
+EarPrimary: 0, EarSecondary: 0
+==================================
+[2026-09-20T11:37:24.663Z] 
+=== IN-MEMORY STATE TABLE DUMP ===
+Connected: true
+Address: "A4:F6:E6:88:BA:ED"
+DeviceName: "AirPods Pro"
+BatteryLeft: 63 (Status: 2)
+BatteryRight: 64 (Status: 2)
+BatteryCase: 255 (Status: 4)
+BatteryHeadphone: 255
+ListeningMode: 1
+AllowOff: 0
+ConversationDetect: false
+PersonalizedVolume: false
+EarPrimary: 0, EarSecondary: 0
+==================================
+[2026-09-20T11:37:27.663Z] 
+=== IN-MEMORY STATE TABLE DUMP ===
+Connected: true
+Address: "A4:F6:E6:88:BA:ED"
+DeviceName: "AirPods Pro"
+BatteryLeft: 63 (Status: 2)
+BatteryRight: 64 (Status: 2)
+BatteryCase: 255 (Status: 4)
+BatteryHeadphone: 255
+ListeningMode: 1
+AllowOff: 0
+ConversationDetect: false
+PersonalizedVolume: false
+EarPrimary: 0, EarSecondary: 0
+==================================
+[2026-09-20T11:37:30.663Z] 
+=== IN-MEMORY STATE TABLE DUMP ===
+Connected: true
+Address: "A4:F6:E6:88:BA:ED"
+DeviceName: "AirPods Pro"
+BatteryLeft: 63 (Status: 2)
+BatteryRight: 64 (Status: 2)
+BatteryCase: 255 (Status: 4)
+BatteryHeadphone: 255
+ListeningMode: 1
+AllowOff: 0
+ConversationDetect: false
+PersonalizedVolume: false
+EarPrimary: 0, EarSecondary: 0
+==================================
+[2026-09-20T11:37:33.663Z] 
+=== IN-MEMORY STATE TABLE DUMP ===
+Connected: true
+Address: "A4:F6:E6:88:BA:ED"
+DeviceName: "AirPods Pro"
+BatteryLeft: 63 (Status: 2)
+BatteryRight: 64 (Status: 2)
+BatteryCase: 255 (Status: 4)
+BatteryHeadphone: 255
+ListeningMode: 1
+AllowOff: 0
+ConversationDetect: false
+PersonalizedVolume: false
+EarPrimary: 0, EarSecondary: 0
+==================================
+[2026-09-20T11:37:36.663Z] 
+=== IN-MEMORY STATE TABLE DUMP ===
+Connected: true
+Address: "A4:F6:E6:88:BA:ED"
+DeviceName: "AirPods Pro"
+BatteryLeft: 63 (Status: 2)
+BatteryRight: 64 (Status: 2)
+BatteryCase: 255 (Status: 4)
+BatteryHeadphone: 255
+ListeningMode: 1
+AllowOff: 0
+ConversationDetect: false
+PersonalizedVolume: false
+EarPrimary: 0, EarSecondary: 0
+==================================
+[2026-09-20T11:37:39.664Z] 
+=== IN-MEMORY STATE TABLE DUMP ===
+Connected: true
+Address: "A4:F6:E6:88:BA:ED"
+DeviceName: "AirPods Pro"
+BatteryLeft: 63 (Status: 2)
+BatteryRight: 64 (Status: 2)
+BatteryCase: 255 (Status: 4)
+BatteryHeadphone: 255
+ListeningMode: 1
+AllowOff: 0
+ConversationDetect: false
+PersonalizedVolume: false
+EarPrimary: 0, EarSecondary: 0
+==================================
+[2026-09-20T11:37:42.664Z] 
+=== IN-MEMORY STATE TABLE DUMP ===
+Connected: true
+Address: "A4:F6:E6:88:BA:ED"
+DeviceName: "AirPods Pro"
+BatteryLeft: 63 (Status: 2)
+BatteryRight: 64 (Status: 2)
+BatteryCase: 255 (Status: 4)
+BatteryHeadphone: 255
+ListeningMode: 1
+AllowOff: 0
+ConversationDetect: false
+PersonalizedVolume: false
+EarPrimary: 0, EarSecondary: 0
+==================================
+[2026-09-20T11:37:45.664Z] 
+=== IN-MEMORY STATE TABLE DUMP ===
+Connected: true
+Address: "A4:F6:E6:88:BA:ED"
+DeviceName: "AirPods Pro"
+BatteryLeft: 63 (Status: 2)
+BatteryRight: 64 (Status: 2)
+BatteryCase: 255 (Status: 4)
+BatteryHeadphone: 255
+ListeningMode: 1
+AllowOff: 0
+ConversationDetect: false
+PersonalizedVolume: false
+EarPrimary: 0, EarSecondary: 0
+==================================
+[2026-09-20T11:37:48.665Z] 
+=== IN-MEMORY STATE TABLE DUMP ===
+Connected: true
+Address: "A4:F6:E6:88:BA:ED"
+DeviceName: "AirPods Pro"
+BatteryLeft: 63 (Status: 2)
+BatteryRight: 64 (Status: 2)
+BatteryCase: 255 (Status: 4)
+BatteryHeadphone: 255
+ListeningMode: 1
+AllowOff: 0
+ConversationDetect: false
+PersonalizedVolume: false
+EarPrimary: 0, EarSecondary: 0
+==================================
+[2026-09-20T11:37:51.665Z] 
+=== IN-MEMORY STATE TABLE DUMP ===
+Connected: true
+Address: "A4:F6:E6:88:BA:ED"
+DeviceName: "AirPods Pro"
+BatteryLeft: 63 (Status: 2)
+BatteryRight: 64 (Status: 2)
+BatteryCase: 255 (Status: 4)
+BatteryHeadphone: 255
+ListeningMode: 1
+AllowOff: 0
+ConversationDetect: false
+PersonalizedVolume: false
+EarPrimary: 0, EarSecondary: 0
+==================================
+[2026-09-20T11:37:54.665Z] 
+=== IN-MEMORY STATE TABLE DUMP ===
+Connected: true
+Address: "A4:F6:E6:88:BA:ED"
+DeviceName: "AirPods Pro"
+BatteryLeft: 63 (Status: 2)
+BatteryRight: 64 (Status: 2)
+BatteryCase: 255 (Status: 4)
+BatteryHeadphone: 255
+ListeningMode: 1
+AllowOff: 0
+ConversationDetect: false
+PersonalizedVolume: false
+EarPrimary: 0, EarSecondary: 0
+==================================
+[2026-09-20T11:37:57.666Z] 
+=== IN-MEMORY STATE TABLE DUMP ===
+Connected: true
+Address: "A4:F6:E6:88:BA:ED"
+DeviceName: "AirPods Pro"
+BatteryLeft: 63 (Status: 2)
+BatteryRight: 64 (Status: 2)
+BatteryCase: 255 (Status: 4)
+BatteryHeadphone: 255
+ListeningMode: 1
+AllowOff: 0
+ConversationDetect: false
+PersonalizedVolume: false
+EarPrimary: 0, EarSecondary: 0
+==================================
+[2026-09-20T11:38:00.666Z] 
+=== IN-MEMORY STATE TABLE DUMP ===
+Connected: true
+Address: "A4:F6:E6:88:BA:ED"
+DeviceName: "AirPods Pro"
+BatteryLeft: 63 (Status: 2)
+BatteryRight: 64 (Status: 2)
+BatteryCase: 255 (Status: 4)
+BatteryHeadphone: 255
+ListeningMode: 1
+AllowOff: 0
+ConversationDetect: false
+PersonalizedVolume: false
+EarPrimary: 0, EarSecondary: 0
+==================================
+[2026-09-20T11:38:03.666Z] 
+=== IN-MEMORY STATE TABLE DUMP ===
+Connected: true
+Address: "A4:F6:E6:88:BA:ED"
+DeviceName: "AirPods Pro"
+BatteryLeft: 63 (Status: 2)
+BatteryRight: 64 (Status: 2)
+BatteryCase: 255 (Status: 4)
+BatteryHeadphone: 255
+ListeningMode: 1
+AllowOff: 0
+ConversationDetect: false
+PersonalizedVolume: false
+EarPrimary: 0, EarSecondary: 0
+==================================
+[2026-09-20T11:38:06.667Z] 
+=== IN-MEMORY STATE TABLE DUMP ===
+Connected: true
+Address: "A4:F6:E6:88:BA:ED"
+DeviceName: "AirPods Pro"
+BatteryLeft: 63 (Status: 2)
+BatteryRight: 64 (Status: 2)
+BatteryCase: 255 (Status: 4)
+BatteryHeadphone: 255
+ListeningMode: 1
+AllowOff: 0
+ConversationDetect: false
+PersonalizedVolume: false
+EarPrimary: 0, EarSecondary: 0
+==================================
+[2026-09-20T11:38:09.480Z] [INFO] [STATE CHANGE] BatteryRight: 64 -> 63
+[2026-09-20T11:38:09.667Z] 
+=== IN-MEMORY STATE TABLE DUMP ===
+Connected: true
+Address: "A4:F6:E6:88:BA:ED"
+DeviceName: "AirPods Pro"
+BatteryLeft: 63 (Status: 2)
+BatteryRight: 63 (Status: 2)
+BatteryCase: 255 (Status: 4)
+BatteryHeadphone: 255
+ListeningMode: 1
+AllowOff: 0
+ConversationDetect: false
+PersonalizedVolume: false
+EarPrimary: 0, EarSecondary: 0
+==================================
+[2026-09-20T11:38:12.667Z] 
+=== IN-MEMORY STATE TABLE DUMP ===
+Connected: true
+Address: "A4:F6:E6:88:BA:ED"
+DeviceName: "AirPods Pro"
+BatteryLeft: 63 (Status: 2)
+BatteryRight: 63 (Status: 2)
+BatteryCase: 255 (Status: 4)
+BatteryHeadphone: 255
+ListeningMode: 1
+AllowOff: 0
+ConversationDetect: false
+PersonalizedVolume: false
+EarPrimary: 0, EarSecondary: 0
+==================================
+[2026-09-20T11:38:15.668Z] 
+=== IN-MEMORY STATE TABLE DUMP ===
+Connected: true
+Address: "A4:F6:E6:88:BA:ED"
+DeviceName: "AirPods Pro"
+BatteryLeft: 63 (Status: 2)
+BatteryRight: 63 (Status: 2)
+BatteryCase: 255 (Status: 4)
+BatteryHeadphone: 255
+ListeningMode: 1
+AllowOff: 0
+ConversationDetect: false
+PersonalizedVolume: false
+EarPrimary: 0, EarSecondary: 0
+==================================
+[2026-09-20T11:38:18.668Z] 
+=== IN-MEMORY STATE TABLE DUMP ===
+Connected: true
+Address: "A4:F6:E6:88:BA:ED"
+DeviceName: "AirPods Pro"
+BatteryLeft: 63 (Status: 2)
+BatteryRight: 63 (Status: 2)
+BatteryCase: 255 (Status: 4)
+BatteryHeadphone: 255
+ListeningMode: 1
+AllowOff: 0
+ConversationDetect: false
+PersonalizedVolume: false
+EarPrimary: 0, EarSecondary: 0
+==================================
+[2026-09-20T11:38:21.668Z] 
+=== IN-MEMORY STATE TABLE DUMP ===
+Connected: true
+Address: "A4:F6:E6:88:BA:ED"
+DeviceName: "AirPods Pro"
+BatteryLeft: 63 (Status: 2)
+BatteryRight: 63 (Status: 2)
+BatteryCase: 255 (Status: 4)
+BatteryHeadphone: 255
+ListeningMode: 1
+AllowOff: 0
+ConversationDetect: false
+PersonalizedVolume: false
+EarPrimary: 0, EarSecondary: 0
+==================================
+[2026-09-20T11:38:24.669Z] 
+=== IN-MEMORY STATE TABLE DUMP ===
+Connected: true
+Address: "A4:F6:E6:88:BA:ED"
+DeviceName: "AirPods Pro"
+BatteryLeft: 63 (Status: 2)
+BatteryRight: 63 (Status: 2)
+BatteryCase: 255 (Status: 4)
+BatteryHeadphone: 255
+ListeningMode: 1
+AllowOff: 0
+ConversationDetect: false
+PersonalizedVolume: false
+EarPrimary: 0, EarSecondary: 0
+==================================
+[2026-09-20T11:38:27.669Z] 
+=== IN-MEMORY STATE TABLE DUMP ===
+Connected: true
+Address: "A4:F6:E6:88:BA:ED"
+DeviceName: "AirPods Pro"
+BatteryLeft: 63 (Status: 2)
+BatteryRight: 63 (Status: 2)
+BatteryCase: 255 (Status: 4)
+BatteryHeadphone: 255
+ListeningMode: 1
+AllowOff: 0
+ConversationDetect: false
+PersonalizedVolume: false
+EarPrimary: 0, EarSecondary: 0
+==================================
+[2026-09-20T11:38:30.669Z] 
+=== IN-MEMORY STATE TABLE DUMP ===
+Connected: true
+Address: "A4:F6:E6:88:BA:ED"
+DeviceName: "AirPods Pro"
+BatteryLeft: 63 (Status: 2)
+BatteryRight: 63 (Status: 2)
+BatteryCase: 255 (Status: 4)
+BatteryHeadphone: 255
+ListeningMode: 1
+AllowOff: 0
+ConversationDetect: false
+PersonalizedVolume: false
+EarPrimary: 0, EarSecondary: 0
+==================================
+[2026-09-20T11:38:33.670Z] 
+=== IN-MEMORY STATE TABLE DUMP ===
+Connected: true
+Address: "A4:F6:E6:88:BA:ED"
+DeviceName: "AirPods Pro"
+BatteryLeft: 63 (Status: 2)
+BatteryRight: 63 (Status: 2)
+BatteryCase: 255 (Status: 4)
+BatteryHeadphone: 255
+ListeningMode: 1
+AllowOff: 0
+ConversationDetect: false
+PersonalizedVolume: false
+EarPrimary: 0, EarSecondary: 0
+==================================
+[2026-09-20T11:38:36.670Z] 
+=== IN-MEMORY STATE TABLE DUMP ===
+Connected: true
+Address: "A4:F6:E6:88:BA:ED"
+DeviceName: "AirPods Pro"
+BatteryLeft: 63 (Status: 2)
+BatteryRight: 63 (Status: 2)
+BatteryCase: 255 (Status: 4)
+BatteryHeadphone: 255
+ListeningMode: 1
+AllowOff: 0
+ConversationDetect: false
+PersonalizedVolume: false
+EarPrimary: 0, EarSecondary: 0
+==================================
+[2026-09-20T11:38:39.670Z] 
+=== IN-MEMORY STATE TABLE DUMP ===
+Connected: true
+Address: "A4:F6:E6:88:BA:ED"
+DeviceName: "AirPods Pro"
+BatteryLeft: 63 (Status: 2)
+BatteryRight: 63 (Status: 2)
+BatteryCase: 255 (Status: 4)
+BatteryHeadphone: 255
+ListeningMode: 1
+AllowOff: 0
+ConversationDetect: false
+PersonalizedVolume: false
+EarPrimary: 0, EarSecondary: 0
+==================================
+[2026-09-20T11:38:42.671Z] 
+=== IN-MEMORY STATE TABLE DUMP ===
+Connected: true
+Address: "A4:F6:E6:88:BA:ED"
+DeviceName: "AirPods Pro"
+BatteryLeft: 63 (Status: 2)
+BatteryRight: 63 (Status: 2)
+BatteryCase: 255 (Status: 4)
+BatteryHeadphone: 255
+ListeningMode: 1
+AllowOff: 0
+ConversationDetect: false
+PersonalizedVolume: false
+EarPrimary: 0, EarSecondary: 0
+==================================
+[2026-09-20T11:38:45.671Z] 
+=== IN-MEMORY STATE TABLE DUMP ===
+Connected: true
+Address: "A4:F6:E6:88:BA:ED"
+DeviceName: "AirPods Pro"
+BatteryLeft: 63 (Status: 2)
+BatteryRight: 63 (Status: 2)
+BatteryCase: 255 (Status: 4)
+BatteryHeadphone: 255
+ListeningMode: 1
+AllowOff: 0
+ConversationDetect: false
+PersonalizedVolume: false
+EarPrimary: 0, EarSecondary: 0
+==================================
+[2026-09-20T11:38:48.671Z] 
+=== IN-MEMORY STATE TABLE DUMP ===
+Connected: true
+Address: "A4:F6:E6:88:BA:ED"
+DeviceName: "AirPods Pro"
+BatteryLeft: 63 (Status: 2)
+BatteryRight: 63 (Status: 2)
+BatteryCase: 255 (Status: 4)
+BatteryHeadphone: 255
+ListeningMode: 1
+AllowOff: 0
+ConversationDetect: false
+PersonalizedVolume: false
+EarPrimary: 0, EarSecondary: 0
+==================================
+[2026-09-20T11:38:51.672Z] 
+=== IN-MEMORY STATE TABLE DUMP ===
+Connected: true
+Address: "A4:F6:E6:88:BA:ED"
+DeviceName: "AirPods Pro"
+BatteryLeft: 63 (Status: 2)
+BatteryRight: 63 (Status: 2)
+BatteryCase: 255 (Status: 4)
+BatteryHeadphone: 255
+ListeningMode: 1
+AllowOff: 0
+ConversationDetect: false
+PersonalizedVolume: false
+EarPrimary: 0, EarSecondary: 0
+==================================
+[2026-09-20T11:38:54.672Z] 
+=== IN-MEMORY STATE TABLE DUMP ===
+Connected: true
+Address: "A4:F6:E6:88:BA:ED"
+DeviceName: "AirPods Pro"
+BatteryLeft: 63 (Status: 2)
+BatteryRight: 63 (Status: 2)
+BatteryCase: 255 (Status: 4)
+BatteryHeadphone: 255
+ListeningMode: 1
+AllowOff: 0
+ConversationDetect: false
+PersonalizedVolume: false
+EarPrimary: 0, EarSecondary: 0
+==================================
+[2026-09-20T11:38:57.672Z] 
+=== IN-MEMORY STATE TABLE DUMP ===
+Connected: true
+Address: "A4:F6:E6:88:BA:ED"
+DeviceName: "AirPods Pro"
+BatteryLeft: 63 (Status: 2)
+BatteryRight: 63 (Status: 2)
+BatteryCase: 255 (Status: 4)
+BatteryHeadphone: 255
+ListeningMode: 1
+AllowOff: 0
+ConversationDetect: false
+PersonalizedVolume: false
+EarPrimary: 0, EarSecondary: 0
+==================================
+[2026-09-20T11:39:00.672Z] 
+=== IN-MEMORY STATE TABLE DUMP ===
+Connected: true
+Address: "A4:F6:E6:88:BA:ED"
+DeviceName: "AirPods Pro"
+BatteryLeft: 63 (Status: 2)
+BatteryRight: 63 (Status: 2)
+BatteryCase: 255 (Status: 4)
+BatteryHeadphone: 255
+ListeningMode: 1
+AllowOff: 0
+ConversationDetect: false
+PersonalizedVolume: false
+EarPrimary: 0, EarSecondary: 0
+==================================
+[2026-09-20T11:39:03.672Z] 
+=== IN-MEMORY STATE TABLE DUMP ===
+Connected: true
+Address: "A4:F6:E6:88:BA:ED"
+DeviceName: "AirPods Pro"
+BatteryLeft: 63 (Status: 2)
+BatteryRight: 63 (Status: 2)
+BatteryCase: 255 (Status: 4)
+BatteryHeadphone: 255
+ListeningMode: 1
+AllowOff: 0
+ConversationDetect: false
+PersonalizedVolume: false
+EarPrimary: 0, EarSecondary: 0
+==================================
+[2026-09-20T11:39:06.673Z] 
+=== IN-MEMORY STATE TABLE DUMP ===
+Connected: true
+Address: "A4:F6:E6:88:BA:ED"
+DeviceName: "AirPods Pro"
+BatteryLeft: 63 (Status: 2)
+BatteryRight: 63 (Status: 2)
+BatteryCase: 255 (Status: 4)
+BatteryHeadphone: 255
+ListeningMode: 1
+AllowOff: 0
+ConversationDetect: false
+PersonalizedVolume: false
+EarPrimary: 0, EarSecondary: 0
+==================================
+[2026-09-20T11:39:09.673Z] 
+=== IN-MEMORY STATE TABLE DUMP ===
+Connected: true
+Address: "A4:F6:E6:88:BA:ED"
+DeviceName: "AirPods Pro"
+BatteryLeft: 63 (Status: 2)
+BatteryRight: 63 (Status: 2)
+BatteryCase: 255 (Status: 4)
+BatteryHeadphone: 255
+ListeningMode: 1
+AllowOff: 0
+ConversationDetect: false
+PersonalizedVolume: false
+EarPrimary: 0, EarSecondary: 0
+==================================
+[2026-09-20T11:39:12.674Z] 
+=== IN-MEMORY STATE TABLE DUMP ===
+Connected: true
+Address: "A4:F6:E6:88:BA:ED"
+DeviceName: "AirPods Pro"
+BatteryLeft: 63 (Status: 2)
+BatteryRight: 63 (Status: 2)
+BatteryCase: 255 (Status: 4)
+BatteryHeadphone: 255
+ListeningMode: 1
+AllowOff: 0
+ConversationDetect: false
+PersonalizedVolume: false
+EarPrimary: 0, EarSecondary: 0
+==================================
+[2026-09-20T11:39:15.674Z] 
+=== IN-MEMORY STATE TABLE DUMP ===
+Connected: true
+Address: "A4:F6:E6:88:BA:ED"
+DeviceName: "AirPods Pro"
+BatteryLeft: 63 (Status: 2)
+BatteryRight: 63 (Status: 2)
+BatteryCase: 255 (Status: 4)
+BatteryHeadphone: 255
+ListeningMode: 1
+AllowOff: 0
+ConversationDetect: false
+PersonalizedVolume: false
+EarPrimary: 0, EarSecondary: 0
+==================================
+[2026-09-20T11:39:18.674Z] 
+=== IN-MEMORY STATE TABLE DUMP ===
+Connected: true
+Address: "A4:F6:E6:88:BA:ED"
+DeviceName: "AirPods Pro"
+BatteryLeft: 63 (Status: 2)
+BatteryRight: 63 (Status: 2)
+BatteryCase: 255 (Status: 4)
+BatteryHeadphone: 255
+ListeningMode: 1
+AllowOff: 0
+ConversationDetect: false
+PersonalizedVolume: false
+EarPrimary: 0, EarSecondary: 0
+==================================
+[2026-09-20T11:39:21.675Z] 
+=== IN-MEMORY STATE TABLE DUMP ===
+Connected: true
+Address: "A4:F6:E6:88:BA:ED"
+DeviceName: "AirPods Pro"
+BatteryLeft: 63 (Status: 2)
+BatteryRight: 63 (Status: 2)
+BatteryCase: 255 (Status: 4)
+BatteryHeadphone: 255
+ListeningMode: 1
+AllowOff: 0
+ConversationDetect: false
+PersonalizedVolume: false
+EarPrimary: 0, EarSecondary: 0
+==================================
+[2026-09-20T11:39:24.675Z] 
+=== IN-MEMORY STATE TABLE DUMP ===
+Connected: true
+Address: "A4:F6:E6:88:BA:ED"
+DeviceName: "AirPods Pro"
+BatteryLeft: 63 (Status: 2)
+BatteryRight: 63 (Status: 2)
+BatteryCase: 255 (Status: 4)
+BatteryHeadphone: 255
+ListeningMode: 1
+AllowOff: 0
+ConversationDetect: false
+PersonalizedVolume: false
+EarPrimary: 0, EarSecondary: 0
+==================================
+[2026-09-20T11:39:27.675Z] 
+=== IN-MEMORY STATE TABLE DUMP ===
+Connected: true
+Address: "A4:F6:E6:88:BA:ED"
+DeviceName: "AirPods Pro"
+BatteryLeft: 63 (Status: 2)
+BatteryRight: 63 (Status: 2)
+BatteryCase: 255 (Status: 4)
+BatteryHeadphone: 255
+ListeningMode: 1
+AllowOff: 0
+ConversationDetect: false
+PersonalizedVolume: false
+EarPrimary: 0, EarSecondary: 0
+==================================
+[2026-09-20T11:39:30.675Z] 
+=== IN-MEMORY STATE TABLE DUMP ===
+Connected: true
+Address: "A4:F6:E6:88:BA:ED"
+DeviceName: "AirPods Pro"
+BatteryLeft: 63 (Status: 2)
+BatteryRight: 63 (Status: 2)
+BatteryCase: 255 (Status: 4)
+BatteryHeadphone: 255
+ListeningMode: 1
+AllowOff: 0
+ConversationDetect: false
+PersonalizedVolume: false
+EarPrimary: 0, EarSecondary: 0
+==================================
+[2026-09-20T11:39:33.676Z] 
+=== IN-MEMORY STATE TABLE DUMP ===
+Connected: true
+Address: "A4:F6:E6:88:BA:ED"
+DeviceName: "AirPods Pro"
+BatteryLeft: 63 (Status: 2)
+BatteryRight: 63 (Status: 2)
+BatteryCase: 255 (Status: 4)
+BatteryHeadphone: 255
+ListeningMode: 1
+AllowOff: 0
+ConversationDetect: false
+PersonalizedVolume: false
+EarPrimary: 0, EarSecondary: 0
+==================================
+[2026-09-20T11:39:36.676Z] 
+=== IN-MEMORY STATE TABLE DUMP ===
+Connected: true
+Address: "A4:F6:E6:88:BA:ED"
+DeviceName: "AirPods Pro"
+BatteryLeft: 63 (Status: 2)
+BatteryRight: 63 (Status: 2)
+BatteryCase: 255 (Status: 4)
+BatteryHeadphone: 255
+ListeningMode: 1
+AllowOff: 0
+ConversationDetect: false
+PersonalizedVolume: false
+EarPrimary: 0, EarSecondary: 0
+==================================
+[2026-09-20T11:39:39.677Z] 
+=== IN-MEMORY STATE TABLE DUMP ===
+Connected: true
+Address: "A4:F6:E6:88:BA:ED"
+DeviceName: "AirPods Pro"
+BatteryLeft: 63 (Status: 2)
+BatteryRight: 63 (Status: 2)
+BatteryCase: 255 (Status: 4)
+BatteryHeadphone: 255
+ListeningMode: 1
+AllowOff: 0
+ConversationDetect: false
+PersonalizedVolume: false
+EarPrimary: 0, EarSecondary: 0
+==================================
+[2026-09-20T11:39:42.677Z] 
+=== IN-MEMORY STATE TABLE DUMP ===
+Connected: true
+Address: "A4:F6:E6:88:BA:ED"
+DeviceName: "AirPods Pro"
+BatteryLeft: 63 (Status: 2)
+BatteryRight: 63 (Status: 2)
+BatteryCase: 255 (Status: 4)
+BatteryHeadphone: 255
+ListeningMode: 1
+AllowOff: 0
+ConversationDetect: false
+PersonalizedVolume: false
+EarPrimary: 0, EarSecondary: 0
+==================================

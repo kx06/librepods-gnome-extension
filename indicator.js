@@ -1,5 +1,6 @@
 import Clutter from 'gi://Clutter';
 import Gio from 'gi://Gio';
+import GLib from 'gi://GLib';
 import GObject from 'gi://GObject';
 import St from 'gi://St';
 
@@ -49,10 +50,67 @@ function earStatusLabel(status) {
     }
 }
 
+function logDebugToFile(msg) {
+    try {
+        const timestamp = new Date().toISOString();
+        const line = `[${timestamp}] ${msg}\n`;
+        const path = '/home/krishhh16/.local/share/gnome-shell/extensions/librepods@krishhh.dev/extension_debug.log';
+        const file = Gio.File.new_for_path(path);
+
+        let content = '';
+        if (file.query_exists(null)) {
+            const [success, bytes] = file.load_contents(null);
+            if (success) {
+                content = new TextDecoder().decode(bytes);
+            }
+        }
+
+        const lines = content.split('\n');
+        if (lines[lines.length - 1] === '') lines.pop();
+        lines.push(`[${timestamp}] ${msg}`);
+
+        const MAX_LINES = 1000;
+        const trimmedLines = lines.length > MAX_LINES ? lines.slice(lines.length - MAX_LINES) : lines;
+        const finalContent = trimmedLines.join('\n') + '\n';
+
+        file.replace_contents(finalContent, null, false, Gio.FileCreateFlags.NONE, null);
+    } catch (e) {
+        console.log(`[LibrePods] ${msg}`);
+    }
+}
+
+function log(msg) {
+    logDebugToFile(`[INFO] ${msg}`);
+}
+
+function logError(msg, error) {
+    logDebugToFile(`[ERROR] ${msg}: ${error}`);
+}
+
 // ── State Management ───────────────────────────────────────────────────
 
-const LibrePodsState = GObject.registerClass(
-class LibrePodsState extends GObject.Object {
+const LibrePodsState = GObject.registerClass({
+    Properties: {
+        'connected': GObject.ParamSpec.boolean('connected', 'Connected', 'Connected status', GObject.ParamFlags.READABLE, false),
+        'address': GObject.ParamSpec.string('address', 'Address', 'Device MAC Address', GObject.ParamFlags.READABLE, ''),
+        'device-name': GObject.ParamSpec.string('device-name', 'DeviceName', 'Device Name', GObject.ParamFlags.READABLE, 'AirPods'),
+        'battery-headphone': GObject.ParamSpec.uchar('battery-headphone', 'BatteryHeadphone', 'Battery Headphone', GObject.ParamFlags.READABLE, 0, 255, 255),
+        'battery-headphone-status': GObject.ParamSpec.uchar('battery-headphone-status', 'BatteryHeadphoneStatus', 'Battery Headphone Status', GObject.ParamFlags.READABLE, 0, 255, 0),
+        'battery-left': GObject.ParamSpec.uchar('battery-left', 'BatteryLeft', 'Battery Left', GObject.ParamFlags.READABLE, 0, 255, 255),
+        'battery-left-status': GObject.ParamSpec.uchar('battery-left-status', 'BatteryLeftStatus', 'Battery Left Status', GObject.ParamFlags.READABLE, 0, 255, 0),
+        'battery-right': GObject.ParamSpec.uchar('battery-right', 'BatteryRight', 'Battery Right', GObject.ParamFlags.READABLE, 0, 255, 255),
+        'battery-right-status': GObject.ParamSpec.uchar('battery-right-status', 'BatteryRightStatus', 'Battery Right Status', GObject.ParamFlags.READABLE, 0, 255, 0),
+        'battery-case': GObject.ParamSpec.uchar('battery-case', 'BatteryCase', 'Battery Case', GObject.ParamFlags.READABLE, 0, 255, 255),
+        'battery-case-status': GObject.ParamSpec.uchar('battery-case-status', 'BatteryCaseStatus', 'Battery Case Status', GObject.ParamFlags.READABLE, 0, 255, 0),
+        'listening-mode': GObject.ParamSpec.uchar('listening-mode', 'ListeningMode', 'Listening Mode', GObject.ParamFlags.READABLE, 0, 255, NoiseMode.OFF),
+        'allow-off': GObject.ParamSpec.uchar('allow-off', 'AllowOff', 'Allow Off', GObject.ParamFlags.READABLE, 0, 255, 0),
+        'conversation-detect': GObject.ParamSpec.boolean('conversation-detect', 'ConversationDetect', 'Conversation Detect', GObject.ParamFlags.READABLE, false),
+        'personalized-volume': GObject.ParamSpec.boolean('personalized-volume', 'PersonalizedVolume', 'Personalized Volume', GObject.ParamFlags.READABLE, false),
+        'ear-primary': GObject.ParamSpec.uchar('ear-primary', 'EarPrimary', 'Ear Primary', GObject.ParamFlags.READABLE, 0, 255, 255),
+        'ear-secondary': GObject.ParamSpec.uchar('ear-secondary', 'EarSecondary', 'Ear Secondary', GObject.ParamFlags.READABLE, 0, 255, 255),
+        'conversational-awareness': GObject.ParamSpec.uchar('conversational-awareness', 'ConversationalAwareness', 'Conversational Awareness', GObject.ParamFlags.READABLE, 0, 255, 0),
+    },
+}, class LibrePodsState extends GObject.Object {
     _init() {
         super._init();
         this._dbus = getDBus();
@@ -76,10 +134,40 @@ class LibrePodsState extends GObject.Object {
         this._conversationalAwareness = 0;
 
         this._setupDBus();
+        this._startPeriodicDump();
+    }
+
+    _startPeriodicDump() {
+        this._dumpTimerId = GLib.timeout_add(GLib.PRIORITY_DEFAULT, 3000, () => {
+            this.dumpStateTable();
+            return GLib.SOURCE_CONTINUE;
+        });
+    }
+
+    dumpStateTable() {
+        logDebugToFile(`\n=== IN-MEMORY STATE TABLE DUMP ===\n` +
+            `Connected: ${this._connected}\n` +
+            `Address: "${this._address}"\n` +
+            `DeviceName: "${this._deviceName}"\n` +
+            `BatteryLeft: ${this._batteryLeft} (Status: ${this._batteryLeftStatus})\n` +
+            `BatteryRight: ${this._batteryRight} (Status: ${this._batteryRightStatus})\n` +
+            `BatteryCase: ${this._batteryCase} (Status: ${this._batteryCaseStatus})\n` +
+            `BatteryHeadphone: ${this._batteryHeadphone}\n` +
+            `ListeningMode: ${this._listeningMode}\n` +
+            `AllowOff: ${this._allowOff}\n` +
+            `ConversationDetect: ${this._conversationDetect}\n` +
+            `PersonalizedVolume: ${this._personalizedVolume}\n` +
+            `EarPrimary: ${this._earPrimary}, EarSecondary: ${this._earSecondary}\n` +
+            `==================================`);
+    }
+
+    async refresh() {
+        log('Manual refresh requested');
+        await this._dbus.refresh();
     }
 
     _setupDBus() {
-        this._dbus.connect().catch(e => logError('Initial DBus connect failed:', e));
+        this._dbus.ensureDBusConnected().catch(e => logError('Initial DBus connect failed:', e));
 
         const props = [
             'Connected', 'Address', 'DeviceName',
@@ -121,8 +209,10 @@ class LibrePodsState extends GObject.Object {
 
         const field = propMap[prop];
         if (field && this[field] !== value) {
+            log(`[STATE CHANGE] ${prop}: ${this[field]} -> ${value}`);
             this[field] = value;
-            this.notify(field.slice(1).replace(/([A-Z])/g, '-$1').toLowerCase());
+            const paramName = field.slice(1).replace(/([A-Z])/g, '-$1').toLowerCase();
+            this.notify(paramName);
         }
     }
 
@@ -203,6 +293,10 @@ class LibrePodsState extends GObject.Object {
     }
 
     destroy() {
+        if (this._dumpTimerId) {
+            GLib.source_remove(this._dumpTimerId);
+            this._dumpTimerId = null;
+        }
         this._dbus.destroy();
     }
 });
@@ -214,6 +308,7 @@ class LibrePodsHeroToggle extends PopupMenu.PopupBaseMenuItem {
     _init(extensionDir, state) {
         super._init({reactive: true});
         this._state = state;
+        this._updating = false;
         this.style_class = 'popup-menu-item librepods-hero';
 
         const iconPath = extensionDir
@@ -246,10 +341,34 @@ class LibrePodsHeroToggle extends PopupMenu.PopupBaseMenuItem {
         this.add_child(textStack);
 
         this._switch = new PopupMenu.Switch(false);
+        this._switch.add_style_class_name('librepods-hero-switch');
+        this._switch.reactive = false;
         this.add_child(this._switch);
 
-        this._switch.connect('notify::state', () => this._onSwitchToggled());
-        this.connect('activate', () => this._switch.toggle());
+        this._connectionTimeoutId = null;
+
+        this.connect('activate', () => {
+            if (this._updating) return;
+            const targetState = !this._switch.state;
+            this._subtitleLabel.set_text(targetState ? 'Connecting...' : 'Disconnecting...');
+
+            if (this._connectionTimeoutId) {
+                GLib.source_remove(this._connectionTimeoutId);
+                this._connectionTimeoutId = null;
+            }
+
+            this._connectionTimeoutId = GLib.timeout_add(GLib.PRIORITY_DEFAULT, 2000, () => {
+                this._connectionTimeoutId = null;
+                this._updateFromState();
+                return GLib.SOURCE_REMOVE;
+            });
+
+            if (targetState) {
+                this._state.connect();
+            } else {
+                this._state.disconnect();
+            }
+        });
 
         this._state.connect('notify::connected', () => this._updateFromState());
         this._state.connect('notify::device-name', () => this._updateFromState());
@@ -259,95 +378,127 @@ class LibrePodsHeroToggle extends PopupMenu.PopupBaseMenuItem {
     }
 
     _updateFromState() {
-        this._titleLabel.set_text(this._state.deviceName || 'AirPods');
-        this._subtitleLabel.set_text(this._state.connected ? 'Connected' : 'Disconnected');
-        this._switch.state = this._state.connected;
-        this._syncCheckedStyle();
-    }
-
-    _onSwitchToggled() {
-        if (this._switch.state) {
-            this._state.connect();
-        } else {
-            this._state.disconnect();
+        if (this._connectionTimeoutId) {
+            GLib.source_remove(this._connectionTimeoutId);
+            this._connectionTimeoutId = null;
         }
-        this._syncCheckedStyle();
+        this._updating = true;
+        try {
+            const isConnected = !!this._state.connected;
+            log(`[HERO UI UPDATE] Setting title: "${this._state.deviceName}", connected: ${isConnected}`);
+            this._titleLabel.set_text(this._state.deviceName || 'AirPods');
+            this._subtitleLabel.set_text(isConnected ? 'Connected' : 'Disconnected');
+            this._switch.state = isConnected;
+            this._syncCheckedStyle();
+        } finally {
+            this._updating = false;
+        }
     }
 
     _syncCheckedStyle() {
-        if (this._switch.state)
+        const isConnected = !!this._state.connected;
+        if (isConnected) {
             this.add_style_pseudo_class('checked');
-        else
+            this._switch.add_style_pseudo_class('checked');
+        } else {
             this.remove_style_pseudo_class('checked');
+            this._switch.remove_style_pseudo_class('checked');
+        }
     }
 });
 
-// ── Noise Control ────────────────────────────────────────────────────
+// ── Noise Control Segmented Bar ────────────────────────────────────────
 
-const NoiseControlToggle = GObject.registerClass(
-class NoiseControlToggle extends QuickMenuToggle {
+const NoiseModeBar = GObject.registerClass(
+class NoiseModeBar extends St.BoxLayout {
     _init(state) {
         super._init({
-            title: 'Noise Control',
-            subtitle: 'Off',
-            icon_name: 'audio-headphones-symbolic',
-            toggle_mode: true,
-            checked: false,
-            menu_enabled: true,
+            orientation: Clutter.Orientation.VERTICAL,
             x_expand: true,
         });
 
         this._state = state;
-        this._mode = NoiseMode.OFF;
-        this._updating = false;
+        this._timeoutId = null;
 
-        this._modeItems = new Map();
-        for (const {mode, label} of NOISE_MODE_DEFS) {
-            const item = new PopupMenu.PopupMenuItem(label);
-            item.connect('activate', () => this._setMode(mode));
-            this.menu.addMenuItem(item);
-            this._modeItems.set(mode, item);
-        }
-
-        this.connect('clicked', () => {
-            if (this._updating) return;
-            const newMode = this.checked ? this._mode : NoiseMode.OFF;
-            this._setMode(newMode);
+        const header = new St.Label({
+            text: 'NOISE CONTROLS',
+            style_class: 'librepods-section-label librepods-noise-section-label',
         });
+        this.add_child(header);
+
+        this._tabBar = new St.BoxLayout({
+            style_class: 'librepods-tab-bar librepods-noise-tab-bar',
+            x_expand: true,
+        });
+        this.add_child(this._tabBar);
+
+        this._buttons = new Map();
+        for (const {mode, label} of NOISE_MODE_DEFS) {
+            const btn = new St.Button({
+                label,
+                style_class: 'librepods-tab-button',
+                can_focus: true,
+                x_expand: true,
+            });
+            btn.connect('clicked', () => this._onTabClicked(mode));
+            this._tabBar.add_child(btn);
+            this._buttons.set(mode, btn);
+        }
 
         this._state.connect('notify::listening-mode', () => this._updateFromState());
         this._state.connect('notify::connected', () => this._updateFromState());
         this._updateFromState();
     }
 
-    _updateFromState() {
-        this._updating = true;
-        this._mode = this._state.listeningMode || NoiseMode.OFF;
-        this.checked = this._mode !== NoiseMode.OFF;
-        this.subtitle = noiseModeLabel(this._mode);
-
-        for (const [m, item] of this._modeItems) {
-            item.setOrnament(m === this._mode
-                ? PopupMenu.Ornament.CHECK
-                : PopupMenu.Ornament.NONE);
+    _onTabClicked(mode) {
+        log(`[NoiseModeBar] Tab clicked for mode ${mode}`);
+        if (this._timeoutId) {
+            GLib.source_remove(this._timeoutId);
+            this._timeoutId = null;
         }
-        this._updating = false;
+
+        // Optimistically highlight the clicked tab immediately
+        for (const [m, btn] of this._buttons) {
+            if (m === mode)
+                btn.add_style_pseudo_class('selected');
+            else
+                btn.remove_style_pseudo_class('selected');
+        }
+
+        // Send D-Bus set command
+        this._state.setListeningMode(mode);
+
+        // 2-second fallback timeout: if backend doesn't confirm within 2s, revert back to state
+        this._timeoutId = GLib.timeout_add(GLib.PRIORITY_DEFAULT, 2000, () => {
+            log(`[NoiseModeBar] 2s timeout reached without backend confirmation; reverting UI state`);
+            this._timeoutId = null;
+            this._updateFromState();
+            return GLib.SOURCE_REMOVE;
+        });
     }
 
-    _setMode(mode) {
-        if (this._updating) return;
-        this._mode = mode;
-        this.checked = mode !== NoiseMode.OFF;
-        this.subtitle = noiseModeLabel(mode);
-
-        for (const [m, item] of this._modeItems) {
-            item.setOrnament(m === mode
-                ? PopupMenu.Ornament.CHECK
-                : PopupMenu.Ornament.NONE);
+    _updateFromState() {
+        if (this._timeoutId) {
+            log(`[NoiseModeBar] Backend state update received before timeout expired`);
+            GLib.source_remove(this._timeoutId);
+            this._timeoutId = null;
         }
 
-        this.menu.close();
-        this._state.setListeningMode(mode);
+        const activeMode = this._state.listeningMode || NoiseMode.OFF;
+        for (const [m, btn] of this._buttons) {
+            if (m === activeMode)
+                btn.add_style_pseudo_class('selected');
+            else
+                btn.remove_style_pseudo_class('selected');
+        }
+    }
+
+    destroy() {
+        if (this._timeoutId) {
+            GLib.source_remove(this._timeoutId);
+            this._timeoutId = null;
+        }
+        super.destroy();
     }
 });
 
@@ -472,7 +623,7 @@ class BatteryRow extends St.BoxLayout {
 
         this._bar = new BarLevel.BarLevel({
             value: 0,
-            maximum_value: 100,
+            maximum_value: 1.0,
             x_expand: true,
             style_class: 'librepods-battery-bar',
         });
@@ -514,12 +665,19 @@ class BatteryRow extends St.BoxLayout {
         const level = this._state[levelGetter];
         const status = this._state[statusGetter];
 
+        log(`[BATTERY ROW UPDATE] type: ${this._batteryType}, level: ${level}, status: ${status}`);
+
         if (level === 255 || status === 4) {
             this._bar.value = 0;
             this._pctLabel.set_text('—');
+            this._pctLabel.remove_style_class_name('librepods-battery-has-info');
+            this._nameLabel.remove_style_class_name('librepods-battery-has-info');
         } else {
-            this._bar.value = level;
+            const normalized = Math.max(0, Math.min(1.0, level / 100.0));
+            this._bar.value = normalized;
             this._pctLabel.set_text(`${level}%`);
+            this._pctLabel.add_style_class_name('librepods-battery-has-info');
+            this._nameLabel.add_style_class_name('librepods-battery-has-info');
         }
     }
 });
@@ -527,15 +685,19 @@ class BatteryRow extends St.BoxLayout {
 // ── Info Row ──────────────────────────────────────────────────────────
 
 const InfoRow = GObject.registerClass(
-class InfoRow extends PopupMenu.PopupSwitchMenuItem {
+class InfoRow extends PopupMenu.PopupMenuItem {
     _init(key, state, getterName, formatter) {
-        super._init(key, false);
+        super._init(key, {reactive: false, can_focus: false});
         this._state = state;
         this._getterName = getterName;
         this._formatter = formatter;
         this.style_class = 'popup-menu-item librepods-info-item';
-        this.reactive = false;
-        this._switch.reactive = false;
+
+        this._valueLabel = new St.Label({
+            text: '—',
+            style_class: 'popup-status-menu-item',
+        });
+        this.add_child(this._valueLabel);
 
         const signalName = getterName.replace(/([A-Z])/g, '-$1').toLowerCase();
         this._state.connect(`notify::${signalName}`, () => this._updateFromState());
@@ -545,7 +707,8 @@ class InfoRow extends PopupMenu.PopupSwitchMenuItem {
 
     _updateFromState() {
         const value = this._state[this._getterName];
-        this.setStatus(this._formatter ? this._formatter(value) : (value ?? '—'));
+        const formatted = this._formatter ? this._formatter(value) : (value ?? '—');
+        this._valueLabel.set_text(formatted);
     }
 });
 
@@ -614,26 +777,12 @@ class Notebook extends St.BoxLayout {
         next.tabBtn.add_style_pseudo_class('selected');
         next.child.visible = true;
         this._selectedIndex = index;
-
-        const container = this._pageContainer;
-        const currentHeight = container.height >= 0 ? container.height : container.get_preferred_height(-1)[1];
-        const [, targetHeight] = next.child.get_preferred_height(-1);
-
-        container.height = currentHeight;
-        container.ease({
-            height: targetHeight,
-            duration: 250,
-            mode: Clutter.AnimationMode.EASE_OUT_EXPO,
-            onComplete: () => container.set_height(-1),
-        });
     }
 
     get selectedIndex() {
         return this._selectedIndex;
     }
 });
-
-// ── Tab Page Builders ──────────────────────────────────────────────────
 
 function _buildControlsPage(state) {
     const page = new St.BoxLayout({
@@ -642,41 +791,32 @@ function _buildControlsPage(state) {
         x_expand: true,
     });
 
-    const noiseControl = new NoiseControlToggle(state);
-    const conversationDetect = new ConversationDetectToggle(state);
-    const personalizedVolume = new PersonalizedVolumeToggle(state);
-
-    page.add_child(noiseControl);
-    noiseControl.menu.actor.hide();
-    page.add_child(noiseControl.menu.actor);
-
-    const row = new St.BoxLayout({
-        style_class: 'librepods-toggle-row',
-        x_expand: true,
-    });
-    row.add_child(conversationDetect);
-    row.add_child(personalizedVolume);
-    page.add_child(row);
-
-    return {page, noiseControl, conversationDetect, personalizedVolume};
-}
-
-function _buildBatteryPage(state) {
-    const page = new St.BoxLayout({
+    const batteryBox = new St.BoxLayout({
         orientation: Clutter.Orientation.VERTICAL,
-        style_class: 'librepods-tab-page',
+        style_class: 'librepods-battery-box',
         x_expand: true,
     });
+
+    const batteryHeader = new St.Label({
+        text: 'BATTERY',
+        style_class: 'librepods-section-label librepods-battery-section-label',
+    });
+    batteryBox.add_child(batteryHeader);
 
     const leftRow = new BatteryRow('Left AirPod', state, 'left');
     const rightRow = new BatteryRow('Right AirPod', state, 'right');
     const caseRow = new BatteryRow('Case', state, 'case');
 
-    page.add_child(leftRow);
-    page.add_child(rightRow);
-    page.add_child(caseRow);
+    batteryBox.add_child(leftRow);
+    batteryBox.add_child(rightRow);
+    batteryBox.add_child(caseRow);
 
-    return {page, leftRow, rightRow, caseRow};
+    page.add_child(batteryBox);
+
+    const noiseModeBar = new NoiseModeBar(state);
+    page.add_child(noiseModeBar);
+
+    return {page, noiseModeBar, leftRow, rightRow, caseRow};
 }
 
 function _buildAdvancedPage(state) {
@@ -740,19 +880,21 @@ function _buildInfoPage(state) {
     });
     page.add_child(header);
 
-    const infoRows = [
+    const infoDefs = [
         {key: 'Name', getter: 'deviceName', formatter: v => v || '—'},
         {key: 'Address', getter: 'address', formatter: v => v || '—'},
         {key: 'Listening Mode', getter: 'listeningMode', formatter: v => noiseModeLabel(v)},
         {key: 'Ear Detection', getter: 'earPrimary', formatter: v => earStatusLabel(v)},
     ];
 
-    for (const {key, getter, formatter} of infoRows) {
+    const infoRows = [];
+    for (const {key, getter, formatter} of infoDefs) {
         const item = new InfoRow(key, state, getter, formatter);
         page.add_child(item);
+        infoRows.push(item);
     }
 
-    return page;
+    return {page, infoRows};
 }
 
 // ── Main Indicator ────────────────────────────────────────────────────
@@ -799,15 +941,20 @@ class LibrePodsIndicator extends PanelMenu.Button {
         this._contentBox.add_child(this._heroToggle);
 
         // Build tab pages
-        const {page: controlsPage} = _buildControlsPage(this._state);
-        this._batteryPage = _buildBatteryPage(this._state).page;
+        const controls = _buildControlsPage(this._state);
+        const controlsPage = controls.page;
+        this._batteryRows = {
+            leftRow: controls.leftRow,
+            rightRow: controls.rightRow,
+            caseRow: controls.caseRow,
+        };
         const advancedPage = _buildAdvancedPage(this._state);
-        const infoPage = _buildInfoPage(this._state);
+        const {page: infoPage, infoRows} = _buildInfoPage(this._state);
+        this._infoRows = infoRows;
 
         // Tabbed notebook
         this._notebook = new Notebook();
         this._notebook.appendPage('Controls', controlsPage);
-        this._notebook.appendPage('Charge', this._batteryPage);
         this._notebook.appendPage('Advanced', advancedPage);
         this._notebook.appendPage('System', infoPage);
 
@@ -818,8 +965,30 @@ class LibrePodsIndicator extends PanelMenu.Button {
 
         this.setMenu(this._menu);
 
+        // Sync state when menu opens
+        this._menu.connect('open-state-changed', (menu, isOpen) => {
+            if (isOpen) {
+                this._state.refresh().then(() => {
+                    this._heroToggle._updateFromState();
+                    if (this._batteryRows) {
+                        this._batteryRows.leftRow._updateFromState();
+                        this._batteryRows.rightRow._updateFromState();
+                        this._batteryRows.caseRow._updateFromState();
+                    }
+                    if (controls.noiseModeBar) {
+                        controls.noiseModeBar._updateFromState();
+                    }
+                    if (this._infoRows) {
+                        this._infoRows.forEach(row => row._updateFromState());
+                    }
+                    this._updatePanelIcon();
+                }).catch(() => {});
+            }
+        });
+
         // Sync panel icon
         this._state.connect('notify::connected', () => this._updatePanelIcon());
+        this._updatePanelIcon();
     }
 
     _updatePanelIcon() {
@@ -834,11 +1003,3 @@ class LibrePodsIndicator extends PanelMenu.Button {
         super.destroy();
     }
 });
-
-function log(msg) {
-    console.log(`[LibrePods] ${msg}`);
-}
-
-function logError(msg, error) {
-    console.error(`[LibrePods] ${msg}`, error);
-}

@@ -56,6 +56,24 @@
   opacity: 0.6;
 }
 
+.librepods-hero-switch {
+  transform: scale(0.85);
+  margin: 0 !important;
+  padding: 0 !important;
+  min-height: 0 !important;
+  max-height: 24px !important;
+}
+
+.librepods-hero-switch:hover,
+.librepods-hero-switch:selected,
+.librepods-hero-switch:focus,
+.librepods-hero-switch:active {
+  margin: 0 !important;
+  padding: 0 !important;
+  min-height: 0 !important;
+  max-height: 24px !important;
+}
+
 /* Tab Bar */
 .librepods-tab-bar {
   border-radius: 9999px;
@@ -63,7 +81,7 @@
   spacing: 2px;
   background-color: rgba(255, 255, 255, 0.08);
   margin-top: 12px;
-  margin-bottom: 4px;
+  margin-bottom: 6px;
 }
 
 .librepods-tab-button {
@@ -90,11 +108,29 @@
   padding-top: 4px;
 }
 
+.librepods-tab-page>* {
+  min-width: 0;
+  max-width: 100%;
+}
+
 .librepods-tab-page-tight {
   spacing: 2px;
 }
 
 /* Toggle Row */
+.librepods-quick-toggle,
+.librepods-quick-toggle:hover,
+.librepods-quick-toggle:active,
+.librepods-quick-toggle:focus,
+.librepods-quick-toggle:checked,
+.librepods-quick-toggle:selected {
+  min-height: 44px !important;
+  max-height: 44px !important;
+  height: 44px !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
 .librepods-toggle-row {
   spacing: 6px;
 }
@@ -110,12 +146,33 @@
   opacity: 0.55;
   letter-spacing: 0.9px;
   padding-left: 4px;
-  margin-bottom: 2px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.librepods-battery-box {
+  spacing: 4px;
+}
+
+.librepods-battery-section-label {
+  font-size: 10.5px;
+  margin-top: 0px;
+  margin-bottom: 0px !important;
+}
+
+.librepods-noise-section-label {
+  font-size: 10.5px;
+  margin-top: 4px;
+  margin-bottom: 0px !important;
+}
+
+.librepods-noise-tab-bar {
+  margin-top: 4px !important;
 }
 
 /* Battery Cards */
 .librepods-battery-card {
-  border-radius: 14px;
+  border-radius: 18px;
   padding: 10px 14px;
   background-color: rgba(255, 255, 255, 0.08);
   spacing: 4px;
@@ -133,7 +190,9 @@
 .librepods-battery-bar {
   -barlevel-height: 6px;
   -barlevel-background-color: rgba(255, 255, 255, 0.18);
-  -barlevel-active-background-color: -st-accent-color;
+  -barlevel-active-background-color: #26a269 !important;
+  -barlevel-overdrive-color: #26a269 !important;
+  -barlevel-overdrive-separator-width: 0px;
   margin: 4px 0;
 }
 
@@ -145,6 +204,11 @@
 .librepods-battery-pct {
   font-size: 13.5px;
   font-weight: bold;
+}
+
+.librepods-battery-has-info {
+  color: #ffffff !important;
+  opacity: 1 !important;
 }
 
 /* Info Rows */
